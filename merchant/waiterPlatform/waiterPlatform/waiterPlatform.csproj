@@ -1,0 +1,328 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{58749244-D106-4CAE-A3E8-DD69AE9186DB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>waiterPlatform</RootNamespace>
+    <AssemblyName>waiterPlatform</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="MyDbConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MyDbConnect.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="UI\css\bootstrap\Descr.WD3" />
+    <Content Include="UI\css\cleditor\Descr.WD3" />
+    <Content Include="UI\css\Descr.WD3" />
+    <Content Include="UI\css\epiechart\Descr.WD3" />
+    <Content Include="UI\css\fancybox\Descr.WD3" />
+    <Content Include="UI\css\fonts\Descr.WD3" />
+    <Content Include="UI\css\fonts\icomoon.eot" />
+    <Content Include="UI\css\fonts\icomoon.eot%40" />
+    <Content Include="UI\css\fonts\icomoon.ttf" />
+    <Content Include="UI\css\fonts\icomoon.woff" />
+    <Content Include="UI\css\jquery\Descr.WD3" />
+    <Content Include="UI\css\jquery\images\Descr.WD3" />
+    <Content Include="UI\css\mcustomscrollbar\Descr.WD3" />
+    <Content Include="UI\css\multiselect\Descr.WD3" />
+    <Content Include="UI\css\select\Descr.WD3" />
+    <Content Include="UI\css\shbrush\Descr.WD3" />
+    <Content Include="UI\css\stepywizard\Descr.WD3" />
+    <Content Include="UI\css\tagsinput\Descr.WD3" />
+    <Content Include="UI\css\uniform\Descr.WD3" />
+    <Content Include="UI\css\validation\Descr.WD3" />
+    <Content Include="UI\img\backgrounds\Descr.WD3" />
+    <Content Include="UI\img\cleditor\Descr.WD3" />
+    <Content Include="UI\img\Descr.WD3" />
+    <Content Include="UI\img\examples\photo\Descr.WD3" />
+    <Content Include="UI\img\examples\users\Descr.WD3" />
+    <Content Include="UI\img\loaders\Descr.WD3" />
+    <Content Include="UI\img\select\Descr.WD3" />
+    <Content Include="UI\img\uniform\Descr.WD3" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="UI\add_menu.aspx" />
+    <Content Include="UI\add_menu.html" />
+    <Content Include="UI\add_restaurant.html" />
+    <Content Include="UI\check_menu.html" />
+    <Content Include="UI\css\bootstrap\bootstrap-fileupload.css" />
+    <Content Include="UI\css\bootstrap\bootstrap-responsive.min.css" />
+    <Content Include="UI\css\bootstrap\bootstrap.min.css" />
+    <Content Include="UI\css\cleditor\cleditor.css" />
+    <Content Include="UI\css\epiechart\jquery.easy-pie-chart.css" />
+    <Content Include="UI\css\fancybox\blank.gif" />
+    <Content Include="UI\css\fancybox\fancybox_loading.gif" />
+    <Content Include="UI\css\fancybox\fancybox_overlay.png" />
+    <Content Include="UI\css\fancybox\fancybox_sprite.png" />
+    <Content Include="UI\css\fancybox\jquery.fancybox.css" />
+    <Content Include="UI\css\fonts\icomoon.svg" />
+    <Content Include="UI\css\icons.css" />
+    <Content Include="UI\css\ie.css" />
+    <Content Include="UI\css\jquery\images\close.jpg" />
+    <Content Include="UI\css\jquery\images\dateArrows.png" />
+    <Content Include="UI\css\jquery\images\pboverlay.png" />
+    <Content Include="UI\css\jquery\images\slider.png" />
+    <Content Include="UI\css\jquery\images\ui-bg_flat_0_aaaaaa_5F40x100.png" />
+    <Content Include="UI\css\jquery\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="UI\css\jquery\images\ui-icons_222222_5F256x240.png" />
+    <Content Include="UI\css\jquery\images\ui-icons_2e83ff_5F256x240.png" />
+    <Content Include="UI\css\jquery\images\ui-icons_454545_5F256x240.png" />
+    <Content Include="UI\css\jquery\images\ui-icons_888888_5F256x240.png" />
+    <Content Include="UI\css\jquery\images\ui-icons_cd0a0a_5F256x240.png" />
+    <Content Include="UI\css\jquery\ui.css" />
+    <Content Include="UI\css\mcustomscrollbar\mCustomScrollbar.css" />
+    <Content Include="UI\css\multiselect\multiselect.css" />
+    <Content Include="UI\css\mystyles.css" />
+    <Content Include="UI\css\opera.css" />
+    <Content Include="UI\css\select\select.css" />
+    <Content Include="UI\css\shbrush\shCoreDefault.css" />
+    <Content Include="UI\css\shbrush\shThemeDefault.css" />
+    <Content Include="UI\css\stepywizard\jquery.stepy.css" />
+    <Content Include="UI\css\stylesheet.css" />
+    <Content Include="UI\css\stylesheets.css" />
+    <Content Include="UI\css\styling.css" />
+    <Content Include="UI\css\tagsinput\jquery.tagsinput.css" />
+    <Content Include="UI\css\uniform\uniform.css" />
+    <Content Include="UI\css\validation\validationEngine.jquery.css" />
+    <Content Include="UI\img\arrow_right_white.png" />
+    <Content Include="UI\img\arrow_white.png" />
+    <Content Include="UI\img\arrow_white_active.png" />
+    <Content Include="UI\img\back.png" />
+    <Content Include="UI\img\backgrounds\default.jpg" />
+    <Content Include="UI\img\backgrounds\dropdown_arrow.png" />
+    <Content Include="UI\img\backgrounds\dropdown_arrow_down.png" />
+    <Content Include="UI\img\backgrounds\dropdown_arrow_up.png" />
+    <Content Include="UI\img\back_dark.png" />
+    <Content Include="UI\img\cleditor\buttons.gif" />
+    <Content Include="UI\img\cleditor\toolbar.gif" />
+    <Content Include="UI\img\examples\photo\example_1.jpg" />
+    <Content Include="UI\img\examples\photo\example_10.jpg" />
+    <Content Include="UI\img\examples\photo\example_10s.jpg" />
+    <Content Include="UI\img\examples\photo\example_1s.jpg" />
+    <Content Include="UI\img\examples\photo\example_2.jpg" />
+    <Content Include="UI\img\examples\photo\example_2s.jpg" />
+    <Content Include="UI\img\examples\photo\example_3.jpg" />
+    <Content Include="UI\img\examples\photo\example_3s.jpg" />
+    <Content Include="UI\img\examples\photo\example_4.jpg" />
+    <Content Include="UI\img\examples\photo\example_4s.jpg" />
+    <Content Include="UI\img\examples\photo\example_5.jpg" />
+    <Content Include="UI\img\examples\photo\example_5s.jpg" />
+    <Content Include="UI\img\examples\photo\example_6.jpg" />
+    <Content Include="UI\img\examples\photo\example_6s.jpg" />
+    <Content Include="UI\img\examples\photo\example_7.jpg" />
+    <Content Include="UI\img\examples\photo\example_7s.jpg" />
+    <Content Include="UI\img\examples\photo\example_8.jpg" />
+    <Content Include="UI\img\examples\photo\example_8s.jpg" />
+    <Content Include="UI\img\examples\photo\example_9.jpg" />
+    <Content Include="UI\img\examples\photo\example_9s.jpg" />
+    <Content Include="UI\img\examples\users\dmitry_m.jpg" />
+    <Content Include="UI\img\glyphicons-halflings-white.png" />
+    <Content Include="UI\img\glyphicons-halflings.png" />
+    <Content Include="UI\img\loader.gif" />
+    <Content Include="UI\img\loaders\1d_1.gif" />
+    <Content Include="UI\img\loaders\1d_2.gif" />
+    <Content Include="UI\img\loaders\1d_3.gif" />
+    <Content Include="UI\img\loaders\2d_1.gif" />
+    <Content Include="UI\img\loaders\2d_2.gif" />
+    <Content Include="UI\img\loaders\3d_1.gif" />
+    <Content Include="UI\img\loaders\3d_2.gif" />
+    <Content Include="UI\img\loaders\3d_3.gif" />
+    <Content Include="UI\img\loaders\3d_4.gif" />
+    <Content Include="UI\img\loaders\3d_5.gif" />
+    <Content Include="UI\img\loaders\3d_6.gif" />
+    <Content Include="UI\img\logo.png" />
+    <Content Include="UI\img\navb_minus.png" />
+    <Content Include="UI\img\navb_plus.png" />
+    <Content Include="UI\img\nav_line.jpg" />
+    <Content Include="UI\img\next.png" />
+    <Content Include="UI\img\next_dark.png" />
+    <Content Include="UI\img\pingmian.jpg" />
+    <Content Include="UI\img\popup_arrow.png" />
+    <Content Include="UI\img\select\select2.png" />
+    <Content Include="UI\img\select\select2x2.png" />
+    <Content Include="UI\img\select\spinner.gif" />
+    <Content Include="UI\img\switch.png" />
+    <Content Include="UI\img\uniform\bg-input-focus.png" />
+    <Content Include="UI\img\uniform\bg-input.png" />
+    <Content Include="UI\img\uniform\sprite.png" />
+    <Content Include="UI\img\wpoint.png" />
+    <Content Include="UI\img\wpoint8.png" />
+    <Content Include="UI\index.html" />
+    <Content Include="UI\js\actions.js" />
+    <Content Include="UI\js\charts.js" />
+    <Content Include="UI\js\plugins.js" />
+    <Content Include="UI\js\plugins\animatedprogressbar\animated_progressbar.js" />
+    <Content Include="UI\js\plugins\bootstrap\bootstrap.min.js" />
+    <Content Include="UI\js\plugins\ckeditor\ckeditor.js" />
+    <Content Include="UI\js\plugins\cleditor\jquery.cleditor.js" />
+    <Content Include="UI\js\plugins\cookies\jquery.cookies.2.2.0.min.js" />
+    <Content Include="UI\js\plugins\datatables\jquery.dataTables.min.js" />
+    <Content Include="UI\js\plugins\epiechart\jquery.easy-pie-chart.js" />
+    <Content Include="UI\js\plugins\fancybox\jquery.fancybox.pack.js" />
+    <Content Include="UI\js\plugins\highlight\jquery.highlight-4.js" />
+    <Content Include="UI\js\plugins\jflot\jquery.flot.js" />
+    <Content Include="UI\js\plugins\jflot\jquery.flot.pie.js" />
+    <Content Include="UI\js\plugins\jflot\jquery.flot.resize.js" />
+    <Content Include="UI\js\plugins\jflot\jquery.flot.stack.js" />
+    <Content Include="UI\js\plugins\jquery\globalize.js" />
+    <Content Include="UI\js\plugins\jquery\jquery-1.9.1.min.js" />
+    <Content Include="UI\js\plugins\jquery\jquery-migrate-1.1.1.min.js" />
+    <Content Include="UI\js\plugins\jquery\jquery-ui-1.10.1.custom.min.js" />
+    <Content Include="UI\js\plugins\maskedinput\jquery.maskedinput-1.3.min.js" />
+    <Content Include="UI\js\plugins\mcustomscrollbar\jquery.mCustomScrollbar.min.js" />
+    <Content Include="UI\js\plugins\multiselect\jquery.multi-select.min.js" />
+    <Content Include="UI\js\plugins\other\excanvas.js" />
+    <Content Include="UI\js\plugins\other\faq.js" />
+    <Content Include="UI\js\plugins\other\jquery.mousewheel.min.js" />
+    <Content Include="UI\js\plugins\plupload\jquery.plupload.queue\jquery.plupload.queue.js" />
+    <Content Include="UI\js\plugins\plupload\plupload.browserplus.js" />
+    <Content Include="UI\js\plugins\plupload\plupload.flash.js" />
+    <Content Include="UI\js\plugins\plupload\plupload.gears.js" />
+    <Content Include="UI\js\plugins\plupload\plupload.html4.js" />
+    <Content Include="UI\js\plugins\plupload\plupload.html5.js" />
+    <Content Include="UI\js\plugins\plupload\plupload.js" />
+    <Content Include="UI\js\plugins\plupload\plupload.silverlight.js" />
+    <Content Include="UI\js\plugins\select\select2.min.js" />
+    <Content Include="UI\js\plugins\shbrush\shBrushCss.js" />
+    <Content Include="UI\js\plugins\shbrush\shBrushJScript.js" />
+    <Content Include="UI\js\plugins\shbrush\shBrushXml.js" />
+    <Content Include="UI\js\plugins\shbrush\shCore.js" />
+    <Content Include="UI\js\plugins\shbrush\XRegExp.js" />
+    <Content Include="UI\js\plugins\sparklines\jquery.sparkline.min.js" />
+    <Content Include="UI\js\plugins\stepywizard\jquery.stepy.js" />
+    <Content Include="UI\js\plugins\tagsinput\jquery.tagsinput.min.js" />
+    <Content Include="UI\js\plugins\uniform\jquery.uniform.min.js" />
+    <Content Include="UI\js\plugins\validationEngine\jquery.validationEngine.js" />
+    <Content Include="UI\js\plugins\validationEngine\languages\jquery.validationEngine-en.js" />
+    <Content Include="UI\login.html" />
+    <Content Include="UI\menu_list.aspx" />
+    <Content Include="UI\menu_list.html" />
+    <Content Include="UI\restaurant_list.html" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AccountDAO.cs" />
+    <Compile Include="Models\AccountEntity.cs" />
+    <Compile Include="Models\BrandEntity.cs" />
+    <Compile Include="Models\DishDAO.cs" />
+    <Compile Include="Models\DishEntity.cs" />
+    <Compile Include="Models\MySqlHelper.cs" />
+    <Compile Include="Models\OrderEntity.cs" />
+    <Compile Include="Models\RestaurantEntity.cs" />
+    <Compile Include="Models\RestaurantsDAO.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\add_menu.aspx.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\add_menu.aspx.designer.cs">
+      <DependentUpon>add_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\menu_list.aspx.cs">
+      <DependentUpon>menu_list.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\menu_list.aspx.designer.cs">
+      <DependentUpon>menu_list.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50269</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:55609/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

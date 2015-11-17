@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>        
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
+    <!--[if gt IE 8]>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
+    <![endif]-->                
+    <title>结算订单</title>
+    <link rel="icon" type="image/ico" href="favicon.ico"/>
+    
+    <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
+    <!--[if lte IE 7]>
+        <link href="css/ie.css" rel="stylesheet" type="text/css" />
+        <script type='text/javascript' src='js/plugins/other/lte-ie7.js'></script>
+    <![endif]-->      
+    <script type='text/javascript' src='js/plugins/jquery/jquery-1.9.1.min.js'></script>
+    <script type='text/javascript' src='js/plugins/jquery/jquery-ui-1.10.1.custom.min.js'></script>
+    <script type='text/javascript' src='js/plugins/jquery/jquery-migrate-1.1.1.min.js'></script>
+    <script type='text/javascript' src='js/plugins/jquery/globalize.js'></script>
+    <script type='text/javascript' src='js/plugins/other/excanvas.js'></script>
+    
+    <script type='text/javascript' src='js/plugins/other/jquery.mousewheel.min.js'></script>
+        
+    <script type='text/javascript' src='js/plugins/bootstrap/bootstrap.min.js'></script>            
+    
+    <script type='text/javascript' src='js/plugins/cookies/jquery.cookies.2.2.0.min.js'></script>    
+    
+    <script type='text/javascript' src="js/plugins/uniform/jquery.uniform.min.js"></script>
+    <script type='text/javascript' src="js/plugins/select/select2.min.js"></script>
+    
+    <script type='text/javascript' src='js/plugins/shbrush/XRegExp.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shCore.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shBrushXml.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shBrushJScript.js'></script>
+    <script type='text/javascript' src='js/plugins/shbrush/shBrushCss.js'></script>    
+    
+    <script type='text/javascript' src='js/plugins/highlight/jquery.highlight-4.js'></script>
+    <script type='text/javascript' src='js/plugins/other/faq.js'></script>
+    
+    <script type='text/javascript' src='js/plugins.js'></script>
+    <script type='text/javascript' src='js/charts.js'></script>
+    <script type='text/javascript' src='js/actions.js'></script>
+    
+</head>
+<body>    
+    <div id="loader"><img src="img/loader.gif"/></div>
+    <div class="wrapper">
+        
+        <div class="sidebar">
+  
+            <div class="top">
+                <a href="index.html" class="logo"></a>
+                <div class="search">
+                    <div class="input-prepend">
+                        <span class="add-on orange"><span class="icon-search icon-white"></span></span>
+                        <input type="text" placeholder="search..."/>                                                      
+                    </div>            
+                </div>
+            </div>
+            <div class="nContainer">                
+                <ul class="navigation">         
+                    <li class="active"><a href="index.html" class="blblue">当前店面呼叫信息</a></li>
+                    <li>
+                        <a href="#" class="blyellow">餐厅信息</a>
+                        <div class="open"></div>
+                        <ul>
+                            <li><a href="add_restaurant.html">编辑餐厅信息</a></li>
+                            <li><a href="restaurant_list.html">餐厅列表</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="blgreen">菜单信息</a>
+                        <div class="open"></div>
+                        <ul>
+                            <li><a href="add_menu.html">增加菜单</a></li>
+                            <li><a href="menu_list.html">菜单列表</a></li>
+                            
+                        </ul>
+                    </li>
+                   
+                </ul>
+                <a class="close">
+                    <span class="ico-remove"></span>
+                </a>
+            </div>
+            <div class="widget">
+                <div class="datepicker"></div>
+            </div>
+            
+        </div>
+        
+        <div class="body">
+            
+            <ul class="navigation">
+                               
+                <li>
+                    <div class="user">
+                        <img src="img/examples/users/dmitry_m.jpg" align="left"/>
+                        <a href="#" class="name">
+                            <span>Dmitry Ivaniuk</span>
+                            <span class="sm">Administrator</span>
+                        </a>
+                    </div>
+                 
+                </li>                
+            </ul>
+            
+            
+            <div class="content">
+                
+                <div class="page-header">
+                    <div class="icon">
+                        <span class="ico-dollar"></span>
+                    </div>
+                    <h1>订单号 <small>日期与时间 22:43</small></h1>
+                </div>
+                
+                <div class="row-fluid">
+                    <div class="span12">                
+
+                        <div class="block">
+                            <div class="data invoice">
+
+                                <div class="row-fluid">
+                                    <div class="span3">
+                                        <h4>From Dmitry Ivaniuk</h4>
+                                        <address>
+                                            <strong>Dmitry Ivaniuk</strong><br>
+                                            44 Revutskogo, Suite 566<br>
+                                            Kyiv, UA 02140<br>
+                                            <abbr title="Phone">P:</abbr> +38 (012) 345-67-89
+                                        </address>
+                                    </div>
+                                    <div class="span3">
+                                        <h4>To Enterprise</h4>
+                                        <address>
+                                            <strong>Enterprise, Inc.</strong><br>
+                                            321 Streeet, Suite 300<br>
+                                            San Francisco, CA 94107<br>
+                                            <abbr title="Phone">P:</abbr> +38 (123) 456-7890
+                                        </address>                                
+                                    </div>
+                                    <div class="span3"></div>
+                                    <div class="span3">
+                                        <h4>Invoice</h4>
+                                        <p><strong>Date invoice:</strong> Dec 20, 2012</p>
+                                        <p><strong>Payment due:</strong> Dec 29, 2012</p>
+                                        <div class="highlight">
+                                            <strong>Amount Due:</strong> $2,351.50 <em>USD</em>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <h3>菜单详情</h3>
+                                <p>结算</p>
+
+                                <table class="table" width="100%">
+                                    <thead>
+                                        <tr>
+                                            <th width="55%">菜品名称</th>
+                                            <th width="15%">单价</th>
+                                            <th width="15%">数量</th>
+                                            <th width="15%">总价</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>Web Design</td>
+                                            <td>$800</td>
+                                            <td>1</td>
+                                            <td>$800</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Programming</td>
+                                            <td>$1,151.50</td>
+                                            <td>1</td>
+                                            <td>$1,151.50</td>
+                                        </tr>                                
+                                        <tr>
+                                            <td>Logo Design</td>
+                                            <td>$400</td>
+                                            <td>1</td>
+                                            <td>$400</td>
+                                        </tr>                                            
+                                    </tbody>
+                                </table>
+
+                                <div class="row-fluid">
+                                    <div class="span9"></div>
+                                    <div class="span3">
+                                        <div class="total">
+                                            <p><strong><span>总价</span> $2,351.50 <em>USD</em></strong></p>
+                                            <div class="highlight">
+                                                <strong><span>确认结算付清</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>    
+
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </div>
+    <div class="dialog" id="source" style="display: none;" title="Source"></div>    
+</body>
+</html>

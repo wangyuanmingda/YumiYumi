@@ -40,9 +40,9 @@ namespace waiterPlatform.Models
 
         public bool deleteById(int dish_id)
         {
-            string mysql = "Delete FROM yumiyumi.yumi_dish where dishId = ?dish_id";
+            string mysql = "Delete FROM yumiyumi.yumi_dish where dish_id = ?dish_id";
             MySqlParameter[] parameters = {
-                    new MySqlParameter("?dishId", MySqlDbType.UInt32),
+                    new MySqlParameter("?dish_Id", MySqlDbType.UInt32),
                     };
             parameters[0].Value = dish_id;
             int count = MySqlHelper.ExecuteNonQuery(mysql,parameters);
@@ -53,7 +53,7 @@ namespace waiterPlatform.Models
         public DishEntity getDishById(int dishId)
         {
             //string mysql = "SELECT * FROM yumiyumi.yumi_account where user_name ='"+email+"'";
-            string mysql = "SELECT * FROM yumiyumi.yumi_dish where dish_id = ?dish_id";
+            string mysql = "SELECT dish_id,dish_thumbimage,brand_id,dish_description,dish_price,type_id,dish_name FROM yumiyumi.yumi_dish where dish_id = ?dish_id";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?dish_id", MySqlDbType.UInt32),
                     };
@@ -68,7 +68,7 @@ namespace waiterPlatform.Models
                 dish.description = myreader.GetString(3);
                 dish.price = myreader.GetInt32(4);
                 dish.type_id = myreader.GetInt32(5);
-                dish.type_name = myreader.GetString(6);
+                dish.dish_name = myreader.GetString(6);
             }
             myreader.Close();
             return dish;

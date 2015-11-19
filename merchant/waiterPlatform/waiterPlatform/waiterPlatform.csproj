@@ -85,6 +85,7 @@
     <Content Include="UI\css\tagsinput\Descr.WD3" />
     <Content Include="UI\css\uniform\Descr.WD3" />
     <Content Include="UI\css\validation\Descr.WD3" />
+    <Content Include="UI\edit_dish.aspx" />
     <Content Include="UI\img\backgrounds\Descr.WD3" />
     <Content Include="UI\img\cleditor\Descr.WD3" />
     <Content Include="UI\img\Descr.WD3" />
@@ -93,6 +94,8 @@
     <Content Include="UI\img\loaders\Descr.WD3" />
     <Content Include="UI\img\select\Descr.WD3" />
     <Content Include="UI\img\uniform\Descr.WD3" />
+    <Content Include="UI\deleteDish.ashx" />
+    <Content Include="UI\editDish.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -281,6 +284,19 @@
     </Compile>
     <Compile Include="UI\add_menu.aspx.designer.cs">
       <DependentUpon>add_menu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\deleteDish.ashx.cs">
+      <DependentUpon>deleteDish.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\editDish.ashx.cs">
+      <DependentUpon>editDish.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\edit_dish.aspx.cs">
+      <DependentUpon>edit_dish.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\edit_dish.aspx.designer.cs">
+      <DependentUpon>edit_dish.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\menu_list.aspx.cs">
       <DependentUpon>menu_list.aspx</DependentUpon>

@@ -10,6 +10,6 @@
 namespace waiterPlatform.UI {
     
     
-    public partial class menu_list {
+    public partial class index {
     }
 }

@@ -37,9 +37,9 @@ namespace waiterPlatform.UI
                     sb.Append("<td>"+list[i].dish_name+"</td>");
                     sb.Append("<td>");
                     sb.Append("<a href='#' class='button green'>");
-                    sb.Append("<div class='icon'><asp:button runat='server' class='ico-pencil'></asp:button></div>");
+                    sb.Append("<div class='icon'><span id='" + list[i].id + "' class='ico-pencil' OnClick='editDish(this)'></span></div>");
                     sb.Append("<a href='#' class='button red'>");
-                    sb.Append("<div class='icon'><asp:button runat='server' id='" + list[i].id + "' class='ico-remove' OnClick='Unnamed_Click'></asp:button></div>");
+                    sb.Append("<div class='icon'><span id='" + list[i].id + "' class='ico-remove' OnClick='deleteDish(this)'></span></div>");
                     sb.Append("</a>");
                     sb.Append("</td>");
                     sb.Append("</tr>\n");

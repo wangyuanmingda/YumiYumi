@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "waiterPlatform", "waiterPlatform\waiterPlatform.csproj", "{58749244-D106-4CAE-A3E8-DD69AE9186DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yumiyumi", "..\..\Me1\Me\yumiyumi\yumiyumi\yumiyumi.csproj", "{1DD6B0CD-F8C6-4DC4-9CAE-87DD5CBBB236}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yumiyumi", "..\..\user\yumiyumi\yumiyumi\yumiyumi.csproj", "{1DD6B0CD-F8C6-4DC4-9CAE-87DD5CBBB236}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

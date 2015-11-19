@@ -2,7 +2,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>        
+<head runat="server">        
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />    
     <!--[if gt IE 8]>
@@ -42,13 +42,39 @@
     <script type='text/javascript' src='js/charts.js'></script>
     <script type='text/javascript' src='js/actions.js'></script>
     <script language=javascript> 
+        function editDish(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+            $.ajax({
+                type: 'get',
+                url: 'editDish.ashx?dish_id=' + id,
+                async: true,
+                success: function (result) {
+                    alert(result);
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
+
         function deleteDish(env) {
             var id = (env.getAttribute("id"));
-            //document.getElementById(env).name = "dish";
-            //var a = "";
-            //if (a) { alert("删除成功"); }
-            //else { alert("删除失败"); }
-            alert("删除失败");
+            alert("单机按钮"+id);
+            $.ajax({
+                type: 'get',
+                url: 'deleteDish.ashx?dish_id=' + id,
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
         }
     </script> 
 </head>
@@ -143,19 +169,27 @@
                                             <tr>
                                                 <th><input type="checkbox" class="checkall"/></th>
                                                 <th width="20%">菜品名</th>
-                                                <th>单号</th>
+                                                <th width="20%">单号</th>
                                                 <th width="20%">单价</th>
                                                 <th width="20%">主要原料</th>
                                                 <th width="80" class="TAC">操作</th>
                                             </tr>
                                         </thead>
                                         <tbody>   
-                                            <tr><td><input type='checkbox' name='order[]' value='528'/></td><td><a href='#'>宫保鸡丁</a></td><td>Product #1</td><td><span>20</span></td><td>宫保鸡丁</td><td><a href='#' class='button green'><div class='icon'>
-                                                <asp:button runat='server' class='ico-pencil'></asp:button>
-
-                                                </div><a href='#' class='button red'><div class='icon'>
-                                                    <asp:button runat='server' id='aa1' class='ico-remove' OnClick='Unnamed_Click'></asp:button>
-                                            </div></a></td></tr>
+                                            <tr><td><input type='checkbox' value='528'/></td><td><a href='#'>宫保鸡丁</a></td><td>Product #1</td><td><span>20</span></td><td>宫保鸡丁</td>
+                                                <td>
+                                                <a href='#' class='button green'>
+                                                    <div class='icon'>
+                                                    <span id='23' class='ico-pencil' onclick="editDish(this)"></span>
+                                
+                                                    </div>
+                                                <a href='#' class='button red'>
+                                                    <div class='icon'>
+                                                    <span id='23' class='ico-remove' onclick="deleteDish(this)"></span>
+                                                    </div>
+                                                </a>
+                                                </td>
+                                            </tr>
                                             <%=dishList %>                        
                                         </tbody>
                                     </table>                    

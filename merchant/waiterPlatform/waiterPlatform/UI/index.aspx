@@ -57,7 +57,7 @@
         <div class="sidebar">
             
             <div class="top">
-                <a href="index.html" class="logo"></a>
+                <a href="index.aspx" class="logo"></a>
                 <div class="search">
                     <div class="input-prepend">
                         <span class="add-on orange"><span class="icon-search icon-white"></span></span>
@@ -67,21 +67,21 @@
             </div>
             <div class="nContainer">                
                 <ul class="navigation">         
-                    <li class="active"><a href="index.html" class="blblue">当前店面呼叫信息</a></li>
+                    <li class="active"><a href="index.aspx" class="blblue">当前店面呼叫信息</a></li>
                     <li>
                         <a href="#" class="blyellow">餐厅信息</a>
                         <div class="open"></div>
                         <ul>
-                            <li><a href="add_restaurant.html">编辑餐厅信息</a></li>
-                            <li><a href="restaurant_list.html">餐厅列表</a></li>
+                            <li><a href="add_restaurant.aspx">编辑餐厅信息</a></li>
+                            <li><a href="restaurant_list.aspx">餐厅列表</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#" class="blgreen">菜单信息</a>
                         <div class="open"></div>
                         <ul>
-                            <li><a href="add_menu.html">增加菜单</a></li>
-                            <li><a href="menu_list.html">菜单列表</a></li>
+                            <li><a href="add_menu.aspx">增加菜单</a></li>
+                            <li><a href="menu_list.aspx">菜单列表</a></li>
                             
                         </ul>
                     </li>
@@ -173,7 +173,7 @@
                                             <td>结账</td>
                                             <td>22:22</td>                      
                                             <td>
-                                                <a href="check_menu.html" class="button green">
+                                                <a href="check_menu.aspx" class="button green">
                                                     <div class="icon"><span class="ico-pencil"></span></div>
                                                 </a>
                                                 <a href="#" class="button red">
@@ -204,7 +204,7 @@
                                     <tr>
                                         <td width="55" class="bl_blue"><span class="label label-info">new</span></td>
                                         <td width="50">#AA-325 <span class="mark">23/02/2013</span></td>
-                                        <td><a href="../ftpm_7/menu_list.html" class="cblue">跳转完整订单信息</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
+                                        <td><a href="../ftpm_7/menu_list.aspx" class="cblue">跳转完整订单信息</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
                                     </tr>
                                     <tr>
                                         <td class="bl_blue"><span class="label label-info">new</span></td>
@@ -271,7 +271,12 @@
                                         <div class="arrow"></div>
                                         <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut diam quis dolor mollis tristique. Suspendisse vestibulum convallis felis vitae facilisis. Praesent eu nisi vestibulum erat.</div>
                                         <div class="date">09.02., 20:55</div>
-                                    </div>                                    
+                                    </div>    
+                                    <div class="item blue">
+                                        <div class="arrow"></div>
+                                        <div class="text">Lqwqwqwetur adipiscing elit. Phasellus ut diam quis dolor mollis tristique. Suspendisse vestibulum convallis felis vitae facilisis. Praesent eu nisi vestibulum erat.</div>
+                                        <div class="date">09.02., 20:55</div>
+                                    </div>                                           
                                 </div>                                
                             </div>    
                             <div class="toolbar dark">

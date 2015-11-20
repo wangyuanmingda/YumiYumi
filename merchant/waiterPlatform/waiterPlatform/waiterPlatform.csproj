@@ -38,6 +38,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Apache.NMS">
+      <HintPath>..\..\Apache.NMS.ActiveMQ-1.6.5-bin\lib\Apache.NMS\net-4.0\Apache.NMS.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.ActiveMQ">
+      <HintPath>..\..\Apache.NMS.ActiveMQ-1.6.5-bin\build\net-4.0\release\Apache.NMS.ActiveMQ.dll</HintPath>
+    </Reference>
+    <Reference Include="Apache.NMS.Test">
+      <HintPath>..\..\Apache.NMS.ActiveMQ-1.6.5-bin\lib\Apache.NMS\net-4.0\Apache.NMS.Test.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MyDbConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -211,6 +220,7 @@
     <Content Include="UI\img\uniform\sprite.png" />
     <Content Include="UI\img\wpoint.png" />
     <Content Include="UI\img\wpoint8.png" />
+    <Content Include="UI\index.aspx" />
     <Content Include="UI\index.html" />
     <Content Include="UI\js\actions.js" />
     <Content Include="UI\js\charts.js" />
@@ -262,6 +272,7 @@
     <Content Include="UI\menu_list.aspx" />
     <Content Include="UI\menu_list.html" />
     <Content Include="UI\restaurant_list.html" />
+    <Content Include="UI\test.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -298,12 +309,26 @@
     <Compile Include="UI\edit_dish.aspx.designer.cs">
       <DependentUpon>edit_dish.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\index.aspx.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\index.aspx.designer.cs">
+      <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\menu_list.aspx.cs">
       <DependentUpon>menu_list.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="UI\menu_list.aspx.designer.cs">
       <DependentUpon>menu_list.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\test.aspx.cs">
+      <DependentUpon>test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\test.aspx.designer.cs">
+      <DependentUpon>test.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

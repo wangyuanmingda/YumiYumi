@@ -284,7 +284,11 @@
     <Compile Include="Models\BrandEntity.cs" />
     <Compile Include="Models\DishDAO.cs" />
     <Compile Include="Models\DishEntity.cs" />
+    <Compile Include="Models\MessageDAO.cs" />
+    <Compile Include="Models\MessageEntity.cs" />
     <Compile Include="Models\MySqlHelper.cs" />
+    <Compile Include="Models\OrderDAO.cs" />
+    <Compile Include="Models\OrderDetailEntity.cs" />
     <Compile Include="Models\OrderEntity.cs" />
     <Compile Include="Models\RestaurantEntity.cs" />
     <Compile Include="Models\RestaurantsDAO.cs" />

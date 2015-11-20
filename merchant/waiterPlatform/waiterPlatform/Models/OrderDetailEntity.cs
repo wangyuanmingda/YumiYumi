@@ -7,5 +7,9 @@ namespace waiterPlatform.Models
 {
     public class OrderDetailEntity
     {
+        public int id;
+        public int order_id;
+        public int dish_id;
+        public int count;
     }
 }

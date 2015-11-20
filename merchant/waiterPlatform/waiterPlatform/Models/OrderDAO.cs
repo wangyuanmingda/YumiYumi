@@ -119,23 +119,6 @@ namespace waiterPlatform.Models
         }
 
 
-        public void addOneOrderDishes(OrderEntity order, int orderId)
-        {
-            for (int i = 0; i < order.dishList.Count; i++)
-            {
-                string mysql = "insert `yumi_order_detail`(`order_id`,`dish_id`,`dish_count`) values(?orderId,?dishId,?dishCount);";
-                MySqlParameter[] parameters = {
-                        new MySqlParameter("?orderId", MySqlDbType.UInt32),
-                        new MySqlParameter("?dishId", MySqlDbType.UInt32),
-                        new MySqlParameter("?dishCount", MySqlDbType.UInt32)
-                        };
-                parameters[0].Value = orderId;
-                parameters[1].Value = order.dishList[i].id;
-                parameters[2].Value = order.dishList[i].count;
-                //通过MySqlCommand的ExecuteReader()方法构造DataReader对象
-                int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
-            }
-        }
 
     }
 }

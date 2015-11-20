@@ -11,17 +11,19 @@ namespace waiterPlatform.Models
     {
         public bool addOneOrder(OrderEntity order)
         {
-            string mysql = "insert `yumi_order`(`order_id`,`user_id`,`restaurant_id`,`remark`,`total_price`) values(?orderId,userId,restaurantId,?remark,?total);";
+            string mysql = "insert `yumi_order`(`user_id`,`restaurant_id`,`remark`,`total_price`,`status`) values(userId,restaurantId,?remark,?total,?status);";
             MySqlParameter[] parameters = {
-                    new MySqlParameter("?userId", MySqlDbType.UInt32),
-                    new MySqlParameter("?restaurantId", MySqlDbType.UInt32),
+                    new MySqlParameter("?userId", MySqlDbType.Int32),
+                    new MySqlParameter("?restaurantId", MySqlDbType.Int32),
                     new MySqlParameter("?remark", MySqlDbType.VarChar,255),
-                    new MySqlParameter("?total", MySqlDbType.UInt32)
+                    new MySqlParameter("?total", MySqlDbType.Int32),
+                    new MySqlParameter("?status", MySqlDbType.Int32)
                     };
-            parameters[1].Value = order.user_id;
-            parameters[2].Value = order.restaurant_id;
-            parameters[3].Value = order.remark;
-            parameters[4].Value = order.total_price;
+            parameters[0].Value = order.user_id;
+            parameters[1].Value = order.restaurant_id;
+            parameters[2].Value = order.remark;
+            parameters[3].Value = order.total_price;
+            parameters[4].Value = order.status;
 
             //通过MySqlCommand的ExecuteReader()方法构造DataReader对象
             int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
@@ -49,7 +51,7 @@ namespace waiterPlatform.Models
         public List<OrderEntity> getAllOrderByRestaurantId(int restaurantId)
         {
             //string mysql = "SELECT * FROM yumiyumi.yumi_account where user_name ='"+email+"'";
-            string mysql = "SELECT `order_id`,`user_id`,`restaurant_id`,`remark`,`total_price` FROM `yumi_order` WHERE `restaurant_id` =?restaurantId";
+            string mysql = "SELECT `order_id`,`user_id`,`restaurant_id`,`remark`,`total_price`,`status`,`start_time` FROM `yumi_order` WHERE `restaurant_id` =?restaurantId";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?restaurantId", MySqlDbType.UInt32)
                     };
@@ -64,6 +66,14 @@ namespace waiterPlatform.Models
                 order.restaurant_id = myreader.GetInt32(2);
                 order.remark = myreader.GetString(3);
                 order.total_price = myreader.GetInt32(4);
+                order.status = myreader.GetInt32(5);
+                order.start_time = myreader.GetString(6);
+                list.Add(order);
+            }
+            myreader.Close();
+            for (int i = 0; i < list.Count; i++)
+            {
+                OrderEntity order = list[i];
                 string mysql2 = "SELECT `id`,`order_id`,`dish_id`,`dish_count` FROM `yumi_order_detail` WHERE `order_id` =?orderId;";
                 MySqlParameter[] parameters2 = {
                     new MySqlParameter("?orderId", MySqlDbType.UInt32)
@@ -73,14 +83,13 @@ namespace waiterPlatform.Models
                 while (myreader2.Read())
                 {
                     OrderDetailEntity detail = new OrderDetailEntity();
-                    detail.order_id = myreader.GetInt32(1);
-                    detail.dish_id = myreader.GetInt32(2);
-                    detail.count = detail.dish_id = myreader.GetInt32(3);
+                    detail.order_id = myreader2.GetInt32(1);
+                    detail.dish_id = myreader2.GetInt32(2);
+                    detail.count = myreader2.GetInt32(3);
                     order.dishList.Add(detail);
                 }
-                list.Add(order);
+                myreader2.Close();
             }
-            myreader.Close();
             return list;
         }
 

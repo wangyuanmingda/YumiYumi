@@ -13,5 +13,6 @@ namespace waiterPlatform.Models
         public String ctime;
         public int status;
         public int message_id;
+        public int restaurant_id;
     }
 }

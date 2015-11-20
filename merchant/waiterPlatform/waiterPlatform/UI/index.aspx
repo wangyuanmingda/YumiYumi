@@ -49,6 +49,28 @@
     <script type='text/javascript' src='js/charts.js'></script>
     
     <script type='text/javascript' src='js/actions.js'></script>
+
+    <script language=javascript>
+        function postMessage() {
+            alert("单机按钮");
+            var text = document.getElementById("messageBox").value;
+            document.getElementById("messageBox").value = "";
+            alert("单机按钮");
+            $.ajax({
+                type: 'get',
+                url: 'sss.ashx?content=' + text,
+                async: true,
+                success: function (result) {
+                    document.getElementById("messageBox").innerHTML = result;
+                    alert(result);
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
+    </script> 
 </head>
 <body>    
     <div id="loader"><img src="img/loader.gif"/></div>
@@ -152,35 +174,7 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        <tr>
-                                            <td><input type="checkbox" name="checkbox"/></td>                                        
-                                            <td>123</td>
-                                            <td>加汤</td>
-                                            <td>22:22</td>                      
-                                            <td>
-                                                <a href="#" class="button green">
-                                                    <div class="icon"><span class="ico-pencil"></span></div>
-                                                </a>
-                                                <a href="#" class="button red">
-                                                    <div class="icon"><span class="ico-remove"></span></div>
-                                                </a>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td><input type="checkbox" name="checkbox"/></td>                                        
-                                            <td>123</td>
-                                            <td>结账</td>
-                                            <td>22:22</td>                      
-                                            <td>
-                                                <a href="check_menu.aspx" class="button green">
-                                                    <div class="icon"><span class="ico-pencil"></span></div>
-                                                </a>
-                                                <a href="#" class="button red">
-                                                    <div class="icon"><span class="ico-remove"></span></div>
-                                                </a>
-                                            </td>
-                                        </tr>
+                                    <%=servicePart %>
                                                                        
                                     </tbody>
                                 </table>
@@ -201,47 +195,8 @@
                             </div>
                             <div class="data-fluid">
                                 <table width="100%" class="table tickets">
-                                    <tr>
-                                        <td width="55" class="bl_blue"><span class="label label-info">new</span></td>
-                                        <td width="50">#AA-325 <span class="mark">23/02/2013</span></td>
-                                        <td><a href="../ftpm_7/menu_list.aspx" class="cblue">跳转完整订单信息</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td class="bl_blue"><span class="label label-info">new</span></td>
-                                        <td>#AA-216 <span class="mark">22/02/2013</span></td>
-                                        <td><a href="#" class="cblue">Go to shop and buy beer!</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>                
-                                    <tr>
-                                        <td class="bl_green"><span class="label label-success">done</span></td>
-                                        <td>#AC-857 <span class="mark">21/02/2013</span></td>
-                                        <td><a href="#" class="cgreen">Buy on themeforest this great template...</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td class="bl_red"><span class="label label-important">removed</span></td>
-                                        <td>#VB-57 <span class="mark">20/02/2013</span></td>
-                                        <td><a href="#" class="cred">Buy something for my dog...</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>   
-                                    <tr>
-                                        <td class="bl_red"><span class="label label-important">removed</span></td>
-                                        <td>#VB-44 <span class="mark">20/02/2013</span></td>
-                                        <td><a href="#" class="cred">Buy something for my dog...</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td class="bl_green"><span class="label label-success">done</span></td>
-                                        <td>#AA-216 <span class="mark">22/02/2013</span></td>
-                                        <td><a href="#" class="cgreen">Go to shop and buy beer!</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>                
-                                    <tr>
-                                        <td class="bl_red"><span class="label label-important">removed</span></td>
-                                        <td>#VB-31 <span class="mark">21/02/2013</span></td>
-                                        <td><a href="#" class="cred">Buy on themeforest this great template...</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>
-                                    <tr>
-                                        <td class="bl_green"><span class="label label-success">done</span></td>
-                                        <td>#VB-57 <span class="mark">20/02/2013</span></td>
-                                        <td><a href="#" class="cgreen">Buy something for my dog...</a> <span class="mark">Added by Dmitry Ivaniuk</span></td>                                        
-                                    </tr>                                      
+                                    <%=orderPart %>
+                                   
                                 </table>
                             </div>                                   
                         </div>                        
@@ -257,33 +212,14 @@
                             </div>
                             <div class="data dark npr npb">                                
                                 <div class="messages scroll" style="height: 200px;">
-                                    <div class="item blue">
-                                        <div class="arrow"></div>
-                                        <div class="text">为什么我的菜还没来啊.</div>
-                                        <div class="date">09.02., 21:04</div>
-                                    </div>
-                                    <div class="item dblue out">
-                                        <div class="arrow"></div>
-                                        <div class="text">催一下.</div>
-                                        <div class="date">09.02., 21:02</div>
-                                    </div>                                    
-                                    <div class="item blue">
-                                        <div class="arrow"></div>
-                                        <div class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut diam quis dolor mollis tristique. Suspendisse vestibulum convallis felis vitae facilisis. Praesent eu nisi vestibulum erat.</div>
-                                        <div class="date">09.02., 20:55</div>
-                                    </div>    
-                                    <div class="item blue">
-                                        <div class="arrow"></div>
-                                        <div class="text">Lqwqwqwetur adipiscing elit. Phasellus ut diam quis dolor mollis tristique. Suspendisse vestibulum convallis felis vitae facilisis. Praesent eu nisi vestibulum erat.</div>
-                                        <div class="date">09.02., 20:55</div>
-                                    </div>                                           
+                                    <%=messagePart %>                                       
                                 </div>                                
                             </div>    
                             <div class="toolbar dark">
                                 <div class="input-prepend input-append">
                                     <span class="add-on dblue"><span class="icon-envelope icon-white"></span></span>
-                                    <input type="text"/>                              
-                                    <button class="btn dblue" type="button">发送 <span class="icon-arrow-next icon-white"></span></button>
+                                    <input id="messageBox" type="text"/>                              
+                                    <button class="btn dblue" type="button" onclick="postMessage()">发送 <span class="icon-arrow-next icon-white"></span></button>
                                 </div>                                 
                             </div>
                         </div>

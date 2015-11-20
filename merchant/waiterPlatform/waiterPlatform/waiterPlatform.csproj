@@ -292,6 +292,8 @@
     <Compile Include="Models\OrderEntity.cs" />
     <Compile Include="Models\RestaurantEntity.cs" />
     <Compile Include="Models\RestaurantsDAO.cs" />
+    <Compile Include="Models\ServiceDAO.cs" />
+    <Compile Include="Models\ServiceEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\add_menu.aspx.cs">
       <DependentUpon>add_menu.aspx</DependentUpon>

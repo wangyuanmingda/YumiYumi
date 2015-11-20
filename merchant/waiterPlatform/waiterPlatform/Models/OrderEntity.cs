@@ -12,6 +12,9 @@ namespace waiterPlatform.Models
         public int restaurant_id;
         public String remark;
         public int total_price;
-        public List<OrderDetailEntity> dishList;
+        public List<OrderDetailEntity> dishList = new List<OrderDetailEntity>();
+        public int status;
+        public String start_time;
+
     }
 }

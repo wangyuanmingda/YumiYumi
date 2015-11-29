@@ -169,6 +169,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="Account\Web.config" />
+    <None Include="Properties\PublishProfiles\adad.pubxml" />
     <None Include="Properties\PublishProfiles\yumi.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -208,7 +209,7 @@
     <Content Include="UI\checkout.html" />
     <Content Include="UI\contact.aspx" />
     <Content Include="UI\contact.html" />
-    <Content Include="UI\index.aspx" />
+    <Content Include="UI\index2.aspx" />
     <Content Include="UI\index.html" />
     <Content Include="UI\login.aspx" />
     <Content Include="UI\login.html" />
@@ -335,12 +336,12 @@
     <Compile Include="UI\contact.aspx.designer.cs">
       <DependentUpon>contact.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\index.aspx.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="UI\index2.aspx.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\index.aspx.designer.cs">
-      <DependentUpon>index.aspx</DependentUpon>
+    <Compile Include="UI\index2.aspx.designer.cs">
+      <DependentUpon>index2.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\login.aspx.cs">
       <DependentUpon>login.aspx</DependentUpon>

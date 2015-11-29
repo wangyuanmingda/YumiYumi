@@ -59,7 +59,7 @@ namespace waiterPlatform.UI
             {
                 MessageEntity message = messageList[i];
 
-                DateTime todaydate = Convert.ToDateTime(message.ctime);
+                DateTime todaydate = new DateTime(Convert.ToInt64(message.ctime));
                 String date = todaydate.ToString("hh:mm:ss");
                 if (message.to_id != -1)
                 {

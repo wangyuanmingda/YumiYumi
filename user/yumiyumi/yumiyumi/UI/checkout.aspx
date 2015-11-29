@@ -33,13 +33,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="container">
 			<div class="logo">
-				<a href="index.aspx"><img src="images/logo.png" class="img-responsive" alt=""></a>
+				<a href="index2.aspx"><img src="images/logo.png" class="img-responsive" alt=""></a>
 			</div>
 			<div class="header-left">
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li class="active"><a href="index.aspx">Home</a></li>
+							<li class="active"><a href="index2.aspx">Home</a></li>
 							<li><a href=" restaurants.aspx">Resturants</a></li>
 							<li><a href="login.aspx">Sign In</a></li>
 							<li><a href=" contact.aspx">Contact</a></li>

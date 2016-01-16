@@ -53,6 +53,7 @@ namespace waiterPlatform.UI
         public void getAllMessages()
         {
             MessageDAO messageDAO = new MessageDAO();
+            //这里到时候要改为根据餐厅id来
             List<MessageEntity> messageList = messageDAO.getMessageByRestaurantId(1);
             StringBuilder sb = new StringBuilder();
             for (int i = messageList.Count-1; i >= 0; i--)
@@ -103,18 +104,20 @@ namespace waiterPlatform.UI
                 String date = todaydate.ToString("MM/dd hh:mm:ss");
                     switch (order.status)
                     {
+                        //对订单状态进行分类，应该需要换，优化
                         case 0:
                             sb.Append("<tr>");
                             sb.Append("<td width='55' class='bl_blue'><span class='label label-info'>新订单</span></td>");
                             sb.Append("<td width='50'>#AA-325 <span class='mark'>"+date+"</span></td>");
-                            sb.Append("<td><a href='../ftpm_7/menu_list.aspx' class='cblue'>"+dishString+"</a>");
+                            //跳转位置
+                            sb.Append("<td><a href='order_list.aspx?orderId="+order.order_id+"' class='cblue'>"+dishString+"</a>");
                             sb.Append("<span class='mark'>来自"+order.user_id+"号桌</span></td>");
                             sb.Append("</tr>");
                             break;
                         case 1:
                             sb.Append("<tr>");
                             sb.Append("<td class='bl_green'><span class='label label-success'>完成</span></td>");
-                            sb.Append("<td width='50'>#AA-325 <span class='mark'>" + date + "</span></td>");
+                            sb.Append("<td width='50'>#AA-"+order.order_id+" <span class='mark'>" + date + "</span></td>");
                             sb.Append("<td><a href='#' class='cgreen'>" + dishString + "</a>");
                             sb.Append("<span class='mark'>来自" + order.user_id + "号桌</span></td>");
                             sb.Append("</tr>");

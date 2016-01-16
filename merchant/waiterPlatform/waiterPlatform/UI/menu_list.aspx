@@ -83,7 +83,7 @@
     <div class="wrapper">
         <div class="sidebar">
                     <div class="top">
-                <a href="index.html" class="logo"></a>
+                <a href="index.aspx" class="logo"></a>
                 <div class="search">
                     <div class="input-prepend">
                         <span class="add-on orange"><span class="icon-search icon-white"></span></span>
@@ -93,21 +93,21 @@
             </div>
             <div class="nContainer">                
                 <ul class="navigation">         
-                    <li class="active"><a href="index.html" class="blblue">当前店面呼叫信息</a></li>
+                    <li class="active"><a href="index.aspx" class="blblue">当前店面呼叫信息</a></li>
                     <li>
                         <a href="#" class="blyellow">餐厅信息</a>
                         <div class="open"></div>
                         <ul>
-                            <li><a href="add_restaurant.html">编辑餐厅信息</a></li>
-                            <li><a href="restaurant_list.html">餐厅列表</a></li>
+                            <li><a href="add_restaurant.aspx">编辑餐厅信息</a></li>
+                            <li><a href="restaurant_list.aspx">餐厅列表</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="#" class="blgreen">菜单信息</a>
                         <div class="open"></div>
                         <ul>
-                            <li><a href="add_menu.html">增加菜单</a></li>
-                            <li><a href="menu_list.html">菜单列表</a></li>
+                            <li><a href="add_menu.aspx">增加菜单</a></li>
+                            <li><a href="menu_list.aspx">菜单列表</a></li>
                             
                         </ul>
                     </li>

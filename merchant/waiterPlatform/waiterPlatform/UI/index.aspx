@@ -58,11 +58,28 @@
             alert("单机按钮");
             $.ajax({
                 type: 'get',
-                url: 'sss.ashx?content=' + text,
+                url: 'addMessage.ashx?content=' + text,
                 async: true,
                 success: function (result) {
-                    document.getElementById("messageBox").innerHTML = result;
-                    alert(result);
+                    /*
+                    self.location.reload();
+                    var ad = document.getElementById('message_list');
+                    var adiv = document.createElement('div');
+                    adiv.className = "item dblue out";
+                    var arrow = document.createElement('div');
+                    arrow.className = "arrow";
+                    var text = document.createElement('div');
+                    text.className = "text";
+                    text.innerHTML = result;
+                    var date = document.createElement('div');
+                    date.className = "date";
+                    date.innerHTML = "12:12:11";
+                    adiv.appendChild(arrow);
+                    adiv.appendChild(text);
+                    adiv.appendChild(date);
+                    ad.appendChild(adiv);
+                    */
+                    self.location.reload();
                 },
                 error: function () {
                     alert("请求失败，请重新尝试");
@@ -211,7 +228,7 @@
                                 </ul>                                
                             </div>
                             <div class="data dark npr npb">                                
-                                <div class="messages scroll" style="height: 200px;">
+                                <div id="message_list" class="messages scroll" style="height: 200px;">
                                     <%=messagePart %>                                       
                                 </div>                                
                             </div>    

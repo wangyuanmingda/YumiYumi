@@ -11,13 +11,12 @@ namespace waiterPlatform.Models
     {
         public bool addOneMessage(MessageEntity message)
         {
-            string mysql = "insert into `yumiyumi.yumi_message`(`message_text`,`from_id`,`to_id`,`status`,`message_id`,`ctime`,`restaurant_id`) values(?text,?fromId,?toId,?stauts,?id,?ctime,?restaurantId);";
+            string mysql = "insert into `yumi_message`(`message_text`,`from_id`,`to_id`,`status`,`ctime`,`restaurant_id`) values(?text,?fromId,?toId,?stauts,?ctime,?restaurantId);";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?text", MySqlDbType.Text),
                     new MySqlParameter("?fromId", MySqlDbType.Int32),
                     new MySqlParameter("?toId", MySqlDbType.Int32),
-                    new MySqlParameter("?stauts", MySqlDbType.UInt32),
-                    new MySqlParameter("?id", MySqlDbType.Int32),
+                    new MySqlParameter("?stauts", MySqlDbType.Int32),
                     new MySqlParameter("?ctime", MySqlDbType.VarChar,32),
                     new MySqlParameter("?restaurantId", MySqlDbType.Int32)
                     };
@@ -25,9 +24,8 @@ namespace waiterPlatform.Models
             parameters[1].Value = message.from_id;
             parameters[2].Value = message.to_id;
             parameters[3].Value = message.status;
-            parameters[4].Value = message.message_id;
-            parameters[5].Value = System.DateTime.Now.Ticks;
-            parameters[6].Value = message.restaurant_id;
+            parameters[4].Value = System.DateTime.Now.Ticks;
+            parameters[5].Value = message.restaurant_id;
 
             //通过MySqlCommand的ExecuteReader()方法构造DataReader对象
             int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);

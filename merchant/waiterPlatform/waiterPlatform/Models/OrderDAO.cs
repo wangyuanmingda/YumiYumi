@@ -51,7 +51,7 @@ namespace waiterPlatform.Models
         public List<OrderEntity> getAllOrderByRestaurantId(int restaurantId)
         {
             //string mysql = "SELECT * FROM yumiyumi.yumi_account where user_name ='"+email+"'";
-            string mysql = "SELECT `order_id`,`user_id`,`restaurant_id`,`remark`,`total_price`,`status`,`start_time` FROM `yumi_order` WHERE `restaurant_id` =?restaurantId";
+            string mysql = "SELECT `order_id`,`user_id`,`restaurant_id`,`remark`,`total_price`,`status`,`start_time` FROM `yumi_order` WHERE `restaurant_id` =?restaurantId Order by start_time desc";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?restaurantId", MySqlDbType.UInt32)
                     };
@@ -118,9 +118,9 @@ namespace waiterPlatform.Models
                 while (myreader2.Read())
                 {
                     OrderDetailEntity detail = new OrderDetailEntity();
-                    detail.order_id = myreader.GetInt32(1);
-                    detail.dish_id = myreader.GetInt32(2);
-                    detail.count = detail.dish_id = myreader.GetInt32(3);
+                    detail.order_id = myreader2.GetInt32(1);
+                    detail.dish_id = myreader2.GetInt32(2);
+                    detail.count = detail.dish_id = myreader2.GetInt32(3);
                     order.dishList.Add(detail);
                 }
             }

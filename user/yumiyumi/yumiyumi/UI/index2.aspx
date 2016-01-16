@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="yumiyumi.UI.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index2.aspx.cs" Inherits="yumiyumi.UI.index" %>
 
 <!--
 Author: W3layouts
@@ -89,13 +89,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="container">
 			<div class="logo">
-				<a href="index.aspx"><img src="images/logo.png" class="img-responsive" alt=""></a>
+				<a href="index2.aspx"><img src="images/logo.png" class="img-responsive" alt=""></a>
 			</div>
 			<div class="header-left">
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li class="active"><a href="index.aspx">主页</a></li>
+							<li class="active"><a href="index2.aspx">主页</a></li>
 							<li><a href=" restaurants.aspx">餐厅</a></li>
 							<li><a href="login.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>

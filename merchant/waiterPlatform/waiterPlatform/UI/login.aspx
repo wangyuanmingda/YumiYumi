@@ -52,7 +52,7 @@
             </div>
             <h1>登录<small>电子点餐系统</small></h1>
         </div>        
-        
+        <form runat="server" action="" method="post">
         <div class="row-fluid">
             <div class="row-form">
                 <div class="span12">
@@ -71,10 +71,12 @@
             </div>
             <div class="row-form">
                 <div class="span12">
-                    <button class="btn">登录 <span class="icon-arrow-next icon-white"></span></button>
+                    <input  class="btn" type="submit" value="登录">
+                    
                 </div>                
             </div>
         </div>
+        </form>
     </div>
     
 </body>

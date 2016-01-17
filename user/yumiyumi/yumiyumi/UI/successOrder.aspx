@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="checkout.aspx.cs" Inherits="yumiyumi.UI.checkout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="successOrder.aspx.cs" Inherits="yumiyumi.UI.successOrder" %>
 
 <!--
 Author: W3layouts
@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Checkout :: w3layouts</title>
+<title>下单成功</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <script src="js/simpleCart.min.js"> </script>		
-<script src="js/jquery.cookie.js"> </script>	
 </head>
 <body>
 <!-- header -->
@@ -33,16 +32,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 		
 		<div class="container">
 			<div class="logo">
-				<a href="index2.aspx"><img src="images/logo.png" class="img-responsive" alt=""></a>
+				<a href="index.html"><img src="images/logo.png" class="img-responsive" alt=""></a>
 			</div>
 			<div class="header-left">
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li class="active"><a href="index2.aspx">Home</a></li>
-							<li><a href=" restaurants.aspx">Resturants</a></li>
-							<li><a href="login.aspx">Sign In</a></li>
-							<li><a href=" contact.aspx">Contact</a></li>
+							<li class="active"><a href="index.html">Home</a></li>
+							<li><a href=" resturants.html">Resturants</a></li>
+							<li><a href="login.html">Sign In</a></li>
+							<li><a href=" contact.html">Contact</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
 								<!-- script-for-nav -->
@@ -57,7 +56,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					</div>
 					<div class="header-right1">
 						<div class="cart box_1">
-							<a href="checkout.aspx">
+							<a href="checkout.html">
 								<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
 							</a>	
 							<p><a href="javascript:;" class="simpleCart_empty">empty card</a></p>
@@ -70,19 +69,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 	</div>
 <!-- header -->
-<!-- checkout -->
-<div class="cart-items">
-	<div class="container">
-			 <h1>My Shopping Bag (2)</h1>
-             <%=shopping_cart %>		
+<!-- finish -->
+    <div>
+        <h1>恭喜你，下单成功</h1>
     </div>
-</div>
-    <form action="#" method="post" runat="server" >
-        <asp:Button ID="Button1" OnClick="Unnamed_Click" runat="server" Text="提交订单" />
-    </form>
+<!-- finish -->
 
-
-<!-- checkout -->	
 <!-- footer-->
 	<div class="footer">
 		<div class="container">

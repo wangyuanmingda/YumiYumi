@@ -10,10 +10,13 @@ namespace yumiyumi.Models
         public int id;
         public string dish_name;
         public string photo;
-        public string brand_id;
+        public int brand_id;
         public string description;
         public int price;
         public int type_id;
         public string type_name;
+        public int status;
+
+        public int count;
     }
 }

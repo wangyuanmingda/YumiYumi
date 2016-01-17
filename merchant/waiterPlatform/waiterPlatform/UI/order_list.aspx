@@ -49,7 +49,7 @@
         
          <div class="sidebar">
                     <div class="top">
-                <a href="index.html" class="logo"></a>
+                <a href="index.html" class="logo"><img src="../img/logo.jpg" /></a>
                 <div class="search">
                     <div class="input-prepend">
                         <span class="add-on orange"><span class="icon-search icon-white"></span></span>

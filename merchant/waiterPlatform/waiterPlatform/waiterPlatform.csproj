@@ -40,10 +40,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Apache.NMS">
-      <HintPath>..\..\Apache.NMS.ActiveMQ-1.6.5-bin\lib\Apache.NMS\net-4.0\Apache.NMS.dll</HintPath>
+      <HintPath>..\..\..\..\创业\Apache.NMS.dll</HintPath>
     </Reference>
     <Reference Include="Apache.NMS.ActiveMQ">
-      <HintPath>..\..\Apache.NMS.ActiveMQ-1.6.5-bin\build\net-4.0\release\Apache.NMS.ActiveMQ.dll</HintPath>
+      <HintPath>..\..\..\..\创业\Apache.NMS.ActiveMQ.dll</HintPath>
     </Reference>
     <Reference Include="Apache.NMS.Test">
       <HintPath>..\..\Apache.NMS.ActiveMQ-1.6.5-bin\lib\Apache.NMS\net-4.0\Apache.NMS.Test.dll</HintPath>
@@ -51,11 +51,11 @@
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="MyDbConnect, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\MyDbConnect.dll</HintPath>
+      <HintPath>..\..\..\..\wymd\waiterPlatform\waiterPlatform\bin\MyDbConnect.dll</HintPath>
     </Reference>
     <Reference Include="MySql.Data, Version=5.2.3.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>bin\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\wymd\waiterPlatform\waiterPlatform\bin\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
@@ -370,6 +370,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

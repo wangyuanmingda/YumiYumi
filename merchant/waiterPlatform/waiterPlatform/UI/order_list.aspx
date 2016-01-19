@@ -49,7 +49,7 @@
         
          <div class="sidebar">
                     <div class="top">
-                <a href="index.html" class="logo"></a>
+                <a href="index.aspx" class="logo"><img src="../UI/img/logo.jpg" /></a>
                 <div class="search">
                     <div class="input-prepend">
                         <span class="add-on orange"><span class="icon-search icon-white"></span></span>
@@ -111,7 +111,9 @@
                     <div class="icon">                        
                         <span class="ico-pictures"></span>
                     </div>
+
                     <h1>菜单 <small><%=userId %>号桌   订单编号：<%=orderId %></small></h1>
+
                     <h2 style="float:right;"><small>总价:2340rmb</small>&nbsp;<small>数量：12道</small></h2>
                 </div>
                           

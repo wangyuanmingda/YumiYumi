@@ -67,7 +67,7 @@ namespace yumiyumi.Models
                 DishEntity dish = new DishEntity();
                 dish.id = myreader.GetInt32(2);
                 dish.photo = myreader.GetString(3);
-                dish.brand_id = myreader.GetString(0);
+                dish.brand_id = myreader.GetInt32(0);
                 dish.description = myreader.GetString(4);
                 dish.price = myreader.GetInt32(5);
                 dish.dish_name = myreader.GetString(6);

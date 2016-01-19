@@ -12,9 +12,11 @@ namespace waiterPlatform.UI
     public partial class order_list : System.Web.UI.Page
     {
         public String orderList;
+        public int userId;
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["orderId"]);
+            userId = id;
             orderList = listDetailOrder(id);
         }
 

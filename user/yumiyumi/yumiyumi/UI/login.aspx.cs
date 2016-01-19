@@ -25,7 +25,7 @@ namespace yumiyumi.UI
                     HttpCookie cookTime = new HttpCookie("cookt", DateTime.Now.AddDays(2).ToString());
                     Response.Cookies.Add(cook);
                     Response.Cookies.Add(cookTime);
-                    Response.Redirect("index.aspx");//重定向 302，通过登录验证，跳转到Default.aspx页面，也就是所谓的登录后的页面
+                    Response.Redirect("index2.aspx");//重定向 302，通过登录验证，跳转到Default.aspx页面，也就是所谓的登录后的页面
                 }
                 else
                 {

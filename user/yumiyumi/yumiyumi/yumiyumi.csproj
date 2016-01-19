@@ -220,6 +220,7 @@
     <Content Include="UI\restaurants.aspx" />
     <Content Include="UI\resturants.html" />
     <Content Include="UI\showpic.aspx" />
+    <Content Include="UI\successOrder.aspx" />
     <Content Include="UI\test.aspx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
@@ -300,9 +301,12 @@
     <Compile Include="Models\AccountDAO.cs" />
     <Compile Include="Models\AccountEntity.cs" />
     <Compile Include="Models\BrandEntity.cs" />
+    <Compile Include="Models\DishDAO.cs" />
     <Compile Include="Models\DishEntity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\MySqlHelper.cs" />
+    <Compile Include="Models\OrderDAO.cs" />
+    <Compile Include="Models\OrderDetailEntity.cs" />
     <Compile Include="Models\OrderEntity.cs" />
     <Compile Include="Models\RestaurantEntity.cs" />
     <Compile Include="Models\RestaurantsDAO.cs" />
@@ -377,6 +381,13 @@
     </Compile>
     <Compile Include="UI\showpic.aspx.designer.cs">
       <DependentUpon>showpic.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\successOrder.aspx.cs">
+      <DependentUpon>successOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\successOrder.aspx.designer.cs">
+      <DependentUpon>successOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\test.aspx.cs">
       <DependentUpon>test.aspx</DependentUpon>

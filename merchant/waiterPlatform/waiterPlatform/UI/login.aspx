@@ -61,7 +61,7 @@
             </div>
             <div class="row-form">
                 <div class="span12">
-                    <input type="text" name="password" placeholder="密码"/>
+                    <input type="password" name="password" placeholder="密码"/>
                 </div>            
             </div>
             <div class="row-form">

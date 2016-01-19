@@ -12,11 +12,14 @@ namespace waiterPlatform.UI
     public partial class order_list : System.Web.UI.Page
     {
         public String orderList;
+        public int orderId;
+
         public int userId;
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["orderId"]);
-            userId = id;
+            orderId = id;
+
             orderList = listDetailOrder(id);
         }
 
@@ -25,6 +28,7 @@ namespace waiterPlatform.UI
             OrderDAO orderDAO = new OrderDAO();
             DishDAO dishDAO = new DishDAO();
             OrderEntity order = orderDAO.getOneOrderByOrderId(id);
+            userId = order.user_id;
             StringBuilder sb = new StringBuilder();
 
             for (int j = 0; j < order.dishList.Count; j++)

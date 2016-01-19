@@ -14,13 +14,26 @@ namespace waiterPlatform.UI
         public String dishList;
         protected void Page_Load(object sender, EventArgs e)
         {
+            identify();
             loadDishesList();
+        }
+
+        public void identify()
+        {
+            if (Request.Cookies["restaurantId"] != null)
+            {
+                string username = Request.Cookies["restaurantId"].Value;
+            }
+            else
+            {
+                Response.Redirect("login.aspx");
+            }
         }
 
         private void loadDishesList()
         {
             StringBuilder sb = new StringBuilder();
-            string id = Request.QueryString["restaurantId"];
+            string id = Request.Cookies["restaurantId"].Value;
             if (id == null)
             {
                 return;
@@ -31,7 +44,7 @@ namespace waiterPlatform.UI
                 for(int i=0;i<list.Count;i++){
                     sb.Append("<tr>");
                     sb.Append("<td><input type='checkbox' name='order[]' value='528'/></td>");
-                    sb.Append("<td><a href='#'>" + list[i].dish_name + "</a></td>");
+                    sb.Append("<td><a href='edit_dish.aspx?dish_id="+list[i].id+"'>" + list[i].dish_name + "</a></td>");
                     sb.Append("<td>Product #"+list[i].id+"</td>");
                     sb.Append("<td><span>"+list[i].price+"</span></td>");
                     sb.Append("<td>"+list[i].dish_name+"</td>");

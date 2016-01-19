@@ -19,11 +19,6 @@ namespace waiterPlatform.UI
 
         public void addDish()
         {
-
-        }
-
-        protected void Unnamed_Click(object sender, EventArgs e)
-        {
             string DishName = Request.Form["name"];
             int DishPrice = Convert.ToInt32(Request.Form["price"]);
             string DishDescription = Request.Form["description"];
@@ -39,11 +34,17 @@ namespace waiterPlatform.UI
             if (dishDAO.addOneDish(dish))
             {
                 Response.Write("<Script Language='JavaScript'>alert('添加成功');</Script>");
+                Response.Redirect("menu_list.aspx");
             }
             else
             {
                 Response.Write("<Script Language='JavaScript'>alert('添加错误,亲!');</Script>");
             }
+        }
+
+        protected void Unnamed_Click(object sender, EventArgs e)
+        {
+            addDish();
         }
     }
 }

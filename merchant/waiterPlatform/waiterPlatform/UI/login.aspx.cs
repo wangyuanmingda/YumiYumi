@@ -20,7 +20,7 @@ namespace waiterPlatform.UI
                 AccountEntity entity = account.login(uEmail, uPwd);
                 if (entity.user_name == uEmail)
                 {
-                    HttpCookie cook = new HttpCookie("uId", entity.user_id.ToString());//新建一个cookie对象
+                    HttpCookie cook = new HttpCookie("restaurantId", entity.user_id.ToString());//新建一个cookie对象
                     cook.Expires = DateTime.Now.AddMinutes(30);//保存cookie期限为30分钟
                     HttpCookie cookTime = new HttpCookie("cookt", DateTime.Now.AddDays(2).ToString());
                     Response.Cookies.Add(cook);

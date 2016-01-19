@@ -176,20 +176,6 @@
                                             </tr>
                                         </thead>
                                         <tbody>   
-                                            <tr><td><input type='checkbox' value='528'/></td><td><a href='#'>宫保鸡丁</a></td><td>Product #1</td><td><span>20</span></td><td>宫保鸡丁</td>
-                                                <td>
-                                                <a href='#' class='button green'>
-                                                    <div class='icon'>
-                                                    <span id='23' class='ico-pencil' onclick="editDish(this)"></span>
-                                
-                                                    </div>
-                                                <a href='#' class='button red'>
-                                                    <div class='icon'>
-                                                    <span id='23' class='ico-remove' onclick="deleteDish(this)"></span>
-                                                    </div>
-                                                </a>
-                                                </td>
-                                            </tr>
                                             <%=dishList %>                        
                                         </tbody>
                                     </table>                    

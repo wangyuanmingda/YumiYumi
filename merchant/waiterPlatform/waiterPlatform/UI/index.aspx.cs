@@ -16,9 +16,22 @@ namespace waiterPlatform.UI
         public String servicePart;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //identify();
             getAllMessages();
             getAllOrders();
             getServiceCall();
+        }
+
+        public void identify()
+        {
+            if (Request.Cookies["restaurantId"] != null)
+            {
+                string username = Request.Cookies["restaurantId"].Value;
+            }
+            else
+            {
+                Response.Redirect("login.aspx");
+            }
         }
 
         public void getServiceCall()

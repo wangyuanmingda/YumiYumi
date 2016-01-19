@@ -111,7 +111,7 @@
                     <div class="icon">                        
                         <span class="ico-pictures"></span>
                     </div>
-                    <h1>菜单 <small><userId %>号桌</small></h1>
+                    <h1>菜单 <small><%=userId %>号桌   订单编号：<%=orderId %></small></h1>
                     <h2 style="float:right;"><small>总价:2340rmb</small>&nbsp;<small>数量：12道</small></h2>
                 </div>
                           

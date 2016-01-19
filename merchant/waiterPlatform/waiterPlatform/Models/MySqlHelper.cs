@@ -7,8 +7,7 @@ using System.Collections.Specialized;
 using System.Data; 
 using MySql.Data.MySqlClient; 
 using System.Configuration; 
-using System.Data.Common; 
-using System.Collections.Generic; 
+using System.Data.Common;  
 using System.Text.RegularExpressions;
 
 namespace waiterPlatform.Models

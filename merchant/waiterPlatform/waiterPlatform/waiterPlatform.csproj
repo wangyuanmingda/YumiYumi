@@ -108,6 +108,8 @@
     <Content Include="UI\editDish.ashx" />
     <Content Include="UI\addMessage.ashx" />
     <None Include="Properties\PublishProfiles\wdq.pubxml" />
+    <Content Include="UI\deleteService.ashx" />
+    <Content Include="UI\editOrderDishStatus.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -322,8 +324,14 @@
     <Compile Include="UI\deleteDish.ashx.cs">
       <DependentUpon>deleteDish.ashx</DependentUpon>
     </Compile>
+    <Compile Include="UI\deleteService.ashx.cs">
+      <DependentUpon>deleteService.ashx</DependentUpon>
+    </Compile>
     <Compile Include="UI\editDish.ashx.cs">
       <DependentUpon>editDish.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\editOrderDishStatus.ashx.cs">
+      <DependentUpon>editOrderDishStatus.ashx</DependentUpon>
     </Compile>
     <Compile Include="UI\edit_dish.aspx.cs">
       <DependentUpon>edit_dish.aspx</DependentUpon>

@@ -70,7 +70,17 @@ namespace yumiyumi.UI
             OrderDAO orderDAO = new OrderDAO();
             OrderEntity order = new OrderEntity();
             DishDAO dishDAO = new DishDAO();
-            order.restaurant_id = 1;//这个要改
+
+            if ((Request.Cookies["deskId"] != null)&&(Request.Cookies["restaurantId"] != null))
+            {
+                order.restaurant_id = Convert.ToInt32(Request.Cookies["restaurantId"].Value);
+                order.user_id = Convert.ToInt32(Request.Cookies["deskId"].Value);
+            }
+            else
+            {
+                order.restaurant_id = 1;//这个要改
+                order.user_id = 1;
+            }
             order.remark = "空";
             for (int i = 0; i < Request.Cookies.Count; i++)
             {

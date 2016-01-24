@@ -33,7 +33,7 @@ namespace waiterPlatform.UI
             {
                 DishEntity dish = dishDAO.getDishById(order.dishList[j].dish_id);
 
-                switch (order.status)
+                switch (order.dishList[j].status)
                 {
                     //对订单状态进行分类，应该需要换，优化
                     case 0:
@@ -42,8 +42,9 @@ namespace waiterPlatform.UI
                         sb.Append("<div class='caption'>");
                         sb.Append("<h3>菜名:"+dish.dish_name+"</h3>");
                         sb.Append("<p>数量:" + order.dishList[j].count+ "</p>");
+                        sb.Append("<p class='bl_blue'>状态:" + "未完成" + "</p>");
                         sb.Append("<p>备注:</p>");
-                        sb.Append("<p><a class='btn btn-warning' href='#'>完成</a> <a class='btn' href='#'>取消</a></p>");
+                        sb.Append("<p><a class='btn btn-warning'  id='" + order.dishList[j].id + "' OnClick='finishDish(this)' href='###'>完成</a> <a class='btn' href='#'>取消</a></p>");
                         sb.Append("</div>");
                         sb.Append("</div>");  
                         break;
@@ -52,7 +53,8 @@ namespace waiterPlatform.UI
                         sb.Append("<a class='fb' rel='group' href='img/examples/photo/example_1.jpg'><img src='img/examples/photo/example_1s.jpg' class='img-polaroid'/></a>");
                         sb.Append("<div class='caption'>");
                         sb.Append("<h3>菜名:" + dish.dish_name + "</h3>");
-                        sb.Append("<p>数量" + order.dishList[j].count + "</p>");
+                        sb.Append("<p>数量:" + order.dishList[j].count + "</p>");
+                        sb.Append("<p class='bl_blue'>状态:" + "完成" + "</p>");
                         sb.Append("<p>备注：</p>");
                         sb.Append("<p><a class='btn btn-warning' href='#'>完成</a> <a class='btn' href='#'>取消</a></p>");
                         sb.Append("</div>");

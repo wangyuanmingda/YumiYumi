@@ -30,6 +30,18 @@ namespace waiterPlatform.Models
             else { return false; }
         }
 
+        public bool deleteById(int serviceId)
+        {
+            string mysql = "Delete FROM yumiyumi.yumi_service where id = ?serviceId";
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?serviceId", MySqlDbType.UInt32),
+                    };
+            parameters[0].Value = serviceId;
+            int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
+            if (count > 0) { return true; }
+            else { return false; }
+        }
+
         public bool finishOneService(int id,int stauts)
         {
             return true;

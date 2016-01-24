@@ -11,5 +11,6 @@ namespace waiterPlatform.Models
         public int order_id;
         public int dish_id;
         public int count;
+        public int status;//表示菜的完成情况
     }
 }

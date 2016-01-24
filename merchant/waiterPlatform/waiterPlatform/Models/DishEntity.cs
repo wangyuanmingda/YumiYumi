@@ -15,8 +15,8 @@ namespace waiterPlatform.Models
         public int price;
         public int type_id;
         public string type_name;
-        public int status;
 
+        public int status;
         public int count;
     }
 }

@@ -42,6 +42,25 @@
     <script type='text/javascript' src='js/charts.js'></script>
     <script type='text/javascript' src='js/actions.js'></script>
     
+    <script language=javascript>
+        function finishDish(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+            $.ajax({
+                type: 'get',
+                url: 'editOrderDishStatus.ashx?id=' + id,
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
+    </script>
 </head>
 <body>    
     <div id="loader"><img src="img/loader.gif"/></div>

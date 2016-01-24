@@ -87,6 +87,23 @@
                 }
             });
         }
+        function deleteDish(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+            $.ajax({
+                type: 'get',
+                url: 'deleteService.ashx?serviceId=' + id,
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
     </script> 
 </head>
 <body>    
@@ -107,6 +124,7 @@
             <div class="nContainer">                
                 <ul class="navigation">         
                     <li class="active"><a href="index.aspx" class="blblue">当前店面呼叫信息</a></li>
+                    <li class="active"><a href="index2.aspx" class="blblue">用户界面信息</a></li>
                     <li>
                         <a href="#" class="blyellow">餐厅信息</a>
                         <div class="open"></div>

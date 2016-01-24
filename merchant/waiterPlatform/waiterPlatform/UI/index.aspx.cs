@@ -14,9 +14,10 @@ namespace waiterPlatform.UI
         public String messagePart;
         public String orderPart;
         public String servicePart;
+        public int restaurantId;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //identify();
+            identify();
             getAllMessages();
             getAllOrders();
             getServiceCall();
@@ -26,7 +27,7 @@ namespace waiterPlatform.UI
         {
             if (Request.Cookies["restaurantId"] != null)
             {
-                string username = Request.Cookies["restaurantId"].Value;
+                restaurantId = Convert.ToInt32(Request.Cookies["restaurantId"].Value);
             }
             else
             {
@@ -38,7 +39,7 @@ namespace waiterPlatform.UI
         {
             StringBuilder sb = new StringBuilder();
             ServiceDAO serviceDAO = new ServiceDAO();
-            List<ServiceEntity> list = serviceDAO.getAllServiceByRestaurantId(1);
+            List<ServiceEntity> list = serviceDAO.getAllServiceByRestaurantId(restaurantId);
             for (int i = 0; i < list.Count; i++)
             {
                 DateTime todaydate = Convert.ToDateTime(list[i].ctime);
@@ -54,7 +55,7 @@ namespace waiterPlatform.UI
                 sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
                 sb.Append("</a>");
                 sb.Append("<a href='#' class='button red'>");
-                sb.Append("<div class='icon'><span class='ico-remove'></span></div>");
+                sb.Append("<div class='icon'><span id='" + list[i].id + "' class='ico-remove' OnClick='deleteDish(this)'></span></div>");
                 sb.Append("</a>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
@@ -131,7 +132,7 @@ namespace waiterPlatform.UI
                             sb.Append("<tr>");
                             sb.Append("<td class='bl_green'><span class='label label-success'>完成</span></td>");
                             sb.Append("<td width='50'>#AA-"+order.order_id+" <span class='mark'>" + date + "</span></td>");
-                            sb.Append("<td><a href='#' class='cgreen'>" + dishString + "</a>");
+                            sb.Append("<td><a href='order_list.aspx?orderId=" + order.order_id + "' class='cgreen'>" + dishString + "</a>");
                             sb.Append("<span class='mark'>来自" + order.user_id + "号桌</span></td>");
                             sb.Append("</tr>");
                             break;
@@ -139,7 +140,7 @@ namespace waiterPlatform.UI
                             sb.Append("<tr>");
                             sb.Append("<td class='bl_red'><span class='label label-important'>取消</span></td>");
                             sb.Append("<td>#VB-57 <span class='mark'>" + date + "</span></td>");
-                            sb.Append("<td><a href='#' class='cred'>" + dishString + "</a>");
+                            sb.Append("<td><a href='order_list.aspx?orderId=" + order.order_id + "' class='cred'>" + dishString + "</a>");
                             sb.Append("<span class='mark'>来自" + order.user_id + "号桌</span></td>");
                             sb.Append("</tr>");
                             break;

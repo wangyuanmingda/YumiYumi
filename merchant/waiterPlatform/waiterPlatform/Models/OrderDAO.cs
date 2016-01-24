@@ -109,7 +109,7 @@ namespace waiterPlatform.Models
                 order.restaurant_id = myreader.GetInt32(2);
                 order.remark = myreader.GetString(3);
                 order.total_price = myreader.GetInt32(4);
-                string mysql2 = "SELECT `id`,`order_id`,`dish_id`,`dish_count` FROM `yumi_order_detail` WHERE `order_id` =?orderId;";
+                string mysql2 = "SELECT `id`,`order_id`,`dish_id`,`dish_count`,`dish_status` FROM `yumi_order_detail` WHERE `order_id` =?orderId;";
                 MySqlParameter[] parameters2 = {
                     new MySqlParameter("?orderId", MySqlDbType.UInt32)
                     };
@@ -118,16 +118,28 @@ namespace waiterPlatform.Models
                 while (myreader2.Read())
                 {
                     OrderDetailEntity detail = new OrderDetailEntity();
+                    detail.id = myreader2.GetInt32(0);
                     detail.order_id = myreader2.GetInt32(1);
                     detail.dish_id = myreader2.GetInt32(2);
                     detail.count = detail.dish_id = myreader2.GetInt32(3);
+                    detail.status = myreader2.GetInt32(4);
                     order.dishList.Add(detail);
                 }
             }
             return order;
         }
 
-
+        public bool finishDetailOrderDish(int detailId)
+        {
+            string mysql = "update yumiyumi.yumi_order_detail set dish_status = 1 where id = ?detailId";
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?detailId", MySqlDbType.UInt32),
+                    };
+            parameters[0].Value = detailId;
+            int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
+            if (count > 0) { return true; }
+            else { return false; }
+        }
 
     }
 }

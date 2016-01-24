@@ -13,11 +13,13 @@ namespace waiterPlatform.UI
     {
         public String orderList;
         public int orderId;
+
         public int userId;
         protected void Page_Load(object sender, EventArgs e)
         {
             int id = Convert.ToInt32(Request.QueryString["orderId"]);
             orderId = id;
+
             orderList = listDetailOrder(id);
         }
 

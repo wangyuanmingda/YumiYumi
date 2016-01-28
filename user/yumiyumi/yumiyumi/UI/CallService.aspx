@@ -1,4 +1,7 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="restaurants.aspx.cs" Inherits="yumiyumi.UI.resturants" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CallService.aspx.cs" Inherits="yumiyumi.UI.callService" %>
+
+<!DOCTYPE html>
+
 
 <!--
 Author: W3layouts
@@ -9,7 +12,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Resturant :: w3layouts</title>
+<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +24,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
 <script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/simpleCart.min.js"> </script>		
+<script src="js/simpleCart.min.js"> </script>
+    <script language=javascript>
+        function addService(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+
+            $.ajax({
+                type: 'get',
+                url: 'Addservice.ashx?service_type=' + id +'&user_id=55'+'&restaurant_id=1',
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
+</script>
 </head>
 <body>
 <!-- header -->
@@ -38,10 +61,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li><a href="index2.aspx">主页</a></li>
-							<li class="active"><a href=" restaurants.aspx">餐厅</a></li>
+							<li class="active"><a href="index2.aspx">主页</a></li>
+							<li><a href=" restaurants.aspx">餐厅</a></li>
 							<li><a href="login.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
+                            <li><a href=" contact.aspx">呼叫服务</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
 								<!-- script-for-nav -->
@@ -57,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="header-right1">
 						<div class="cart box_1">
 							<a href="checkout.aspx">
-								<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
+								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="images/bag.png" alt=""></h3>
 							</a>	
 							<p><a href="javascript:;" class="simpleCart_empty">empty card</a></p>
 							<div class="clearfix"> </div>
@@ -69,18 +93,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 	</div>
 <!-- header -->
-<!-- about -->
-<div class="orders">
-	<div class="container">
-        <%=restaurantList %>
-	</div>
-</div>
-<!-- about -->	
+    <div class="contact">
+	 <div class="container">
+         <span id="0" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加汤</a></span>
+         <span id="1" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">结账</a></span>
+         <span id="2" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加水</a></span>
+	 </div>
+    </div>
 <!-- footer-->
 	<div class="footer">
 		<div class="container">
 			<div class="footer-left">
-				<p>Copyrights © 2015  All rights reserved | Design by </p>
+				<p>Copyrights 2015 All rights reserved | Design by </p>
 			</div>
 			<div class="footer-right">
 				<ul>

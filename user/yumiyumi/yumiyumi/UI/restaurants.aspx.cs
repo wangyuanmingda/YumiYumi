@@ -20,6 +20,20 @@ namespace yumiyumi.UI
             {
                 name = "";
             }
+
+            if ((Request.QueryString["deskId"] != null) && (Request.QueryString["restaurantId"] != null))
+            {
+                HttpCookie cook = new HttpCookie("deskId", Request.QueryString["deskId"].ToString());//新建一个cookie对象
+                HttpCookie cookie = new HttpCookie("restaurantId", Request.QueryString["restaurantId"].ToString());//新建一个cookie对象
+                Response.Cookies.Add(cook);
+                Response.Cookies.Add(cookie);
+            }
+            else
+            {
+                HttpCookie cook = new HttpCookie("deskId", "1");//新建一个cookie对象
+                HttpCookie cookie = new HttpCookie("restaurantId", "1");//新建一个cookie对象
+            }
+
             List<RestaurantEntity> list = restaurantDAO.getByName(name);
             StringBuilder sb = new StringBuilder();
             for(int i=0;i<list.Count;i++){
@@ -30,7 +44,7 @@ namespace yumiyumi.UI
                 sb.Append("<P> "+list[i].description+"</P>");
                 sb.Append("</li>");
 			    sb.Append("<li class='bt-nn'>");
-                sb.Append("<a class='morebtn hvr-rectangle-in' href='orders?restaurantId="+list[i].id+"'>Explore</a>");
+                sb.Append("<a class='morebtn hvr-rectangle-in' href='shop?restaurantId="+list[i].id+"'>Explore</a>");
                 sb.Append("</li>");
 			    sb.Append("<div class='clearfix'></div>");
                 sb.Append("</div>");

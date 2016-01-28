@@ -205,15 +205,16 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
+    <Content Include="UI\CallService.aspx" />
     <Content Include="UI\checkout.aspx" />
     <Content Include="UI\checkout.html" />
     <Content Include="UI\contact.aspx" />
     <Content Include="UI\contact.html" />
     <Content Include="UI\index2.aspx" />
     <Content Include="UI\index.html" />
-    <Content Include="UI\login.aspx" />
+    <Content Include="UI\login2.aspx" />
     <Content Include="UI\login.html" />
-    <Content Include="UI\orders.aspx" />
+    <Content Include="UI\shop.aspx" />
     <Content Include="UI\orders.html" />
     <Content Include="UI\register.aspx" />
     <Content Include="UI\register.html" />
@@ -228,6 +229,7 @@
     <None Include="Project_Readme.html" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
+    <Content Include="UI\AddService.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -310,6 +312,8 @@
     <Compile Include="Models\OrderEntity.cs" />
     <Compile Include="Models\RestaurantEntity.cs" />
     <Compile Include="Models\RestaurantsDAO.cs" />
+    <Compile Include="Models\ServiceDAO.cs" />
+    <Compile Include="Models\ServiceEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
@@ -326,6 +330,16 @@
       <DependentUpon>Site.Mobile.Master</DependentUpon>
     </Compile>
     <Compile Include="Startup.cs" />
+    <Compile Include="UI\AddService.ashx.cs">
+      <DependentUpon>AddService.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CallService.aspx.cs">
+      <DependentUpon>CallService.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\CallService.aspx.designer.cs">
+      <DependentUpon>CallService.aspx</DependentUpon>
+    </Compile>
     <Compile Include="UI\checkout.aspx.cs">
       <DependentUpon>checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -347,19 +361,19 @@
     <Compile Include="UI\index2.aspx.designer.cs">
       <DependentUpon>index2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\login.aspx.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="UI\login2.aspx.cs">
+      <DependentUpon>login2.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\login.aspx.designer.cs">
-      <DependentUpon>login.aspx</DependentUpon>
+    <Compile Include="UI\login2.aspx.designer.cs">
+      <DependentUpon>login2.aspx</DependentUpon>
     </Compile>
-    <Compile Include="UI\orders.aspx.cs">
-      <DependentUpon>orders.aspx</DependentUpon>
+    <Compile Include="UI\shop.aspx.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="UI\orders.aspx.designer.cs">
-      <DependentUpon>orders.aspx</DependentUpon>
+    <Compile Include="UI\shop.aspx.designer.cs">
+      <DependentUpon>shop.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\register.aspx.cs">
       <DependentUpon>register.aspx</DependentUpon>

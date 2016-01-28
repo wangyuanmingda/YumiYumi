@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="restaurants.aspx.cs" Inherits="yumiyumi.UI.resturants" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="login2.aspx.cs" Inherits="yumiyumi.UI.login" %>
 
 <!--
 Author: W3layouts
@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Resturant :: w3layouts</title>
+<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Login :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -39,8 +39,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="menu"> </span>
 						<ul>
 							<li><a href="index2.aspx">主页</a></li>
-							<li class="active"><a href=" restaurants.aspx">餐厅</a></li>
-							<li><a href="login.aspx">登录</a></li>
+							<li><a href="restaurants.aspx">餐厅</a></li>
+							<li class="active"><a href=" login.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
@@ -69,13 +69,38 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 	</div>
 <!-- header -->
-<!-- about -->
-<div class="orders">
-	<div class="container">
-        <%=restaurantList %>
+<!-- register -->
+    
+	<div class="login-page">
+		<div class="container">
+			<div class="account_grid">
+				<div class="col-md-6 login-left wow fadeInLeft" data-wow-delay="0.4s">
+					<h3>新用户</h3>
+					<p>创建账户使用我们的服务。</p>
+					<a class="acount-btn" href="register.aspx">创建账户</a>
+			   </div>
+			   <div class="col-md-6 login-right wow fadeInRight" data-wow-delay="0.4s">
+					<h3>已注册用户</h3>
+					<p>已注册用户请直接登录。</p>
+					<form runat="server" action="" method="post">
+						<div>
+							<span>邮箱地址<label>*</label></span>
+							<input name="txtEmail" type="text"> 
+						</div>
+						<div>
+							<span>密码<label>*</label></span>
+							<input name="txtPwd" type="password"> 
+						</div>
+						<a class="forgot" href="#">忘记密码？</a>
+						<input type="submit" value="登录">
+					</form>
+			   </div>	
+				<div class="clearfix"> </div>
+			</div>
+		</div>
 	</div>
-</div>
-<!-- about -->	
+
+<!-- register -->	
 <!-- footer-->
 	<div class="footer">
 		<div class="container">

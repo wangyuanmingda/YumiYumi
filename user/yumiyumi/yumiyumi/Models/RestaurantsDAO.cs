@@ -52,7 +52,7 @@ namespace yumiyumi.Models
             return resturantsList;
         }
 
-        public List<DishEntity> getById(string id)
+        public List<DishEntity> getDishListById(string id)
         {
             //string mysql = "SELECT * FROM yumiyumi.yumi_account where user_name ='"+email+"'";
             string mysql = "SELECT * FROM yumiyumi.yumi_dish natural join yumi_brand natural join yumi_brand_type where brand_id = ?id";
@@ -72,11 +72,33 @@ namespace yumiyumi.Models
                 dish.price = myreader.GetInt32(5);
                 dish.dish_name = myreader.GetString(6);
                 dish.type_id = myreader.GetInt32(1);
-                dish.type_name = myreader.GetString(11);
+                dish.type_name = myreader.GetString(12);
                 dishList.Add(dish);
             }
             myreader.Close();
             return dishList;
+        }
+
+        public RestaurantEntity getById(string id)
+        {
+            //string mysql = "SELECT * FROM yumiyumi.yumi_account where user_name ='"+email+"'";
+            string mysql = "SELECT * FROM yumiyumi.yumi_brand where brand_id = ?id";
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?id", MySqlDbType.VarChar, 255),
+                    };
+            parameters[0].Value = id;
+            MySqlDataReader myreader = MySqlHelper.ExecuteReader(mysql, parameters);
+            RestaurantEntity resturant = new RestaurantEntity();
+            while (myreader.Read())
+            {
+                resturant.id = myreader.GetInt32(0);
+                resturant.name = myreader.GetString(1);
+                resturant.photo = myreader.GetString(2);
+                resturant.description = myreader.GetString(3);
+                resturant.location = myreader.GetString(4);
+            }
+            myreader.Close();
+            return resturant;
         }
 
         public int getTypeCount(string id)

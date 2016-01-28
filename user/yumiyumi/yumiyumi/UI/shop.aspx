@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="restaurants.aspx.cs" Inherits="yumiyumi.UI.resturants" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="shop.aspx.cs" Inherits="yumiyumi.UI.orders" %>
 
 <!--
 Author: W3layouts
@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Resturant :: w3layouts</title>
+<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Orders :: w3layouts</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,46 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
 <script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/simpleCart.min.js"> </script>		
+<script src="js/simpleCart.min.js"> </script>	
+<script language=javascript>
+    function addtocart(env) {
+                var id = (env.getAttribute("id"));
+                id = id.substr(1);
+                var sd = getCookie("yumiyumi_cart" + id);
+                if (sd == null) {
+                    setCookie("yumiyumi_cart" + id, 1, "3600")
+                } else {
+                    setCookie("yumiyumi_cart" + id, parseInt(sd) + 1, "3600");
+                }
+                alert("添加成功");
+            }
+            function setCookie(cookieName, cookieValue, cookieExpires) {
+                cookieValue = escape(cookieValue);//编码latin-1  
+                if (cookieExpires == "") {
+                    var nowDate = new Date();
+                    nowDate.setMonth(nowDate.getMonth() + 6);
+                    cookieExpires = nowDate.toGMTString();
+                }
+                document.cookie = cookieName + "=" + cookieValue + ";expires=" + cookieExpires;
+            }
+            function getCookie(cookie_name) {
+                var value = null;
+                var allcookies = document.cookie;
+                var cookie_pos = allcookies.indexOf(cookie_name);
+                // 如果找到了索引，就代表cookie存在，    
+                // 反之，就说明不存在。    
+                if (cookie_pos != -1) {
+                    // 把cookie_pos放在值的开始，只要给值加1即可。    
+                    cookie_pos += cookie_name.length + 1;
+                    var cookie_end = allcookies.indexOf(";", cookie_pos);
+                    if (cookie_end == -1) {
+                        cookie_end = allcookies.length;
+                    }
+                    value = unescape(allcookies.substring(cookie_pos, cookie_end));
+                }
+                return value;
+            }
+</script>	
 </head>
 <body>
 <!-- header -->
@@ -39,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="menu"> </span>
 						<ul>
 							<li><a href="index2.aspx">主页</a></li>
-							<li class="active"><a href=" restaurants.aspx">餐厅</a></li>
+							<li><a href=" resturants.aspx">餐厅</a></li>
 							<li><a href="login.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
 								<div class="clearfix"> </div>		
@@ -72,7 +111,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- about -->
 <div class="orders">
 	<div class="container">
-        <%=restaurantList %>
+        <%=restaurantName %>
+	    <%=dishList %>
 	</div>
 </div>
 <!-- about -->	
@@ -80,7 +120,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<div class="footer-left">
-				<p>Copyrights © 2015  All rights reserved | Design by </p>
+				<p>Copyrights © 2015 All rights reserved | Design by </p>
 			</div>
 			<div class="footer-right">
 				<ul>

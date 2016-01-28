@@ -42,7 +42,7 @@ namespace yumiyumi.UI
                         sb.Append("<div id='close" + i + "' class='close3'> </div>\n");
                         sb.Append("<div class='cart-sec simpleCart_shelfItem'>\n");
                         sb.Append("<div class='cart-item cyc'>\n");
-                        sb.Append("<img src='images/5p.jpg' class='img-responsive' alt=''>\n");
+                        sb.Append("<img src='images/5p.jpg' class='img-responsive' alt=''>\n");//菜的图片
                         sb.Append("</div>\n");
                         sb.Append("<div class='cart-item-info'>\n");
                         sb.Append("<h3><a href='#'>"+temp.dish_name+"</a><span>Pickup time:</span></h3>\n");
@@ -82,6 +82,7 @@ namespace yumiyumi.UI
                 order.user_id = 1;
             }
             order.remark = "空";
+            List<HttpCookie> cookieList = new List<HttpCookie>();
             for (int i = 0; i < Request.Cookies.Count; i++)
             {
                 string name = Request.Cookies[i].Name;
@@ -96,12 +97,24 @@ namespace yumiyumi.UI
                         orderDetail.count = Convert.ToInt32(Request.Cookies[i].Value.ToString());
                         orderDetail.dish_id = temp.id;
                         order.dishList.Add(orderDetail);
+                        
+                        HttpCookie cookies = Request.Cookies[i];
+                        string cookiename = cookies.Name;
+                        if (cookies != null)
+                        {
+                            cookies.Expires = DateTime.Today.AddDays(-1);
+                            Response.Cookies.Add(cookies);
+                            Request.Cookies.Remove(cookiename);
+                        }
+                        
                     }
                 }
             }
-            if(orderDAO.addOneOrder(order)){
-                Response.Redirect("successOrder.aspx");
-            }
+
+                if (orderDAO.addOneOrder(order))
+                {
+                    Response.Redirect("successOrder.aspx");
+                }
         }
     }
 }

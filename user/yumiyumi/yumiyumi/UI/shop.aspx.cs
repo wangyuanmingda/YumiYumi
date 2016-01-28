@@ -21,6 +21,19 @@ namespace yumiyumi.UI
             {
                 id = "";
             }
+
+            if ((Request.QueryString["deskId"] != null) && (Request.QueryString["restaurantId"] != null))
+            {
+                HttpCookie cook = new HttpCookie("deskId", Request.QueryString["deskId"].ToString());//新建一个cookie对象
+                HttpCookie cookie = new HttpCookie("restaurantId", Request.QueryString["restaurantId"].ToString());//新建一个cookie对象
+                Response.Cookies.Add(cook);
+                Response.Cookies.Add(cookie);
+            }
+            else
+            {
+                HttpCookie cook = new HttpCookie("deskId", "1");//新建一个cookie对象
+                HttpCookie cookie = new HttpCookie("restaurantId", "1");//新建一个cookie对象
+            }
             RestaurantsDAO restaurantDAO = new RestaurantsDAO();
             List<DishEntity> disheslist = restaurantDAO.getDishListById(id);
             RestaurantEntity restaurant = restaurantDAO.getById(id);

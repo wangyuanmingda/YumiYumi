@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Orders :: w3layouts</title>
+<title>YumiYumi食谱</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -122,7 +122,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<div class="footer-left">
-				<p>Copyrights © 2015 All rights reserved | Design by </p>
+				<p>Copyrights © 2015 All rights reserved | Design by YumiYumi</p>
 			</div>
 			<div class="footer-right">
 				<ul>

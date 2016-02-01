@@ -139,7 +139,50 @@ namespace yumiyumi.Models
             return order;
         }
 
-
+        /*
+         * 暂时userId是桌号
+         */
+        public List<OrderEntity> getOrderByUserId(int userId)
+        {
+            string mysql = "SELECT `order_id`,`user_id`,`restaurant_id`,`remark`,`total_price` FROM `yumi_order` WHERE `user_id` =?userId";
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?userId", MySqlDbType.UInt32)
+                    };
+            parameters[0].Value = userId;
+            MySqlDataReader myreader = MySqlHelper.ExecuteReader(mysql, parameters);
+            List<OrderEntity> list = new List<OrderEntity>();
+            while (myreader.Read())
+            {
+                OrderEntity order = new OrderEntity();
+                order.order_id = myreader.GetInt32(0);
+                order.user_id = myreader.GetInt32(1);
+                order.restaurant_id = myreader.GetInt32(2);
+                order.remark = myreader.GetString(3);
+                order.total_price = myreader.GetInt32(4);
+                list.Add(order);
+            }
+            myreader.Close();
+            for (int i = 0; i < list.Count; i++)
+            {
+                OrderEntity order = list[i];
+                string mysql2 = "SELECT `id`,`order_id`,`dish_id`,`dish_count` FROM `yumi_order_detail` WHERE `order_id` =?orderId;";
+                MySqlParameter[] parameters2 = {
+                    new MySqlParameter("?orderId", MySqlDbType.UInt32)
+                    };
+                parameters2[0].Value = order.order_id;
+                MySqlDataReader myreader2 = MySqlHelper.ExecuteReader(mysql2, parameters2);
+                while (myreader2.Read())
+                {
+                    OrderDetailEntity detail = new OrderDetailEntity();
+                    detail.order_id = myreader2.GetInt32(1);
+                    detail.dish_id = myreader2.GetInt32(2);
+                    detail.count = myreader2.GetInt32(3);
+                    order.dishList.Add(detail);
+                }
+                myreader2.Close();
+            }
+            return list;
+        }
 
     }
 }

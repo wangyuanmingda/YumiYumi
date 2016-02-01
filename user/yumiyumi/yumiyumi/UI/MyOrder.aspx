@@ -1,15 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="checkout.aspx.cs" Inherits="yumiyumi.UI.checkout" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyOrder.aspx.cs" Inherits="yumiyumi.UI.MyOrder" %>
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Checkout :: w3layouts</title>
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>本桌订单</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,8 +16,27 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
 <script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/simpleCart.min.js"> </script>		
-<script src="js/jquery.cookie.js"> </script>	
+<script src="js/simpleCart.min.js"> </script>
+    <script language=javascript>
+        function addService(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+
+            $.ajax({
+                type: 'get',
+                url: 'Addservice.ashx?service_type=' + id + '&user_id=55' + '&restaurant_id=1',
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
+</script>
 </head>
 <body>
 <!-- header -->
@@ -39,12 +53,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li class="active"><a href="index2.aspx">主页</a></li>
+							<li><a href="index2.aspx">主页</a></li>
 							<li><a href=" restaurants.aspx">餐厅</a></li>
 							<li><a href="login2.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
                             <li><a href=" CallService.aspx">呼叫服务</a></li>
-                            <li><a href=" MyOrder.aspx">订单查询</a></li>
+                            <li  class="active"><a href=" MyOrder.aspx">订单查询</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
 								<!-- script-for-nav -->
@@ -60,7 +74,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="header-right1">
 						<div class="cart box_1">
 							<a href="checkout.aspx">
-								<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
+								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="images/bag.png" alt=""></h3>
 							</a>	
 							<p><a href="javascript:;" class="simpleCart_empty">empty card</a></p>
 							<div class="clearfix"> </div>
@@ -72,24 +86,41 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			</div>
 	</div>
 <!-- header -->
-<!-- checkout -->
-<div class="cart-items">
-	<div class="container">
-			 <h1>My Shopping Bag (2)</h1>
-             <%=shopping_cart %>		
+    <div class="contact">
+	 <div class="container">
+         <!-- 显示呼叫状态 -->
+                     <div class="block">
+                            <div class="head orange">                                
+                                <h2>我的订单</h2>
+                            </div>
+                            <div class="data-fluid">
+                                <table cellpadding="0" cellspacing="0" width="100%" class="table lcnp">
+                                    <thead>
+                                        <tr>
+                                            <th width="16"><input type="checkbox" class="checkall"/></th>                                        
+                                            <th>桌号</th>
+                                            <th>点单情况</th>
+                                            <th>点单时间</th>                       
+                                            <th width="78">状态</th>
+                                            <th width="78">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <%=orderPart %>
+                                                                       
+                                    </tbody>
+                                </table>
+                            </div>                            
+                        </div>  	 
+     </div>
     </div>
-</div>
-    <form action="#" method="post" runat="server" >
-        <asp:Button ID="Button1" OnClick="Unnamed_Click" runat="server" Text="提交订单" />
-    </form>
 
 
-<!-- checkout -->	
 <!-- footer-->
 	<div class="footer">
 		<div class="container">
 			<div class="footer-left">
-				<p>Copyrights © 2015 SpiceMystery All rights reserved | Design by <a href="http://w3layouts.com/">YumiYumi</a></p>
+				<p>Copyrights 2015 All rights reserved | Design by </p>
 			</div>
 			<div class="footer-right">
 				<ul>

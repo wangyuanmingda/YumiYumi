@@ -214,6 +214,7 @@
     <Content Include="UI\index.html" />
     <Content Include="UI\login2.aspx" />
     <Content Include="UI\login.html" />
+    <Content Include="UI\MyOrder.aspx" />
     <Content Include="UI\shop.aspx" />
     <Content Include="UI\orders.html" />
     <Content Include="UI\register.aspx" />
@@ -367,6 +368,13 @@
     </Compile>
     <Compile Include="UI\login2.aspx.designer.cs">
       <DependentUpon>login2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyOrder.aspx.cs">
+      <DependentUpon>MyOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MyOrder.aspx.designer.cs">
+      <DependentUpon>MyOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\shop.aspx.cs">
       <DependentUpon>shop.aspx</DependentUpon>

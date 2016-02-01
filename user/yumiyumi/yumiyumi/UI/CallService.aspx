@@ -61,11 +61,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li class="active"><a href="index2.aspx">主页</a></li>
+							<li><a href="index2.aspx">主页</a></li>
 							<li><a href=" restaurants.aspx">餐厅</a></li>
-							<li><a href="login.aspx">登录</a></li>
+							<li><a href="login2.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
-                            <li><a href=" contact.aspx">呼叫服务</a></li>
+                            <li  class="active"><a href=" CallService.aspx">呼叫服务</a></li>
+                            <li><a href=" MyOrder.aspx">订单查询</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
 								<!-- script-for-nav -->
@@ -98,8 +99,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
          <span id="0" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加汤</a></span>
          <span id="1" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">结账</a></span>
          <span id="2" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加水</a></span>
-	 </div>
+         <!-- 显示呼叫状态 -->
+                     <div class="block">
+                            <div class="head orange">                                
+                                <h2>我的呼叫服务</h2>
+                            </div>
+                            <div class="data-fluid">
+                                <table cellpadding="0" cellspacing="0" width="100%" class="table lcnp">
+                                    <thead>
+                                        <tr>
+                                            <th width="16"><input type="checkbox" class="checkall"/></th>                                        
+                                            <th>桌号</th>
+                                            <th>呼叫服务原因</th>
+                                            <th>呼叫时间</th>                       
+                                            <th width="78">服务响应状态</th>
+                                            <th width="78">操作</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <%=servicePart %>
+                                                                       
+                                    </tbody>
+                                </table>
+                            </div>                            
+                        </div>  	 
+     </div>
     </div>
+
+
 <!-- footer-->
 	<div class="footer">
 		<div class="container">

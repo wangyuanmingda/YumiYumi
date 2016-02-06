@@ -47,13 +47,7 @@ namespace yumiyumi.UI
                 sb.Append("<td>" + list[i].service_name + "</td>");
                 sb.Append("<td>" + date + "</td>");
                 sb.Append("<td>等待中</td>");
-                sb.Append("<td>取消服务</td>");
-                sb.Append("<a href='#' class='button green'>");
-                sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
-                sb.Append("</a>");
-                sb.Append("<a href='#' class='button red'>");
-                sb.Append("<div class='icon'><span id='" + list[i].id + "' class='ico-remove' OnClick='deleteDish(this)'></span></div>");
-                sb.Append("</a>");
+                sb.Append("<td><a id='" + list[i].id + "' href='#' OnClick='CancleService(this)'>取消服务</a></td>");
                 sb.Append("</td>");
                 sb.Append("</tr>");
             }

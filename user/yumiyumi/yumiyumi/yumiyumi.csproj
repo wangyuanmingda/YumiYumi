@@ -231,6 +231,7 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="UI\AddService.ashx" />
+    <Content Include="UI\CancleService.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -340,6 +341,9 @@
     </Compile>
     <Compile Include="UI\CallService.aspx.designer.cs">
       <DependentUpon>CallService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancleService.ashx.cs">
+      <DependentUpon>CancleService.ashx</DependentUpon>
     </Compile>
     <Compile Include="UI\checkout.aspx.cs">
       <DependentUpon>checkout.aspx</DependentUpon>

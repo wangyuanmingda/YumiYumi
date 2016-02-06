@@ -43,6 +43,23 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 }
             });
         }
+        function CancleService(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+            $.ajax({
+                type: 'get',
+                url: 'CancleService.ashx?service_id=' + id,
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
         var allcookies = document.cookie;
         //定义一个函数，用来读取特定的cookie值。
         function getCookie(cookie_name) {

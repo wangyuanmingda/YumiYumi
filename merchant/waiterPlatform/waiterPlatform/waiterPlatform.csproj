@@ -110,6 +110,7 @@
     <None Include="Properties\PublishProfiles\wdq.pubxml" />
     <Content Include="UI\deleteService.ashx" />
     <Content Include="UI\editOrderDishStatus.ashx" />
+    <Content Include="UI\GetPath.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -291,8 +292,11 @@
     <Compile Include="Models\AccountDAO.cs" />
     <Compile Include="Models\AccountEntity.cs" />
     <Compile Include="Models\BrandEntity.cs" />
+    <Compile Include="Models\Dijkstra.cs" />
     <Compile Include="Models\DishDAO.cs" />
     <Compile Include="Models\DishEntity.cs" />
+    <Compile Include="Models\MapDAO.cs" />
+    <Compile Include="Models\MapEntity.cs" />
     <Compile Include="Models\MessageDAO.cs" />
     <Compile Include="Models\MessageEntity.cs" />
     <Compile Include="Models\MySqlHelper.cs" />
@@ -339,6 +343,9 @@
     </Compile>
     <Compile Include="UI\edit_dish.aspx.designer.cs">
       <DependentUpon>edit_dish.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\GetPath.ashx.cs">
+      <DependentUpon>GetPath.ashx</DependentUpon>
     </Compile>
     <Compile Include="UI\index.aspx.cs">
       <DependentUpon>index.aspx</DependentUpon>

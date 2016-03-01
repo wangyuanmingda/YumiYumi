@@ -94,6 +94,7 @@
             <div class="nContainer">                
                 <ul class="navigation">         
                     <li class="active"><a href="index.aspx" class="blblue">当前店面呼叫信息</a></li>
+                    <li class="active"><a href="index2.aspx" class="blblue">用户界面信息</a></li>
                     <li>
                         <a href="#" class="blyellow">餐厅信息</a>
                         <div class="open"></div>

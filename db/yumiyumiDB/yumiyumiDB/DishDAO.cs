@@ -5,7 +5,7 @@ using System.Web;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 
-namespace waiterPlatform.Models
+namespace yumiyumiDB
 {
     public class DishDAO
     {
@@ -69,7 +69,7 @@ namespace waiterPlatform.Models
                 dish.price = myreader.GetInt32(4);
                 dish.type_id = myreader.GetInt32(5);
                 dish.dish_name = myreader.GetString(6);
-                dish.status = myreader.GetInt32(7);
+                //dish.status = myreader.GetInt32(7);
             }
             myreader.Close();
             return dish;

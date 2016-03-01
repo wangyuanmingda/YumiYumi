@@ -221,6 +221,7 @@
     <Content Include="UI\index.html" />
     <Content Include="UI\login2.aspx" />
     <Content Include="UI\login.html" />
+    <Content Include="UI\MyOrder.aspx" />
     <Content Include="UI\shop.aspx" />
     <Content Include="UI\orders.html" />
     <Content Include="UI\register.aspx" />
@@ -237,6 +238,8 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Site.Mobile.Master" />
     <Content Include="UI\AddService.ashx" />
+    <Content Include="UI\CancleService.ashx" />
+    <Content Include="UI\CancleOrder.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -347,6 +350,12 @@
     <Compile Include="UI\CallService.aspx.designer.cs">
       <DependentUpon>CallService.aspx</DependentUpon>
     </Compile>
+    <Compile Include="UI\CancleOrder.ashx.cs">
+      <DependentUpon>CancleOrder.ashx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancleService.ashx.cs">
+      <DependentUpon>CancleService.ashx</DependentUpon>
+    </Compile>
     <Compile Include="UI\checkout.aspx.cs">
       <DependentUpon>checkout.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -374,6 +383,13 @@
     </Compile>
     <Compile Include="UI\login2.aspx.designer.cs">
       <DependentUpon>login2.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\MyOrder.aspx.cs">
+      <DependentUpon>MyOrder.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\MyOrder.aspx.designer.cs">
+      <DependentUpon>MyOrder.aspx</DependentUpon>
     </Compile>
     <Compile Include="UI\shop.aspx.cs">
       <DependentUpon>shop.aspx</DependentUpon>

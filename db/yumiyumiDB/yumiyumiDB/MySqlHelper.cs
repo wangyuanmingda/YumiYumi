@@ -10,14 +10,14 @@ using System.Configuration;
 using System.Data.Common;  
 using System.Text.RegularExpressions;
 
-namespace waiterPlatform.Models
+namespace yumiyumiDB
 {
     public class MySqlHelper
     {
         
         //数据库连接字符串(web.config来配置)，可以动态更改connectionString支持多数据库. 
         // public static string connectionString = ConfigurationManager.ConnectionStrings["ConnDB"].ConnectionString; 
-        public static string connectionString = "server=rdsn4s3622rg192by7s9.mysql.rds.aliyuncs.com;user id=mashengtao; password=mashengtao; database=yumiyumi; pooling=false;charset=utf8";
+        public static string connectionString = "server=rdsaq1g9a00o8t2o0i4r.mysql.rds.aliyuncs.com;user id=mashengtao; password=mashengtao; database=yumiyumi; pooling=false;charset=utf8";
 
         //public string m = ConfigurationManager.AppSettings["MySQL"]; 
         public MySqlHelper() { } 

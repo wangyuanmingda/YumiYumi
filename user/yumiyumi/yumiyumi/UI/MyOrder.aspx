@@ -1,18 +1,10 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CallService.aspx.cs" Inherits="yumiyumi.UI.callService" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="MyOrder.aspx.cs" Inherits="yumiyumi.UI.MyOrder" %>
 
 <!DOCTYPE html>
 
-
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE HTML>
-<html>
-<head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Home :: w3layouts</title>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+<title>本桌订单</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,59 +18,24 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <script src="js/simpleCart.min.js"> </script>
     <script language=javascript>
-        function addService(env) {
+        function cancleOrder(env) {
             var id = (env.getAttribute("id"));
             alert("单机按钮" + id);
-            $.ajax({
-                type: 'get',
-                url: 'Addservice.ashx?service_type=' + id + '&user_id=' + getCookie("deskId") + '&restaurant_id=1',
-                async: true,
-                success: function (result) {
-                    alert(result);
-                    self.location.reload();
-                },
-                error: function () {
-                    alert("请求失败，请重新尝试");
-                    setContainer('ERROR!');
-                }
-            });
-        }
-        function CancleService(env) {
-            var id = (env.getAttribute("id"));
-            alert("单机按钮" + id);
-            $.ajax({
-                type: 'get',
-                url: 'CancleService.ashx?service_id=' + id,
-                async: true,
-                success: function (result) {
-                    alert(result);
-                    self.location.reload();
-                },
-                error: function () {
-                    alert("请求失败，请重新尝试");
-                    setContainer('ERROR!');
-                }
-            });
-        }
-        var allcookies = document.cookie;
-        //定义一个函数，用来读取特定的cookie值。
-        function getCookie(cookie_name) {
-            var allcookies = document.cookie;
-            var cookie_pos = allcookies.indexOf(cookie_name);   //索引的长度  
-            // 如果找到了索引，就代表cookie存在，  
-            // 反之，就说明不存在。  
-            if (cookie_pos != -1) {
-                // 把cookie_pos放在值的开始，只要给值加1即可。  
-                cookie_pos += cookie_name.length + 1;      //这里我自己试过，容易出问题，所以请大家参考的时候自己好好研究一下。。。  
-                var cookie_end = allcookies.indexOf(";", cookie_pos);
-                if (cookie_end == -1) {
-                    cookie_end = allcookies.length;
-                }
-                var value = unescape(allcookies.substring(cookie_pos, cookie_end)); //这里就可以得到你想要的cookie的值了。。。  
-            }
-            return value;
-}
 
+            $.ajax({
+                type: 'get',
+                url: 'CancleOrder.ashx?order_id=' + id,
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
 </script>
 </head>
 <body>
@@ -100,12 +57,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<li><a href=" restaurants.aspx">餐厅</a></li>
 							<li><a href="login2.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
-                            <li  class="active"><a href=" CallService.aspx">呼叫服务</a></li>
-                            <li><a href=" MyOrder.aspx">订单查询</a></li>
+                            <li><a href=" CallService.aspx">呼叫服务</a></li>
+                            <li  class="active"><a href=" MyOrder.aspx">订单查询</a></li>
 								<div class="clearfix"> </div>		
-
 						</ul>
-                    <div class="clearfix"> </div>
 								<!-- script-for-nav -->
 							<script>
 							    $("span.menu").click(function () {
@@ -133,33 +88,34 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
     <div class="contact">
 	 <div class="container">
-         <span id="0" onclick="disp_prompt();addService(this)"  class="item_price"><a  class="morebtn hvr-rectangle-in" href="#"><div name="order">加汤</div></a></span>
-         <span id="1" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">结账</a></span>
-         <span id="2" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加水</a></span>
          <!-- 显示呼叫状态 -->
                      <div class="block">
                             <div class="head orange">                                
-                                <h2>我的呼叫服务</h2>
+                                <h2>我的订单</h2>
                             </div>
                             <div class="data-fluid">
                                 <table cellpadding="0" cellspacing="0" width="100%" class="table lcnp">
                                     <thead>
                                         <tr>
-                                            <th width="16"><input type="checkbox" class="checkall"/></th>                                        
+                                            <th width="16"></th>                                        
                                             <th>桌号</th>
-                                            <th>呼叫服务原因</th>
-                                            <th>呼叫时间</th>                       
-                                            <th width="78">服务响应状态</th>
+                                            <th></th>
+                                            <th>点单情况</th>
+                                            <th>点单时间</th> 
+                                            <th>支付情况</th>  
+                                            <th>价格</th>                      
+                                            <th width="78">状态</th>
                                             <th width="78">操作</th>
                                         </tr>
                                     </thead>
                                     <tbody>
-                                    <%=servicePart %>
+                                    <%=orderPart %>
                                                                        
                                     </tbody>
                                 </table>
                             </div>                            
-                        </div>  	 
+                        </div>  	
+         <p>合计：￥<%=total_price %></p> 
      </div>
     </div>
 

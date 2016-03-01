@@ -39,10 +39,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li class="active"><a href="index2.aspx">Home</a></li>
-							<li><a href=" restaurants.aspx">Resturants</a></li>
-							<li><a href="login.aspx">Sign In</a></li>
-							<li><a href=" contact.aspx">Contact</a></li>
+							<li class="active"><a href="index2.aspx">主页</a></li>
+							<li><a href=" restaurants.aspx">餐厅</a></li>
+							<li><a href="login2.aspx">登录</a></li>
+							<li><a href=" contact.aspx">联系我们</a></li>
+                            <li><a href=" CallService.aspx">呼叫服务</a></li>
+                            <li><a href=" MyOrder.aspx">订单查询</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
 								<!-- script-for-nav -->
@@ -73,8 +75,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- checkout -->
 <div class="cart-items">
 	<div class="container">
-			 <h1>My Shopping Bag (2)</h1>
+			 <h1>我的购物车 (<%=shopping_count %>)</h1>
              <%=shopping_cart %>		
+        <p>总计：<%=total_price %></p>
     </div>
 </div>
     <form action="#" method="post" runat="server" >

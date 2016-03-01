@@ -5,7 +5,8 @@ using System.Text;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using waiterPlatform.Models;
+using yumiyumiDB;
+
 
 namespace waiterPlatform.UI
 {
@@ -21,6 +22,33 @@ namespace waiterPlatform.UI
             getAllMessages();
             getAllOrders();
             getServiceCall();
+            //getPath();
+        }
+
+        int[,] A;
+        public string number;
+        public string js;
+        const int MAXINT = 32767;
+        public void getPath()
+        {
+            MapDAO mm = new MapDAO();
+            MapEntity entity = mm.getMap();
+            Dijkstra dijkstra = new Dijkstra();
+            int[] pre = dijkstra.run(38, entity.dist, 41);
+            StringBuilder sb = new StringBuilder();
+
+            int endpoint = 5;
+            int ss = pre[endpoint];
+            sb.Append("context.moveTo(" + entity.vertexList[endpoint - 1].x + ", " + entity.vertexList[endpoint - 1].y + ");"); // 设置路径起点，坐标为(20,20)
+            sb.Append("context.lineTo(" + entity.vertexList[ss - 1].x + ", " + entity.vertexList[ss - 1].y + ");"); // 绘制一条到(200,20)的直线
+            number = "1<-" + ss + "<-";
+            while (ss != 38)
+            {
+                ss = pre[ss];
+                sb.Append("context.lineTo(" + entity.vertexList[ss - 1].x + ", " + entity.vertexList[ss - 1].y + ");"); // 绘制一条到(200,20)的直线
+                number += ss + "<-";
+            }
+            js = sb.ToString();
         }
 
         public void identify()
@@ -44,24 +72,52 @@ namespace waiterPlatform.UI
             {
                 DateTime todaydate = Convert.ToDateTime(list[i].ctime);
                 String date = todaydate.ToString("hh:mm:ss");
+                switch (list[i].status)
+                {
+                    //对订单状态进行分类，应该需要换，优化
+                    case 0:
+                        sb.Append("<tr>");
+                        sb.Append("<td><input type='checkbox' name='checkbox'/></td>");
+                        sb.Append("<td>"+list[i].user_id+"</td>");
+                        sb.Append("<td>"+list[i].service_name+"</td>");
+                        sb.Append("<td>"+date+"</td>");
+                        sb.Append("<td width='55' class='bl_blue'><span class='label label-info'>新呼叫</span></td>");
+                        sb.Append("<td>");
+                        sb.Append("<input id='" + list[i].user_id + "'  type='button' value='绘制路线' onclick='strokeRect(this);'/> ");
+                
 
-                sb.Append("<tr>");
-                sb.Append("<td><input type='checkbox' name='checkbox'/></td>");
-                sb.Append("<td>"+list[i].user_id+"</td>");
-                sb.Append("<td>"+list[i].service_name+"</td>");
-                sb.Append("<td>"+date+"</td>");
-                sb.Append("<td>");
-                sb.Append("<a href='#' class='button green'>");
-                sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
-                sb.Append("</a>");
-                sb.Append("<a href='#' class='button red'>");
-                sb.Append("<div class='icon'><span id='" + list[i].id + "' class='ico-remove' OnClick='deleteDish(this)'></span></div>");
-                sb.Append("</a>");
-                sb.Append("</td>");
-                sb.Append("</tr>");
+                        sb.Append("<a href='#' class='button green'>");
+                        sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
+                        sb.Append("</a>");
+                        sb.Append("<a href='#' class='button red'>");
+                        sb.Append("<div class='icon'><span id='" + list[i].id + "' class='ico-remove' OnClick='deleteDish(this)'></span></div>");
+                        sb.Append("</a>");
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
+                        break;
+                    case 1:
+                        sb.Append("<tr>");
+                        sb.Append("<td><input type='checkbox' name='checkbox'/></td>");
+                        sb.Append("<td>"+list[i].user_id+"</td>");
+                        sb.Append("<td>"+list[i].service_name+"</td>");
+                        sb.Append("<td>"+date+"</td>");
+                        sb.Append("<td class='bl_green'><span class='label label-success'>完成</span></td>");
+                        sb.Append("<td>");
+                        sb.Append("<input id='" + list[i].user_id + "' type='button' value='绘制路线' onclick='strokeRect(this);'/> ");
+                
+
+                        sb.Append("<a href='#' class='button green'>");
+                        sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
+                        sb.Append("</a>");
+                        sb.Append("<a href='#' class='button red'>");
+                        sb.Append("<div><input id='" + list[i].id + "' type='button' value='完成'  OnClick='deleteDish(this)'></div>");
+                        sb.Append("</a>");
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
+                        break;
+                }
             }
             servicePart = sb.ToString();
-
         }
 
         public void getAllMessages()

@@ -12,10 +12,14 @@ namespace yumiyumi.UI
     public partial class checkout : System.Web.UI.Page
     {
         public string shopping_cart;
+        public int shopping_count;
+        public int total_price;
         protected void Page_Load(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
             DishDAO dishDAO = new DishDAO();
+            shopping_count = 0;
+            total_price = 0;
             for (int i = 0; i < Request.Cookies.Count; i++)
             {
    
@@ -26,7 +30,9 @@ namespace yumiyumi.UI
                     string logo = name.Substring(0, 13);
                     if (logo.Equals("yumiyumi_cart"))
                     {
+                        shopping_count++;
                         DishEntity temp = dishDAO.getDishById(Convert.ToInt32(id));
+                        total_price = Convert.ToInt32(Request.Cookies[i].Value.ToString()) * temp.price;
                         Response.Write("Cookie[" + i + "]的Name为：" + id + "<br/>\n");
                         Response.Write("Cookie[" + i + "]的Value为：" + Request.Cookies[i].Value.ToString() + "<br/>\n");
                         sb.Append("<script>$(document).ready(function (c) {");
@@ -47,7 +53,7 @@ namespace yumiyumi.UI
                         sb.Append("<div class='cart-item-info'>\n");
                         sb.Append("<h3><a href='#'>"+temp.dish_name+"</a><span>Pickup time:</span></h3>\n");
                         sb.Append("<ul class='qty'>\n");
-                        sb.Append("<li><p>单价:"+temp.price+"</p></li>\n");
+                        sb.Append("<li><p>单价:"+temp.price+"</p></li>\n"); //单价
                         sb.Append("<li><p>数量:" + Request.Cookies[i].Value.ToString() + "</p></li>\n");
                         sb.Append("</ul>\n");
                         sb.Append("<div class='delivery'>\n");
@@ -61,6 +67,10 @@ namespace yumiyumi.UI
                         sb.Append("</div>\n");
                     }
                 }
+            }
+            if (shopping_count == 0)
+            {
+                sb.Append("<img src='images/emptycart.jpg' class='img-responsive' alt=''>\n");//购物车是空的
             }
             shopping_cart = sb.ToString();
         }
@@ -86,7 +96,7 @@ namespace yumiyumi.UI
             for (int i = 0; i < Request.Cookies.Count; i++)
             {
                 string name = Request.Cookies[i].Name;
-                if (name.Length >= 13 && Request.Cookies[i].Value != "null")
+                if (name.Length >= 13 && Request.Cookies[i].Value != "null" && Request.Cookies[i].Value != "0")
                 {
                     string id = name.Substring(13, name.Length - 13);
                     string logo = name.Substring(0, 13);
@@ -97,16 +107,12 @@ namespace yumiyumi.UI
                         orderDetail.count = Convert.ToInt32(Request.Cookies[i].Value.ToString());
                         orderDetail.dish_id = temp.id;
                         order.dishList.Add(orderDetail);
-                        
-                        HttpCookie cookies = Request.Cookies[i];
-                        string cookiename = cookies.Name;
-                        if (cookies != null)
-                        {
-                            cookies.Expires = DateTime.Today.AddDays(-1);
-                            Response.Cookies.Add(cookies);
-                            Request.Cookies.Remove(cookiename);
-                        }
-                        
+
+                        Request.Cookies[i].Value = "0";
+                        HttpCookie cookies = new HttpCookie(name);
+                        cookies.Value = "0";
+                        cookies.Expires = DateTime.Now.AddDays(-1);
+                        Response.Cookies.Add(cookies);
                     }
                 }
             }

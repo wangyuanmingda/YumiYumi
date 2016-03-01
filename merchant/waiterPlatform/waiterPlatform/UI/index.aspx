@@ -87,6 +87,7 @@
                 }
             });
         }
+
         function deleteDish(env) {
             var id = (env.getAttribute("id"));
             alert("单机按钮" + id);
@@ -105,6 +106,32 @@
             });
         }
     </script> 
+
+    <script>
+        function strokeRect(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+            //绘制路径
+            $.ajax({
+                type: 'get',
+                url: 'GetPath.ashx?to=' + id,
+                async: true,
+                success: function (result) {
+                   // alert(result);
+
+                    eval(result);
+
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+    }
+</script>
+
+
+<script type="text/javascript" src="http://www.websjy.com/club/websjy_index/54/images/websjy.js"></script>
 </head>
 <body>    
     <div id="loader"><img src="img/loader.gif"/></div>
@@ -188,7 +215,22 @@
                         
                       
                         <div class="block">
-                        <img src="../UI/img/pingmian.jpg">
+                            <canvas id="demoCanvas" width="500" height="353"> <p>爷，你还在上个世纪吧，现在都html5了，您还在ie6时代？</p> </canvas>
+                            <script type="text/javascript">
+                                //通过id获得当前的Canvas对象
+                                var canvasDom = document.getElementById("demoCanvas");
+                                //通过Canvas Dom对象获取Context的对象
+                                var context = canvasDom.getContext("2d");
+
+                                var image = new Image();//创建一张图片
+
+                                image.src = "img/timg.jpg";//设置图片的路径
+                                image.onload = function () {//当图片加载完成后
+                                    //参数：（1）绘制的图片  （2）坐标x，（3）坐标y
+                                    context.drawImage(image, 0, 0);
+
+                                };
+                            </script>
                             <div class="head orange">                                
                                 <h2>实时呼叫服务</h2>
                                 <ul class="buttons">
@@ -204,7 +246,8 @@
                                             <th width="16"><input type="checkbox" class="checkall"/></th>                                        
                                             <th>桌号</th>
                                             <th>呼叫服务原因</th>
-                                            <th>呼叫时间</th>                       
+                                            <th>呼叫时间</th> 
+                                            <th>状态</th>                       
                                             <th width="78">操作</th>
                                         </tr>
                                     </thead>

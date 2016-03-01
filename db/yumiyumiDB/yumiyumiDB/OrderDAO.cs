@@ -5,7 +5,7 @@ using System.Web;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 
-namespace waiterPlatform.Models
+namespace yumiyumiDB
 {
     public class OrderDAO
     {

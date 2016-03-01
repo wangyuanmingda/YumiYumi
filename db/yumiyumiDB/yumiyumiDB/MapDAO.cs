@@ -4,7 +4,7 @@ using System.Linq;
 using MySql.Data.MySqlClient;
 using System.Web;
 
-namespace waiterPlatform.Models
+namespace yumiyumiDB
 {
     public class MapDAO
     {

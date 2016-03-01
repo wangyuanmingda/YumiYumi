@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace waiterPlatform.Models
+namespace yumiyumiDB
 {
     public class ServiceEntity
     {
@@ -12,6 +12,7 @@ namespace waiterPlatform.Models
         public int restaurant_id;
         public int service_type;
         public String ctime;
+        public int status;
 
         public String service_name;
     }

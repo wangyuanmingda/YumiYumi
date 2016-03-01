@@ -10,7 +10,7 @@ using System.Configuration;
 using System.Data.Common;  
 using System.Text.RegularExpressions;
 
-namespace waiterPlatform.Models
+namespace yumiyumiDB
 {
     public class MySqlHelper
     {

@@ -289,24 +289,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountDAO.cs" />
-    <Compile Include="Models\AccountEntity.cs" />
-    <Compile Include="Models\BrandEntity.cs" />
-    <Compile Include="Models\Dijkstra.cs" />
-    <Compile Include="Models\DishDAO.cs" />
-    <Compile Include="Models\DishEntity.cs" />
-    <Compile Include="Models\MapDAO.cs" />
-    <Compile Include="Models\MapEntity.cs" />
-    <Compile Include="Models\MessageDAO.cs" />
-    <Compile Include="Models\MessageEntity.cs" />
-    <Compile Include="Models\MySqlHelper.cs" />
-    <Compile Include="Models\OrderDAO.cs" />
-    <Compile Include="Models\OrderDetailEntity.cs" />
-    <Compile Include="Models\OrderEntity.cs" />
-    <Compile Include="Models\RestaurantEntity.cs" />
-    <Compile Include="Models\RestaurantsDAO.cs" />
-    <Compile Include="Models\ServiceDAO.cs" />
-    <Compile Include="Models\ServiceEntity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\addMessage.ashx.cs">
       <DependentUpon>addMessage.ashx</DependentUpon>
@@ -388,6 +370,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\db\yumiyumiDB\yumiyumiDB\yumiyumiDB.csproj">
+      <Project>{93c5164d-f0d4-43b7-9c0d-0de63a3b27c3}</Project>
+      <Name>yumiyumiDB</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

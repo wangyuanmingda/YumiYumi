@@ -18,13 +18,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <script src="js/simpleCart.min.js"> </script>
     <script language=javascript>
-        function addService(env) {
+        function cancleOrder(env) {
             var id = (env.getAttribute("id"));
             alert("单机按钮" + id);
 
             $.ajax({
                 type: 'get',
-                url: 'Addservice.ashx?service_type=' + id + '&user_id=55' + '&restaurant_id=1',
+                url: 'CancleOrder.ashx?order_id=' + id,
                 async: true,
                 success: function (result) {
                     alert(result);

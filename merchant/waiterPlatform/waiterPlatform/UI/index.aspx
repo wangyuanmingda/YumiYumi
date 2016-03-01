@@ -246,7 +246,8 @@
                                             <th width="16"><input type="checkbox" class="checkall"/></th>                                        
                                             <th>桌号</th>
                                             <th>呼叫服务原因</th>
-                                            <th>呼叫时间</th>                       
+                                            <th>呼叫时间</th> 
+                                            <th>状态</th>                       
                                             <th width="78">操作</th>
                                         </tr>
                                     </thead>

@@ -2,24 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using yumiyumiDB;
+using yumiyumi.Models;
 
-namespace waiterPlatform.UI
+namespace yumiyumi.UI
 {
     /// <summary>
-    /// editOrderDishStatus 的摘要说明
+    /// CancleOrder 的摘要说明
     /// </summary>
-    public class editOrderDishStatus : IHttpHandler
+    public class CancleOrder : IHttpHandler
     {
 
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            int detailDish = Convert.ToInt32(context.Request.QueryString["id"]);
+            int order_id = Convert.ToInt32(context.Request.QueryString["order_id"]);
             OrderDAO orderDAO = new OrderDAO();
-            bool success = orderDAO.finishDetailOrderDish(detailDish);
+            bool success = orderDAO.deleteById(order_id);
             context.Response.Write(success + "\n");
-            context.Response.Write("help");
         }
 
         public bool IsReusable

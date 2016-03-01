@@ -5,6 +5,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "waiterPlatform", "waiterPla
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yumiyumi", "..\..\user\yumiyumi\yumiyumi\yumiyumi.csproj", "{1DD6B0CD-F8C6-4DC4-9CAE-87DD5CBBB236}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "yumiyumiDB", "..\..\db\yumiyumiDB\yumiyumiDB\yumiyumiDB.csproj", "{93C5164D-F0D4-43B7-9C0D-0DE63A3B27C3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,6 +21,10 @@ Global
 		{1DD6B0CD-F8C6-4DC4-9CAE-87DD5CBBB236}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1DD6B0CD-F8C6-4DC4-9CAE-87DD5CBBB236}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1DD6B0CD-F8C6-4DC4-9CAE-87DD5CBBB236}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93C5164D-F0D4-43B7-9C0D-0DE63A3B27C3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93C5164D-F0D4-43B7-9C0D-0DE63A3B27C3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93C5164D-F0D4-43B7-9C0D-0DE63A3B27C3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93C5164D-F0D4-43B7-9C0D-0DE63A3B27C3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

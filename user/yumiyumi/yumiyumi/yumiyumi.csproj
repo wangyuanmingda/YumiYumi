@@ -232,6 +232,7 @@
     <Content Include="Site.Mobile.Master" />
     <Content Include="UI\AddService.ashx" />
     <Content Include="UI\CancleService.ashx" />
+    <Content Include="UI\CancleOrder.ashx" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -341,6 +342,9 @@
     </Compile>
     <Compile Include="UI\CallService.aspx.designer.cs">
       <DependentUpon>CallService.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\CancleOrder.ashx.cs">
+      <DependentUpon>CancleOrder.ashx</DependentUpon>
     </Compile>
     <Compile Include="UI\CancleService.ashx.cs">
       <DependentUpon>CancleService.ashx</DependentUpon>

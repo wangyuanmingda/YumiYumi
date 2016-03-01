@@ -5,13 +5,13 @@ using System.Web;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 
-namespace waiterPlatform.Models
+namespace yumiyumiDB
 {
     public class AccountDAO
-    {
+    {/*
         public AccountEntity connect()
         {
-            string myStr = ConfigurationManager.AppSettings["MySqlServer"].ToString();
+            //string myStr = ConfigurationManager.AppSettings["MySqlServer"].ToString();
             string mysql = "SELECT * FROM yumiyumi.yumi_account";
             MySqlConnection conn = new MySqlConnection(myStr);
             conn.Open();
@@ -34,7 +34,7 @@ namespace waiterPlatform.Models
 
         public AccountEntity addUser()
         {
-            string myStr = ConfigurationManager.AppSettings["entityFramework"].ToString();
+            //string myStr = ConfigurationManager.AppSettings["entityFramework"].ToString();
             string mysql = "SELECT * FROM yumiyumi.yumi_account";
             MySqlConnection conn = new MySqlConnection(myStr);
             conn.Open();
@@ -54,7 +54,7 @@ namespace waiterPlatform.Models
             conn.Close();
             return user;
         }
-
+        */
         public AccountEntity login(string email,string password)
         {
             //string mysql = "SELECT * FROM yumiyumi.yumi_account where user_name ='"+email+"'";

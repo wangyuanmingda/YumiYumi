@@ -66,7 +66,7 @@ namespace yumiyumi.UI
                         sb.Append("<td>未支付</td>");
                         sb.Append("<td>￥"+ order.total_price +"</td>");
                         sb.Append("<td>已接单，等待制作</td>");
-                        sb.Append("<td><a id='" + order.order_id + "' href='#' OnClick='CancleService(this)'>取消订单</a></td>>");
+                        sb.Append("<td><a id='" + order.order_id + "' href='#' OnClick='cancleOrder(this)'>取消订单</a></td>>");
                         sb.Append("</tr>");
                         break;
                     case 1:

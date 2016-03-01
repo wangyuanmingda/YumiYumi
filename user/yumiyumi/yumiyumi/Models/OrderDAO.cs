@@ -185,5 +185,16 @@ namespace yumiyumi.Models
             return list;
         }
 
+        public bool deleteById(int orderId)
+        {
+            string mysql = "Delete FROM yumiyumi.yumi_order where order_id = ?orderId";
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?orderId", MySqlDbType.UInt32),
+                    };
+            parameters[0].Value = orderId;
+            int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
+            if (count > 0) { return true; }
+            else { return false; }
+        }
     }
 }

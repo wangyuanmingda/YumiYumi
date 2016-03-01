@@ -68,6 +68,10 @@ namespace yumiyumi.UI
                     }
                 }
             }
+            if (shopping_count == 0)
+            {
+                sb.Append("<img src='images/emptycart.jpg' class='img-responsive' alt=''>\n");//购物车是空的
+            }
             shopping_cart = sb.ToString();
         }
 

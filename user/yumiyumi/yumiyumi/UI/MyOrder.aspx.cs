@@ -51,7 +51,7 @@ namespace yumiyumi.UI
                 dishString += dish2.dish_name;
                 order.total_price += dish2.price;
                 DateTime todaydate = Convert.ToDateTime(order.start_time);
-                String date = todaydate.ToString("MM/dd hh:mm:ss");
+                String date = todaydate.ToString();
                 switch (order.status)
                 {
                     //对订单状态进行分类，应该需要换，优化

@@ -41,7 +41,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     nowDate.setMonth(nowDate.getMonth() + 6);
                     cookieExpires = nowDate.toGMTString();
                 }
-                document.cookie = cookieName + "=" + cookieValue + ";expires=" + cookieExpires;
+                document.cookie = cookieName + "=" + cookieValue + ";expires=" + cookieExpires + ";path=/";
             }
             function getCookie(cookie_name) {
                 var value = null;

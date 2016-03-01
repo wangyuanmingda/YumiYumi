@@ -144,7 +144,7 @@ namespace yumiyumi.Models
          */
         public List<OrderEntity> getOrderByUserId(int userId)
         {
-            string mysql = "SELECT `order_id`,`user_id`,`restaurant_id`,`remark`,`total_price` FROM `yumi_order` WHERE `user_id` =?userId";
+            string mysql = "SELECT `order_id`,`user_id`,`restaurant_id`,`remark`,`total_price`,`start_time` FROM `yumi_order` WHERE `user_id` =?userId";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?userId", MySqlDbType.UInt32)
                     };
@@ -159,6 +159,7 @@ namespace yumiyumi.Models
                 order.restaurant_id = myreader.GetInt32(2);
                 order.remark = myreader.GetString(3);
                 order.total_price = myreader.GetInt32(4);
+                order.start_time = myreader.GetString(5);
                 list.Add(order);
             }
             myreader.Close();

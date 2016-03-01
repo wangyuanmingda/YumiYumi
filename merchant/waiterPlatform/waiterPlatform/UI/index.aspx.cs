@@ -21,7 +21,7 @@ namespace waiterPlatform.UI
             getAllMessages();
             getAllOrders();
             getServiceCall();
-            getPath();
+            //getPath();
         }
 
         int[,] A;

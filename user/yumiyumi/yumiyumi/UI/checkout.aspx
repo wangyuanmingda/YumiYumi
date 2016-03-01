@@ -75,8 +75,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- checkout -->
 <div class="cart-items">
 	<div class="container">
-			 <h1>My Shopping Bag (2)</h1>
+			 <h1>我的购物车 (<%=shopping_count %>)</h1>
              <%=shopping_cart %>		
+        <p>总计：<%=total_price %></p>
     </div>
 </div>
     <form action="#" method="post" runat="server" >

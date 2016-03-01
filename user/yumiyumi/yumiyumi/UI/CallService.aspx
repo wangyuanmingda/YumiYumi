@@ -78,6 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             }
             return value;
 }
+
 </script>
 </head>
 <body>
@@ -102,7 +103,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <li  class="active"><a href=" CallService.aspx">呼叫服务</a></li>
                             <li><a href=" MyOrder.aspx">订单查询</a></li>
 								<div class="clearfix"> </div>		
+
 						</ul>
+                    <div class="clearfix"> </div>
 								<!-- script-for-nav -->
 							<script>
 							    $("span.menu").click(function () {
@@ -130,7 +133,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
     <div class="contact">
 	 <div class="container">
-         <span id="0" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加汤</a></span>
+         <span id="0" onclick="disp_prompt();addService(this)"  class="item_price"><a  class="morebtn hvr-rectangle-in" href="#"><div name="order">加汤</div></a></span>
          <span id="1" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">结账</a></span>
          <span id="2" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加水</a></span>
          <!-- 显示呼叫状态 -->

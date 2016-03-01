@@ -1,8 +1,8 @@
 (function(p, f) {
     var s = "string",
-        k = function(e, f) {
-            return typeof e === f
-        },
+    k = function(e, f) {
+        return typeof e === f
+    },
     e = function(e) {
         return k(e, "undefined")
     },
@@ -285,7 +285,6 @@
                 return d
             },
             empty: function() {
-            	alert("3");
                 var a = {};
                 b.each(function(b) { ! 1 === b.remove(!0) && (a[b.id()] = b)
                 });
@@ -1118,7 +1117,6 @@
                 selector: "empty",
                 event: "click",
                 callback: function() {
-                	alert("4");
                     b.empty()
                 }
             },
@@ -1308,20 +1306,20 @@ JSON || (JSON = {}); (function() {
         throw new SyntaxError("JSON.parse");
     })
 })(); (function() {
-    if (!this.localStorage) if (this.globalStorage) try {//globalStorage 是火狐浏览器特有的localStorage，不过11之后不使用了。
+    if (!this.localStorage) if (this.globalStorage) try {
         this.localStorage = this.globalStorage
     } catch(p) {} else {
         var f = document.createElement("div");
         f.style.display = "none";
-        document.getElementsByTagName("head")[0].appendChild(f);/*到此的结果为 <div style="display: none;"></div> */
-        if (f.addBehavior) { //这个判断语句的意义不太明白。。。。
-            f.addBehavior("#default#userdata"); //此句为userData的语法。
+        document.getElementsByTagName("head")[0].appendChild(f);
+        if (f.addBehavior) {
+            f.addBehavior("#default#userdata");
             var s = this.localStorage = {
                 length: 0,
                 setItem: function(e, h) {
                     f.load("localStorage");
                     e = k(e);
-                    f.getAttribute(e) || this.length++; //f.getAttribute(e) 的值为否定时执行后一句？
+                    f.getAttribute(e) || this.length++;
                     f.setAttribute(e, h);
                     f.save("localStorage")
                 },
@@ -1339,9 +1337,7 @@ JSON || (JSON = {}); (function() {
                 },
                 clear: function() {
                     f.load("localStorage");
-                    alert("1");
                     for (var e = 0; attr = f.XMLDocument.documentElement.attributes[e++];) f.removeAttribute(attr.name);
-                    	//XMLDocument 获取对由对象引出的的 XML 文档对象模型(DOM)的引用  ；documentElement	获取对文档根结点的引用。
                     f.save("localStorage");
                     this.length = 0
                 },

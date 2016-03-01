@@ -42,14 +42,22 @@ namespace yumiyumiDB
             else { return false; }
         }
 
-        public bool finishOneService(int id,int stauts)
+        public bool finishService(int serviceId)
         {
-            return true;
+            string mysql = "UPDATE yumi_service SET status = '1' WHERE id = ?serviceId";
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?serviceId", MySqlDbType.UInt32),
+                    };
+            parameters[0].Value = serviceId;
+            int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
+            if (count > 0) { return true; }
+            else { return false; }
         }
+
 
         public List<ServiceEntity> getAllServiceByRestaurantId(int restaurantId)
         {
-            string mysql = "SELECT `id`,`user_id`,`restaurant_id`,`service_type`,`ctime` FROM `yumi_service` WHERE `restaurant_id` =?restaurantId";
+            string mysql = "SELECT `id`,`user_id`,`restaurant_id`,`service_type`,`ctime`,`status` FROM `yumi_service` WHERE `restaurant_id` =?restaurantId";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?restaurantId", MySqlDbType.Int32)
                     };
@@ -64,6 +72,7 @@ namespace yumiyumiDB
                 service.restaurant_id = myreader.GetInt32(2);
                 service.service_type = myreader.GetInt32(3);
                 service.ctime = myreader.GetString(4);
+                service.status = myreader.GetInt32(5);
                 list.Add(service);
             }
             myreader.Close();

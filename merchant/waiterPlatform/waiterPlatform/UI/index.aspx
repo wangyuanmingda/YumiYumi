@@ -61,24 +61,6 @@
                 url: 'addMessage.ashx?content=' + text,
                 async: true,
                 success: function (result) {
-                    /*
-                    self.location.reload();
-                    var ad = document.getElementById('message_list');
-                    var adiv = document.createElement('div');
-                    adiv.className = "item dblue out";
-                    var arrow = document.createElement('div');
-                    arrow.className = "arrow";
-                    var text = document.createElement('div');
-                    text.className = "text";
-                    text.innerHTML = result;
-                    var date = document.createElement('div');
-                    date.className = "date";
-                    date.innerHTML = "12:12:11";
-                    adiv.appendChild(arrow);
-                    adiv.appendChild(text);
-                    adiv.appendChild(date);
-                    ad.appendChild(adiv);
-                    */
                     self.location.reload();
                 },
                 error: function () {
@@ -88,12 +70,30 @@
             });
         }
 
-        function deleteDish(env) {
+        function deleteService(env) {
             var id = (env.getAttribute("id"));
             alert("单机按钮" + id);
             $.ajax({
                 type: 'get',
                 url: 'deleteService.ashx?serviceId=' + id,
+                async: true,
+                success: function (result) {
+                    alert(result);
+                    self.location.reload();
+                },
+                error: function () {
+                    alert("请求失败，请重新尝试");
+                    setContainer('ERROR!');
+                }
+            });
+        }
+
+        function finishOrder(env) {
+            var id = (env.getAttribute("id"));
+            alert("单机按钮" + id);
+            $.ajax({
+                type: 'get',
+                url: 'finishOrder.ashx?orderId=' + id,
                 async: true,
                 success: function (result) {
                     alert(result);

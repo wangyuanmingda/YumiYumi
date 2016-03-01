@@ -134,7 +134,7 @@
 
                     <h1>菜单 <small><%=userId %>号桌   订单编号：<%=orderId %></small></h1>
 
-                    <h2 style="float:right;"><small>总价:2340rmb</small>&nbsp;<small>数量：12道</small></h2>
+                    <h2 style="float:right;"><small>总价:<%=total_price %></small>&nbsp;<small>数量：<%=total_count %></small></h2>
                 </div>
                           
                 <div class="row-fluid">

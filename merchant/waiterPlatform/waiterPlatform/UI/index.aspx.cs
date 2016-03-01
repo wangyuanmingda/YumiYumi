@@ -85,12 +85,10 @@ namespace waiterPlatform.UI
                         sb.Append("<td>");
                         sb.Append("<input id='" + list[i].user_id + "'  type='button' value='绘制路线' onclick='strokeRect(this);'/> ");
                 
-
                         sb.Append("<a href='#' class='button green'>");
                         sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
                         sb.Append("</a>");
-                        sb.Append("<a href='#' class='button red'>");
-                        sb.Append("<div class='icon'><span id='" + list[i].id + "' class='ico-remove' OnClick='deleteDish(this)'></span></div>");
+                        sb.Append("<div><input id='" + list[i].id + "' type='button' value='完成'  OnClick='deleteService(this)'></div>");
                         sb.Append("</a>");
                         sb.Append("</td>");
                         sb.Append("</tr>");
@@ -104,13 +102,11 @@ namespace waiterPlatform.UI
                         sb.Append("<td class='bl_green'><span class='label label-success'>完成</span></td>");
                         sb.Append("<td>");
                         sb.Append("<input id='" + list[i].user_id + "' type='button' value='绘制路线' onclick='strokeRect(this);'/> ");
-                
 
                         sb.Append("<a href='#' class='button green'>");
                         sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
                         sb.Append("</a>");
-                        sb.Append("<a href='#' class='button red'>");
-                        sb.Append("<div><input id='" + list[i].id + "' type='button' value='完成'  OnClick='deleteDish(this)'></div>");
+                        //sb.Append("<div><input id='" + list[i].id + "' type='button' value='完成'  OnClick='deleteService(this)'></div>");
                         sb.Append("</a>");
                         sb.Append("</td>");
                         sb.Append("</tr>");
@@ -181,7 +177,8 @@ namespace waiterPlatform.UI
                             sb.Append("<td width='50'>#AA-325 <span class='mark'>"+date+"</span></td>");
                             //跳转位置
                             sb.Append("<td><a href='order_list.aspx?orderId="+order.order_id+"' class='cblue'>"+dishString+"</a>");
-                            sb.Append("<span class='mark'>来自"+order.user_id+"号桌</span></td>");
+                            sb.Append("<span class='mark'>来自"+order.user_id+"号桌</span>");
+                            sb.Append("<input id='" + order.order_id + "' type='button' value='完成'  OnClick='finishOrder(this)'></td>");
                             sb.Append("</tr>");
                             break;
                         case 1:

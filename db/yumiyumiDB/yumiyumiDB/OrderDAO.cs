@@ -141,5 +141,17 @@ namespace yumiyumiDB
             else { return false; }
         }
 
+        public bool finishOrder(int orderId)
+        {
+            string mysql = "update yumiyumi.yumi_order set status = 1 where order_id = ?orderId";
+            MySqlParameter[] parameters = {
+                    new MySqlParameter("?orderId", MySqlDbType.UInt32),
+                    };
+            parameters[0].Value = orderId;
+            int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
+            if (count > 0) { return true; }
+            else { return false; }
+        }
+
     }
 }

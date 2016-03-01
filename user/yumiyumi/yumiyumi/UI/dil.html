@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>对话框</title>
+    <script type="text/javascript">
+        function ClickOk() {
+            var url = document.getElementById("txtUrl").value;
+            if (url == null || url == "hi")
+                return false;
+            window.returnValue = url;
+            window.close();
+        }
+</script></head>
+<body>
+    <form name="edit" id="edit">
+        <table border="0" cellpadding="0" align="center" width="500">
+            <tr>
+                <td width="30" align="right"height="30">url:</td>
+                <td width="30"><input type="text" id="txtUrl" value="hihi"</td>
+                <td width="56" align="center" height="30">
+                <input type="button" name="btnOk" value="kk" onclick="ClickOk()"/>
+                </td>
+           </tr>
+        </table>
+    </form>
+
+</body>
+</html>

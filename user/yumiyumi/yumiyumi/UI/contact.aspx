@@ -39,9 +39,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<span class="menu"> </span>
 						<ul>
 							<li><a href="index2.aspx">主页</a></li>
-							<li><a href=" restaurants.html">餐厅</a></li>
+							<li><a href=" restaurants.aspx">餐厅</a></li>
 							<li><a href=" login.aspx">登录</a></li>
 							<li class="active"><a href=" contact.aspx">联系我们</a></li>
+                            <li ><a href=" CallService.aspx">呼叫服务</a></li>
 								<div class="clearfix"> </div>		
 						</ul>
 								<!-- script-for-nav -->

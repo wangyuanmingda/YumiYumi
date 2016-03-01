@@ -44,6 +44,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 }
             });
         }
+        function disp_prompt() {
+            var name = prompt("请输入您的具体要求", "无")
+            var request = document.getElementsByName("a");
+            if (name != null && name != "") {
+                alert("您好！您的要求" + name + "已提交。")
+            }
+        }
 </script>
 </head>
 <body>
@@ -61,13 +68,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<div class="head-nav">
 					<span class="menu"> </span>
 						<ul>
-							<li class="active"><a href="index2.aspx">主页</a></li>
+							<li><a href="index2.aspx">主页</a></li>
 							<li><a href=" restaurants.aspx">餐厅</a></li>
 							<li><a href="login.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
-                            <li><a href=" contact.aspx">呼叫服务</a></li>
-								<div class="clearfix"> </div>		
+                            <li class="active"><a href=" CallService.aspx">呼叫服务</a></li>
 						</ul>
+                    <div class="clearfix"> </div>
 								<!-- script-for-nav -->
 							<script>
 							    $("span.menu").click(function () {
@@ -95,7 +102,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
     <div class="contact">
 	 <div class="container">
-         <span id="0" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加汤</a></span>
+         <span id="0" onclick="disp_prompt();addService(this)"  class="item_price"><a  class="morebtn hvr-rectangle-in" href="#"><div name="order">加汤</div></a></span>
          <span id="1" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">结账</a></span>
          <span id="2" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加水</a></span>
 	 </div>

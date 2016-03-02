@@ -12,6 +12,7 @@ namespace yumiyumi.Models
         public int restaurant_id;
         public int service_type;
         public String ctime;
+        public int status;
 
         public String service_name;
     }

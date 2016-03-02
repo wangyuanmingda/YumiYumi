@@ -23,6 +23,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
 <script src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/yumiyumi.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
 <script src="js/simpleCart.min.js"> </script>
     <script language=javascript>
@@ -118,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<a href="checkout.aspx">
 								<h3> <span class="simpleCart_total"> $0.00 </span> (<span id="simpleCart_quantity" class="simpleCart_quantity"> 0 </span> items)<img src="images/bag.png" alt=""></h3>
 							</a>	
-							<p><a href="javascript:;" class="simpleCart_empty">empty card</a></p>
+							<p><a href="javascript:;" onclick="emptyCart()" class="simpleCart_empty">empty card</a></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>
@@ -167,15 +168,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="footer-left">
 				<p>Copyrights 2015 All rights reserved | Design by </p>
 			</div>
-			<div class="footer-right">
-				<ul>
-					<li><a href="#"><i class="fbk"></i></a></li>
-					<li><a href="#"><i class="googpl"></i></a></li>
-					<li><a href="#"><i class="link"></i></a></li>
-					<li><a href="#"><i class="rss"></i></a></li>
-					<li><a href="#"><i class="twt"></i></a></li>
-				</ul>
-			</div>	
 				<div class="clearfix"></div>
 		</div>
 	</div>

@@ -114,15 +114,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			<div class="footer-left">
 				<p>Copyrights © 2015 SpiceMystery All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
 			</div>
-			<div class="footer-right">
-				<ul>
-					<li><a href="#"><i class="fbk"></i></a></li>
-					<li><a href="#"><i class="googpl"></i></a></li>
-					<li><a href="#"><i class="link"></i></a></li>
-					<li><a href="#"><i class="rss"></i></a></li>
-					<li><a href="#"><i class="twt"></i></a></li>
-				</ul>
-			</div>	
 				<div class="clearfix"></div>
 		</div>
 	</div>

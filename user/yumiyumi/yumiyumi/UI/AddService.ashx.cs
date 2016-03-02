@@ -23,7 +23,8 @@ namespace yumiyumi.UI
             service.user_id = user_id;
             service.restaurant_id = restaurant_id;
             service.service_type = service_type;
-            service.ctime = System.DateTime.Now.ToString(); 
+            service.ctime = System.DateTime.Now.ToString();
+            service.status = 0;
             bool success = serviceDAO.addOneService(service);
             context.Response.Write(success + "\n");
             context.Response.Write("help");

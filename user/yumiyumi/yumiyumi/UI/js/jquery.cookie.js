@@ -5,6 +5,7 @@
  * Copyright 2013 Klaus Hartl
  * Released under the MIT license
  */
+ //此写法为function 用作闭包使用
 (function (factory) {
 	if (typeof define === 'function' && define.amd) {
 		// AMD. Register as anonymous module.

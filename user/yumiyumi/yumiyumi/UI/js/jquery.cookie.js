@@ -56,6 +56,10 @@
 	}
 
 	var config = $.cookie = function (key, value, options) {
+	/*这句代码是定义插件的名字叫cookie，
+	属于jquery对象的一个属性，通过$.cookie来调用。
+	括号后面是3个参数，第一个是要设置或获取的cookie的名字，
+	第二个是要设置的cookie的值，第三个是一些附加的配置，如cookie保存的路径、保存的时间等。*/
 
 		// Write
 		if (value !== undefined && !$.isFunction(value)) {
@@ -63,12 +67,13 @@
 
 			if (typeof options.expires === 'number') {
 				var days = options.expires, t = options.expires = new Date();
-				t.setDate(t.getDate() + days);
+				t.setDate(t.getDate() + days);//设置cookie过期的时间，
 			}
 
 			return (document.cookie = [
 				encode(key), '=', stringifyCookieValue(value),
-				options.expires ? '; expires=' + options.expires.toUTCString() : '', // use expires attribute, max-age is not supported by IE
+				options.expires ? '; expires=' + options.expires.toUTCString() : '', 
+				// use expires attribute, max-age is not supported by IE
 				options.path    ? '; path=' + options.path : '',
 				options.domain  ? '; domain=' + options.domain : '',
 				options.secure  ? '; secure' : ''

@@ -32,7 +32,10 @@ namespace yumiyumi.UI
                     {
                         shopping_count++;
                         DishEntity temp = dishDAO.getDishById(Convert.ToInt32(id));
-                        total_price = Convert.ToInt32(Request.Cookies[i].Value.ToString()) * temp.price;
+                        string eachcookie = System.Web.HttpUtility.UrlDecode(Request.Cookies[i].Value.ToString());
+                        string[] quantity = eachcookie.Split(';');
+                        int q = Convert.ToInt32(quantity[0].Split(':')[1]);
+                        total_price = q * temp.price;
                         Response.Write("Cookie[" + i + "]的Name为：" + id + "<br/>\n");
                         Response.Write("Cookie[" + i + "]的Value为：" + Request.Cookies[i].Value.ToString() + "<br/>\n");
                         sb.Append("<script>$(document).ready(function (c) {");
@@ -70,7 +73,7 @@ namespace yumiyumi.UI
             }
             if (shopping_count == 0)
             {
-                sb.Append("<img src='images/emptycart.jpg' class='img-responsive' alt=''>\n");//购物车是空的
+                sb.Append("<img  src='images/emptycart.png' class='img-responsive' alt='' style='padding-left:100px'>\n");//购物车是空的
             }
             shopping_cart = sb.ToString();
         }

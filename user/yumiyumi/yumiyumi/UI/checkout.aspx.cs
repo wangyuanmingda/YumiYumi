@@ -62,8 +62,8 @@ namespace yumiyumi.UI
                         sb.Append("<li><p>单价:" + temp.price + "</p></li>\n"); //单价
                         sb.Append("</ul>\n");
                         sb.Append("<div style='float:left;width:30%'><span id='qof' style='float:left;padding-right:20px;'>数量:" + q + "</span> ");
-                        sb.Append(" <img src='images/plus.png'style='height: 25px;padding-right:15px;float:left;'class='img-responsive' onclick='addtocart(this)'> ");
-                        sb.Append(" <img src='images/remove.png'style='height: 25px;float:left;'class='img-responsive' onclick='deletefromcart(this)'> </div>");
+                        sb.Append(" <img id='"+ id +"' src='images/plus.png'style='height: 25px;padding-right:15px;float:left;'class='img-responsive' onclick='addtocart(this)'> ");
+                        sb.Append(" <img id='"+ id +"' src='images/remove.png'style='height: 25px;float:left;'class='img-responsive' onclick='deletefromcart(this)'> </div>");
                         sb.Append("<div style='float:right;width:40%'><span>总价:￥" + every_price + "</span></div>");
                         sb.Append("<div class='delivery'>\n");
                         sb.Append("<div class='clearfix'></div>\n");

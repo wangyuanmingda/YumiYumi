@@ -19,8 +19,10 @@
             }
             function deletefromcart(env){
                 var id = (env.getAttribute("id"));
-                id = id.substr(1);
+                //id = id.substr(1);
+				alert(id);
                 var sd = getCookie("yumiyumi_cart" + id);
+				alert(sd);
                 if (sd == null) {
                     alert("Wrong");
                 }else{
@@ -31,6 +33,7 @@
                     }else{
                         quantity = parseInt(quantity) - 1;
                         var cookie_value = "quantity:" + quantity +";price:" + price;
+						alert(cookie_value);
                         setCookie("yumiyumi_cart" + id, cookie_value, "3600");
                         document.all["qof"].innerText= quantity;
                     }

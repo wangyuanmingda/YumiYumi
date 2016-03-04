@@ -10,18 +10,19 @@ namespace yumiyumi.Models
     {
         public bool addOneService(ServiceEntity service)
         {
-            string mysql = "insert `yumi_service`(`user_id`,`restaurant_id`,`service_type`,`ctime`) values(?user_id,?restaurant_id,?service_type,?time);";
+            string mysql = "insert `yumi_service`(`user_id`,`restaurant_id`,`service_type`,`ctime`,`status`) values(?user_id,?restaurant_id,?service_type,?time,?status);";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?user_id", MySqlDbType.Int32),
                     new MySqlParameter("?restaurant_id", MySqlDbType.Int32),
                     new MySqlParameter("?service_type", MySqlDbType.Int32),
-                    new MySqlParameter("?time", MySqlDbType.VarChar,32)
+                    new MySqlParameter("?time", MySqlDbType.VarChar,32),
+                    new MySqlParameter("?status", MySqlDbType.Int32)
                     };
             parameters[0].Value = service.user_id;
             parameters[1].Value = service.restaurant_id;
             parameters[2].Value = service.service_type;
             parameters[3].Value = service.ctime;
-
+            parameters[4].Value = service.status;
             //通过MySqlCommand的ExecuteReader()方法构造DataReader对象
             int count = MySqlHelper.ExecuteNonQuery(mysql, parameters);
             if (count > 0) { return true; }

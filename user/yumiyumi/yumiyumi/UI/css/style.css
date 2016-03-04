@@ -667,7 +667,6 @@ li.bt-nn {
 	margin-bottom:3em;
 }
 .cart-item{
-	width:20%;
 	float:left;
 	margin-right:5%;
 	
@@ -881,7 +880,9 @@ a.item_add1:hover{
 	font-size:1.1em;
 }
 ul.qty{
+	float: left;
 	padding:0;
+	width: 20%;
 	margin:0;
 	list-style:none;
 }

@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Checkout :: w3layouts</title>
+<title>YumiYumi</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,10 +21,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
 <script src="js/jquery.min.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/simpleCart.min.js"> </script>		
+ <script src="js/simple.js"></script>	
 <script src="js/jquery.cookie.js"> </script>	
 </head>
-<body>
+<body onload="loadcart()">
 <!-- header -->
 <div class="head-top">
 			
@@ -77,17 +77,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 			 <h1>我的购物车 (<%=shopping_count %>)</h1>
              <%=shopping_cart %>		
-        <p>总计：<%=total_price %></p>
+        <p style="float:right">总计：￥<%=total_price %></p>
     </div>
 </div>
-    <form action="#" method="post" runat="server" >
+    <form action="#" method="post" runat="server" style="float:right;;margin-right: 100px;margin-bottom: 0px; ">
         <asp:Button ID="Button1" OnClick="Unnamed_Click" runat="server" Text="提交订单" />
     </form>
 
 
 <!-- checkout -->	
 <!-- footer-->
-	<div class="footer">
+	<div class="footer" style="margin-top:100px;">
 		<div class="container">
 			<div class="footer-left">
 				<p>Copyrights © 2015 SpiceMystery All rights reserved | Design by <a href="http://w3layouts.com/">YumiYumi</a></p>

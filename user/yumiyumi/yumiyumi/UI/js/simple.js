@@ -17,6 +17,27 @@
                total();
                 alert("添加成功");
             }
+            function deletefromcart(env){
+                var id = (env.getAttribute("id"));
+                id = id.substr(1);
+                var sd = getCookie("yumiyumi_cart" + id);
+                if (sd == null) {
+                    alert("Wrong");
+                }else{
+                    quantity = parseInt(sd.split(";")[0].split(":")[1]);
+                    price = sd.split(";")[1].split(":")[1];
+                    if (quantity == 1) {
+                        alert("不能再减了。");
+                    }else{
+                        quantity = parseInt(quantity) - 1;
+                        var cookie_value = "quantity:" + quantity +";price:" + price;
+                        setCookie("yumiyumi_cart" + id, cookie_value, "3600");
+                        document.all["qof"].innerText= quantity;
+                    }
+                    total();
+                     
+                }
+            }
             function setCookie(cookieName, cookieValue, cookieExpires) {
                 cookieValue = escape(cookieValue);//编码latin-1  
                 if (cookieExpires == "") {

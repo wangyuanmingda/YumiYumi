@@ -22,48 +22,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/yumiyumi.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/simpleCart.min.js"> </script>	
-<script language=javascript>
-    function addtocart(env) {
-                var id = (env.getAttribute("id"));
-                id = id.substr(1);
-                var sd = getCookie("yumiyumi_cart" + id);
-                if (sd == null) {
-                    setCookie("yumiyumi_cart" + id, 1, "3600")
-                } else {
-                    setCookie("yumiyumi_cart" + id, parseInt(sd) + 1, "3600");
-                }
-                alert("添加成功");
-            }
-            function setCookie(cookieName, cookieValue, cookieExpires) {
-                cookieValue = escape(cookieValue);//编码latin-1  
-                if (cookieExpires == "") {
-                    var nowDate = new Date();
-                    nowDate.setMonth(nowDate.getMonth() + 6);
-                    cookieExpires = nowDate.toGMTString();
-                }
-                document.cookie = cookieName + "=" + cookieValue + ";expires=" + cookieExpires + ";path=/";
-            }
-            function getCookie(cookie_name) {
-                var value = null;
-                var allcookies = document.cookie;
-                var cookie_pos = allcookies.indexOf(cookie_name);
-                // 如果找到了索引，就代表cookie存在，    
-                // 反之，就说明不存在。    
-                if (cookie_pos != -1) {
-                    // 把cookie_pos放在值的开始，只要给值加1即可。    
-                    cookie_pos += cookie_name.length + 1;
-                    var cookie_end = allcookies.indexOf(";", cookie_pos);
-                    if (cookie_end == -1) {
-                        cookie_end = allcookies.length;
-                    }
-                    value = unescape(allcookies.substring(cookie_pos, cookie_end));
-                }
-                return value;
-            }
-</script>	
+  <script src="js/simple.js"></script>	
+
 </head>
-<body>
+<body onload="loadcart()">
 <!-- header -->
 <div class="head-top">
 			
@@ -99,9 +61,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="header-right1">
 						<div class="cart box_1">
 							<a href="checkout.aspx">
-								<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
-							</a>	
-							<p><a href="javascript:;" onclick="emptyCart();" class="simpleCart_empty">empty card</a></p>
+								<h3> <span id="totalprice"class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
+							</a>
+							<p><span onclick="emptycart()"><a href="javascript:;" class="simpleCart_empty">empty cart</a></span></p>
 							<div class="clearfix"> </div>
 						</div>
 					</div>

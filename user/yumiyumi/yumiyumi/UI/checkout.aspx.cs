@@ -14,12 +14,14 @@ namespace yumiyumi.UI
         public string shopping_cart;
         public int shopping_count;
         public int total_price;
+        public int every_price;
         protected void Page_Load(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
             DishDAO dishDAO = new DishDAO();
             shopping_count = 0;
             total_price = 0;
+            every_price = 0;
             for (int i = 0; i < Request.Cookies.Count; i++)
             {
    
@@ -32,7 +34,11 @@ namespace yumiyumi.UI
                     {
                         shopping_count++;
                         DishEntity temp = dishDAO.getDishById(Convert.ToInt32(id));
-                        total_price = Convert.ToInt32(Request.Cookies[i].Value.ToString()) * temp.price;
+                        string eachcookie = System.Web.HttpUtility.UrlDecode(Request.Cookies[i].Value.ToString());
+                        string[] quantity = eachcookie.Split(';');
+                        int q = Convert.ToInt32(quantity[0].Split(':')[1]);
+                        total_price += q * temp.price;
+                        every_price = q * temp.price;
                         Response.Write("Cookie[" + i + "]的Name为：" + id + "<br/>\n");
                         Response.Write("Cookie[" + i + "]的Value为：" + Request.Cookies[i].Value.ToString() + "<br/>\n");
                         sb.Append("<script>$(document).ready(function (c) {");
@@ -51,14 +57,15 @@ namespace yumiyumi.UI
                         sb.Append("<img src='images/5p.jpg' class='img-responsive' alt=''>\n");//菜的图片
                         sb.Append("</div>\n");
                         sb.Append("<div class='cart-item-info'>\n");
-                        sb.Append("<h3><a href='#'>"+temp.dish_name+"</a><span>Pickup time:</span></h3>\n");
+                        sb.Append("<h3><a href='#'>"+temp.dish_name+"</a> </h3>\n");
                         sb.Append("<ul class='qty'>\n");
-                        sb.Append("<li><p>单价:"+temp.price+"</p></li>\n"); //单价
-                        sb.Append("<li><p>数量:" + Request.Cookies[i].Value.ToString() + "</p></li>\n");
+                        sb.Append("<li><p>单价:" + temp.price + "</p></li>\n"); //单价
                         sb.Append("</ul>\n");
+                        sb.Append("<div style='float:left;width:30%'><span id='qof' style='float:left;padding-right:20px;'>数量:" + q + "</span> ");
+                        sb.Append(" <img src='images/plus.png'style='height: 25px;padding-right:15px;float:left;'class='img-responsive' onclick='addtocart(this)'> ");
+                        sb.Append(" <img src='images/remove.png'style='height: 25px;float:left;'class='img-responsive' onclick='deletefromcart(this)'> </div>");
+                        sb.Append("<div style='float:right;width:40%'><span>总价:￥" + every_price + "</span></div>");
                         sb.Append("<div class='delivery'>\n");
-                        sb.Append("<p>Service Charges : $10.00</p>\n");
-                        sb.Append("<span>Delivered in 1-1:30 hours</span>\n");
                         sb.Append("<div class='clearfix'></div>\n");
                         sb.Append("</div>\n");
                         sb.Append("</div>\n");
@@ -70,7 +77,7 @@ namespace yumiyumi.UI
             }
             if (shopping_count == 0)
             {
-                sb.Append("<img src='images/emptycart.jpg' class='img-responsive' alt=''>\n");//购物车是空的
+                sb.Append("<img  src='images/emptycart.png' class='img-responsive' alt='' style='padding-left:100px'>\n");//购物车是空的
             }
             shopping_cart = sb.ToString();
         }
@@ -104,7 +111,11 @@ namespace yumiyumi.UI
                     {
                         DishEntity temp = dishDAO.getDishById(Convert.ToInt32(id));
                         OrderDetailEntity orderDetail = new OrderDetailEntity();
-                        orderDetail.count = Convert.ToInt32(Request.Cookies[i].Value.ToString());
+                        
+                        string eachcookie = System.Web.HttpUtility.UrlDecode(Request.Cookies[i].Value.ToString());
+                        string[] quantity = eachcookie.Split(';');
+                        int q = Convert.ToInt32(quantity[0].Split(':')[1]);
+                        orderDetail.count = q;
                         orderDetail.dish_id = temp.id;
                         order.dishList.Add(orderDetail);
 

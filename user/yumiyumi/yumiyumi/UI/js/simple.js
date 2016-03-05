@@ -60,8 +60,7 @@
            function deletepart(env){
             	//把cookie中所有相关id 的cookie都删除。
             	var idtotel = (env.getAttribute("id"));
-            	var id = idtotel.split(";")[1];
-            	var j = idtotel.split(";")[0].split("e")[1]; 
+            	var id = idtotel.split("e")[1]; 
             	var allcookies = document.cookie;
             	var sd = "yumiyumi_cart" + id ;
 
@@ -75,8 +74,8 @@
                                     var date = new Date(); 
                                     date.setTime(date.getTime() - 10000); 
                                     setCookie(cookiename , null, date.toGMTString());
-                                    elem = "#cart-header" + j ;
-                                    fadeOut(elem);
+                                  //  elem = "#cart-header" + j ;
+                                  //  fadeOut(elem);
                                     } 
                                 }
             }

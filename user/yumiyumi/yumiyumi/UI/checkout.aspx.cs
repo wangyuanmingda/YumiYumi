@@ -42,7 +42,7 @@ namespace yumiyumi.UI
                         Response.Write("Cookie[" + i + "]的Name为：" + id + "<br/>\n");
                         Response.Write("Cookie[" + i + "]的Value为：" + Request.Cookies[i].Value.ToString() + "<br/>\n");
                         sb.Append("<script>$(document).ready(function (c) {");
-                        sb.Append("$('#close" + i + ";"+ id +"').on('click', function (c) {");
+                        sb.Append("$('#close" + id +"').on('click', function (c) {");
                         sb.Append("$.cookie('"+name+"', '', { expires: -1 });");
                         sb.Append("$('#cart-header" + i + "').fadeOut('slow', function (c) {");
                         sb.Append("$('#cart-header" + i + "').remove();");
@@ -51,7 +51,7 @@ namespace yumiyumi.UI
                         sb.Append("});");
                         sb.Append("</script>\n");
                         sb.Append("<div id='cart-header" + i + "'class='cart-header3'>\n");
-                        sb.Append("<div id='close" + i + ";" + id + "' class='close3'> </div>\n");
+                        sb.Append("<div id='close" + id + "' class='close3' onclick='deletepart(this)'> </div>\n");
                         sb.Append("<div class='cart-sec simpleCart_shelfItem'>\n");
                         sb.Append("<div class='cart-item cyc'>\n");
                         sb.Append("<img src='images/5p.jpg' class='img-responsive' alt=''>\n");//菜的图片

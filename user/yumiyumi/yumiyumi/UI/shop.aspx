@@ -20,9 +20,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
 <script src="js/jquery.min.js"></script>
-    <script type="text/javascript" src="js/yumiyumi.js"></script>
+<script type="text/javascript" src="js/simple.js"></script>	
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-  <script src="js/simple.js"></script>	
+
 
 </head>
 <body onload="loadcart()">

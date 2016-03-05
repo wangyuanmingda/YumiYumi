@@ -63,7 +63,7 @@ namespace yumiyumi.UI
                     sb.Append("<div class='item_add'><span  class='item_price'><h6>ONLY $" + disheslist[kk].price + ".00</h6></span></div>");
                     sb.Append("</div>");
                     sb.Append("<div class='pr-right'>");
-                    sb.Append("<div class='item_add'><span id='a" + disheslist[kk].id + "' onclick='addtocart(this)' class='item_price'><a href='#'>来一份</a></span></div>");
+                    sb.Append("<div class='item_add'><span id='a" + disheslist[kk].id + "' onclick='addtocart(this,0)' class='item_price'><a href='#'>来一份</a></span></div>");
                     sb.Append("</div>");
                     sb.Append("<div class='clearfix'></div>");
                     sb.Append("</div>");

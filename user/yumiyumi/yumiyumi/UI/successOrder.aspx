@@ -22,9 +22,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/yumiyumi.js"></script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-<script src="js/simpleCart.min.js"> </script>		
+<script src="js/simple.js"> </script>		
 </head>
-<body>
+<body onload="emptycart();">
 <!-- header -->
 <div class="head-top">
 			

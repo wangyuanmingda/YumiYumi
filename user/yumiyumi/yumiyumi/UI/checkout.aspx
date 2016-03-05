@@ -19,12 +19,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Libre+Baskerville:400,700' rel='stylesheet' type='text/css'>
+<script src="js/simple.js"></script>
 <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.cookie.js"> </script>
 <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen" />
-
- <script src="js/simple.js"></script>	
-
-<script src="js/jquery.cookie.js"> </script>	
+	
 </head>
 <body onload="loadcart()">
 <!-- header -->
@@ -62,7 +61,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="header-right1">
 						<div class="cart box_1">
 							<a href="checkout.aspx">
-								<h3> <span class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
+								<h3> <span id="totalprice" class="simpleCart_total">$0.00</span> (<span id="simpleCart_quantity" class="simpleCart_quantity">0</span> items)<img src="images/bag.png" alt=""></h3>
 							</a>	
 							<p><a href="javascript:;" onclick="emptyCart()" class="simpleCart_empty">empty card</a></p>
 							<div class="clearfix"> </div>
@@ -79,7 +78,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="container">
 			 <h1>我的购物车 (<%=shopping_count %>)</h1>
              <%=shopping_cart %>		
-        <p style="float:right">总计：￥<%=total_price %></p>
+        <span style="float:right" id="totals">总计：￥<%=total_price %></span>
     </div>
 </div>
     <form action="#" method="post" runat="server" style="float:right;;margin-right: 100px;margin-bottom: 0px; ">

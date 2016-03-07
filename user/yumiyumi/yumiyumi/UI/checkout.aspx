@@ -81,6 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <span style="float:right" id="totals">总计：￥<%=total_price %></span>
     </div>
 </div>
+
     <%=commitOrder %>
 
 <!-- checkout -->	

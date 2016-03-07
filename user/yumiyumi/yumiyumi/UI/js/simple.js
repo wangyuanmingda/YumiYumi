@@ -74,44 +74,10 @@
                                     var date = new Date(); 
                                     date.setTime(date.getTime() - 10000); 
                                     setCookie(cookiename , null, date.toGMTString());
-                                  //  elem = "#cart-header" + j ;
-                                  //  fadeOut(elem);
+									total(1);
                                     } 
                                 }
             }
-    function fadeOut(elem, speed, opacity){
-    /*
-     * 参数说明
-     * elem==>需要淡入的元素
-     * speed==>淡入速度,正整数(可选)
-     * opacity==>淡入到指定的透明度,0~100(可选)
-     */
-    speed = speed || 20;
-    opacity = opacity || 0;
-    //初始化透明度变化值为0
-    var val = 100;
-     var iBase = {
-            	 	Id: function(name){
-            	 		return document.getElementById(name);
-       					},
-       					//设置元素透明度,透明度值按IE规则计,即0~100
-       				SetOpacity: function(ev, v){
-       					ev.filters ? ev.style.filter = 'alpha(opacity=' + v + ')' : ev.style.opacity = v / 100;
-       					}
-       				}
-    //循环将透明值以5递减,即淡出效果
-    (function(){
-        iBase.SetOpacity(elem, val);
-        val -= 5;
-        if (val >= opacity) {
-            setTimeout(arguments.callee, speed);
-        }else if (val < 0) {
-            //元素透明度为0后隐藏元素
-            elem.style.display = 'none';
-        }
-    })();
-}
-
 
             function setCookie(cookieName, cookieValue, cookieExpires) {
                 cookieValue = escape(cookieValue);//编码latin-1  
@@ -147,9 +113,12 @@
                 if (allcookies != ""){
                         var eachcookie = allcookies.split(";");//得到一个数组
                         for(var i = 0; i < eachcookie.length ;i++){
+                            var cookiename = eachcookie[i].split("=")[0];
+                            if(cookiename.indexOf("yumiyumi_cart") != -1) {
                                     var temp = unescape(eachcookie[i].split("=")[1]).split(";");
                                     totalquantity += parseInt(temp[0].split(":")[1]);
                                     totalprice +=parseInt(temp[0].split(":")[1])*temp[1].split(":")[1];
+                            }
                         }
                  }
                document.all["totalprice"].innerText="￥" + totalprice;

@@ -17,7 +17,7 @@ namespace yumiyumi.UI
             context.Response.ContentType = "text/plain";
             int service_id = Convert.ToInt32(context.Request.QueryString["service_id"]);
             ServiceDAO serviceDAO = new ServiceDAO();
-            bool success = serviceDAO.deleteById(service_id);
+            bool success = serviceDAO.cancleById(service_id);
             context.Response.Write(success + "\n");
             context.Response.Write("help");
         }

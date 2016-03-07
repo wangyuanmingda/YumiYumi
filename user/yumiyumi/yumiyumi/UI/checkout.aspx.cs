@@ -15,6 +15,7 @@ namespace yumiyumi.UI
         public int shopping_count;
         public int total_price;
         public int every_price;
+        public string commitOrder;
         protected void Page_Load(object sender, EventArgs e)
         {
             StringBuilder sb = new StringBuilder();
@@ -80,6 +81,14 @@ namespace yumiyumi.UI
             if (shopping_count == 0)
             {
                 sb.Append("<img class='emptycart img-responsive ' src='images/emptycart.png'alt=''>\n");//购物车是空的
+            }
+            else
+            {
+                StringBuilder ButtonBuilder = new StringBuilder();
+                ButtonBuilder.Append("<form action='#' method='post' runat='server' class='submit'>");
+                ButtonBuilder.Append("<asp:Button ID='Button1' OnClick='Unnamed_Click' runat='server' Text='提交订单' />");
+                ButtonBuilder.Append("</form>");
+                commitOrder = ButtonBuilder.ToString();
             }
             shopping_cart = sb.ToString();
         }

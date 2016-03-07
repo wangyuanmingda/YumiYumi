@@ -111,6 +111,24 @@ namespace waiterPlatform.UI
                         sb.Append("</td>");
                         sb.Append("</tr>");
                         break;
+                    case 2:
+                        sb.Append("<tr>");
+                        sb.Append("<td><input type='checkbox' name='checkbox'/></td>");
+                        sb.Append("<td>" + list[i].user_id + "</td>");
+                        sb.Append("<td>" + list[i].service_name + "</td>");
+                        sb.Append("<td>" + date + "</td>");
+                        sb.Append("<td class='bl_red'><span class='label label-important'>取消</span></td>");
+                        sb.Append("<td>");
+                        sb.Append("<input id='" + list[i].user_id + "' type='button' value='绘制路线' onclick='strokeRect(this);'/> ");
+
+                        sb.Append("<a href='#' class='button green'>");
+                        sb.Append("<div class='icon'><span class='ico-pencil'></span></div>");
+                        sb.Append("</a>");
+                        //sb.Append("<div><input id='" + list[i].id + "' type='button' value='完成'  OnClick='deleteService(this)'></div>");
+                        sb.Append("</a>");
+                        sb.Append("</td>");
+                        sb.Append("</tr>");
+                        break;
                 }
             }
             servicePart = sb.ToString();

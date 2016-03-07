@@ -134,7 +134,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
     <div class="contact">
 	 <div class="container">
-         <span id="0" onclick="disp_prompt();addService(this)"  class="item_price"><a  class="morebtn hvr-rectangle-in" href="#"><div name="order">加汤</div></a></span>
+         <span id="0" onclick="addService(this)"  class="item_price"><a  class="morebtn hvr-rectangle-in" href="#"><div name="order">加汤</div></a></span>
          <span id="1" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">结账</a></span>
          <span id="2" onclick="addService(this)"  class="item_price"><a class="morebtn hvr-rectangle-in" href="#">加水</a></span>
          <!-- 显示呼叫状态 -->

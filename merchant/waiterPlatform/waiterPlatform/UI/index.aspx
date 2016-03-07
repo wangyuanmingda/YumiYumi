@@ -106,6 +106,56 @@
             });
         }
     </script> 
+    <!--  模态窗口    -->
+    <style type="text/css">
+        <!--
+        #ap {
+        position:absolute;
+        z-index:1; left: 400px;
+        top: 140px;
+        background-color: #DAF5FC;
+        border: 1px solid #00CCFF;
+        display:none;
+        }
+        #qp{
+        position:absolute;
+        z-index:1;
+        filter:alpha(opacity=60);
+        width:100%;
+        height:100%;
+        background-color: #eeeeee;
+        display:none;
+        }
+        body {
+        margin-left: 0px;
+        margin-top: 0px;
+        margin-right: 0px;
+        margin-bottom: 0px;
+        }
+        -->
+</style>
+    <script language="javascript">
+        i = 1;
+        function acdiv() {
+            qp.style.display = 'block';
+            ap.style.display = 'block';
+            if (i < 15) {
+                i++;
+                ap.style.width = 2 * i * i;
+                ap.style.height = 1.1 * i * i;
+                ap.style.left = 20 * i;
+                ap.style.top = 10 * i;
+                var timer = setTimeout("acdiv()", 1);
+            }
+
+        }
+        function closediv() {
+            ap.style.display = 'none';
+            qp.style.display = 'none';
+            i = 0;
+        }
+    </script>
+
 
     <script>
         function strokeRect(env) {
@@ -231,10 +281,14 @@
 
                                 };
                             </script>
+                            <div id="qp"></div>
+<p></p>
+<input type="button" onClick="route();" value="绘制路线" />
+
                             <div class="head orange">                                
                                 <h2>实时呼叫服务</h2>
                                 <ul class="buttons">
-                                    <li><a href="#" onClick="source('table_main'); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
+                                    <li><a href="#" onClick="route(); return false;"><div class="icon"><span class="ico-info"></span></div></a></li>
                                     <li><a href="#" class="ublock"><div class="icon"><span class="ico-undo"></span></div></a></li>
                                     <li><a href="#" class="cblock"><div class="icon"><span class="ico-sort"></span></div></a></li>
                                 </ul>

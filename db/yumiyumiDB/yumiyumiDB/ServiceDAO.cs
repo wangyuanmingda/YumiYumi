@@ -30,9 +30,9 @@ namespace yumiyumiDB
             else { return false; }
         }
 
-        public bool deleteById(int serviceId)
+        public bool cancleById(int serviceId)
         {
-            string mysql = "Delete FROM yumiyumi.yumi_service where id = ?serviceId";
+            string mysql = "UPDATE yumi_service SET status = '2' WHERE id = ?serviceId";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?serviceId", MySqlDbType.UInt32),
                     };

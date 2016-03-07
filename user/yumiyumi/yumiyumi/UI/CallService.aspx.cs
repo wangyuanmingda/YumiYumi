@@ -40,16 +40,17 @@ namespace yumiyumi.UI
             {
                 DateTime todaydate = Convert.ToDateTime(list[i].ctime);
                 String date = todaydate.ToString("hh:mm:ss");
-
-                sb.Append("<tr>");
-                sb.Append("<td><input type='checkbox' name='checkbox'/></td>");
-                sb.Append("<td>" + list[i].user_id + "</td>");
-                sb.Append("<td>" + list[i].service_name + "</td>");
-                sb.Append("<td>" + date + "</td>");
-                sb.Append("<td>等待中</td>");
-                sb.Append("<td><a id='" + list[i].id + "' href='#' OnClick='CancleService(this)'>取消服务</a></td>");
-                sb.Append("</td>");
-                sb.Append("</tr>");
+                if(list[i].status!= 2){
+                    sb.Append("<tr>");
+                    sb.Append("<td><input type='checkbox' name='checkbox'/></td>");
+                    sb.Append("<td>" + list[i].user_id + "</td>");
+                    sb.Append("<td>" + list[i].service_name + "</td>");
+                    sb.Append("<td>" + date + "</td>");
+                    sb.Append("<td>等待中</td>");
+                    sb.Append("<td><a id='" + list[i].id + "' href='#' OnClick='CancleService(this)'>取消服务</a></td>");
+                    sb.Append("</td>");
+                    sb.Append("</tr>");
+                }
             }
             servicePart = sb.ToString();
 

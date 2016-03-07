@@ -323,6 +323,20 @@ function source(doc){
        
 }
 
+function route(){
+    $("#source").dialog({autoOpen: false, 
+                         modal: true, 
+                         width: ($('body').width()-40),                         
+                         dialogClass: 'sourcePosition',
+                         close: function(){
+                             $("#source").html('');
+                         }
+                     });        
+    $("#source").load('test.aspx');                       
+    $("#source").dialog('open');
+       
+}
+
 function thumbs(){
     
     $(".thumbs").each(function(){        

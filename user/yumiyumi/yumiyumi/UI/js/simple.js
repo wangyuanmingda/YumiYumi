@@ -1,11 +1,11 @@
-   function addtocart(env,i) {
+   function addtocart(env,i,p) {
                 var id = (env.getAttribute("id"));
                 id = id.substr(1);
                 var sd = getCookie("yumiyumi_cart" + id);
                 var quantity = 0;
                 var price = 0;
                 if (sd == null) {
-                     var cookie_value = "quantity:" + 1 + ";price:"+ 12;
+                     var cookie_value = "quantity:" + 1 + ";price:"+ p ;
                     setCookie("yumiyumi_cart" + id,cookie_value, "3600")
                 } else {
                      quantity = parseInt(sd.split(";")[0].split(":")[1]) + 1;
@@ -19,7 +19,7 @@
                	var temptotal = price * quantity;
                	var idtemp = "q" + id;
                 var totaltemp = "t" + id;
-                document.all[idtemp].innerText= "数量：" + parseInt(quantity);
+                document.all[idtemp].innerText= parseInt(quantity);
                 document.all[totaltemp].innerText = "总价：￥" + parseInt(temptotal);
 
                }
@@ -51,10 +51,10 @@
                         document.all[idtemp].innerText="数量：" +  quantity;
                         document.all[totaltemp].innerText = "总价：￥" + parseInt(temptotal);
                     }
-                //    total();
+                    total(1);
                      
                 }
-                loadcart();
+              //  loadcart();
             }
 
            function deletepart(env){

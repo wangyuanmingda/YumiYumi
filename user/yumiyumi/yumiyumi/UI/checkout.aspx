@@ -81,7 +81,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <span style="float:right" id="totals">总计：￥<%=total_price %></span>
     </div>
 </div>
-    <form action="#" method="post" runat="server" style="float:right;;margin-right: 100px;margin-bottom: 0px; ">
+    <form action="#" method="post" runat="server" class="submit">
         <asp:Button ID="Button1" OnClick="Unnamed_Click" runat="server" Text="提交订单" />
     </form>
 

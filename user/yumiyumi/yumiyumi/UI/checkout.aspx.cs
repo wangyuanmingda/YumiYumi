@@ -83,9 +83,9 @@ namespace yumiyumi.UI
             else
             {
                 StringBuilder ButtonBuilder = new StringBuilder();
-                ButtonBuilder.Append("<form action='#' method='post' runat='server' style='float:right;margin-right: 100px;margin-bottom: 0px; '>");
-                ButtonBuilder.Append("<asp:Button ID='Button1' OnClick='Unnamed_Click' runat='server' Text='提交订单' />");
-                ButtonBuilder.Append("</form>");
+                ButtonBuilder.Append("<form action='#' method='post' runat='server'>\n");
+                ButtonBuilder.Append("<asp:Button ID='Button1' OnClick='Unnamed_Click' runat='server' Text='提交订单'/>\n");
+                ButtonBuilder.Append("</form>\n");
                 commitOrder = ButtonBuilder.ToString();
             }
             shopping_cart = sb.ToString();

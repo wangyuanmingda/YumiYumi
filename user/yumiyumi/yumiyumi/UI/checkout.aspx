@@ -80,8 +80,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
              <%=shopping_cart %>		
         <span style="float:right" id="totals">总计：￥<%=total_price %></span>
     </div>
+    <form id="Form1" action='#' method='post' runat='server'>;
+     <asp:Button ID='Button1' OnClick='Unnamed_Click' runat='server' Text='提交订单'/>
+    </form>
 </div>
-    <%=commitOrder %>
+    
 
 <!-- checkout -->	
 <!-- footer-->

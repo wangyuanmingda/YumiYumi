@@ -60,8 +60,12 @@ namespace yumiyumi.UI
                         sb.Append("<div class='cart-item-info'>\n");
                         sb.Append("<h3><a href='#'>"+temp.dish_name+"</a> </h3>\n");
                         sb.Append("<ul class='qty'>\n");
-                        sb.Append("<li><p>单价:" + temp.price + "</p></li>\n"); //单价
+                        sb.Append("<li><p>\0\0\0￥" + temp.price + "</p></li>\n"); //单价
                         sb.Append("</ul>\n");
+                        sb.Append("<ul class='qty' style='width:100%'>\n");
+                        sb.Append("<li><p'>实价：" + temp.price + "</p></li>\n"); //单价
+                        sb.Append("</ul>\n");
+                        sb.Append("<div style='width:100%;float:left' ><p>折扣原因：周五特价菜</p></div>\n");
                         sb.Append("<div class='quantity'>");
                         sb.Append("<span class='number'>数量：</span>");
                         sb.Append(" <img id=p" + id + " src='images/remove.png'class='img-responsive img_minus' onclick='deletefromcart(this)'>");
@@ -78,9 +82,16 @@ namespace yumiyumi.UI
                     }
                 }
             }
+            //检测是否是会员
+            if(true){
+
+            }
             if (shopping_count == 0)
             {
                 sb.Append("<img class='emptycart img-responsive ' src='images/emptycart.png'alt=''>\n");//购物车是空的
+                sb.Append("<a href = 'restaurants.aspx' class='btn'>");
+
+                sb.Append("<input type='button' value=''/></a>\n");
             }
             else
             {

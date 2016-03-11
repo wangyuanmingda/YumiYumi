@@ -90,16 +90,11 @@ namespace yumiyumi.UI
             {
                 sb.Append("<img class='emptycart img-responsive ' src='images/emptycart.png'alt=''>\n");//购物车是空的
                 sb.Append("<a href = 'restaurants.aspx' class='btn'>");
-
                 sb.Append("<input type='button' value=''/></a>\n");
             }
             else
             {
-                StringBuilder ButtonBuilder = new StringBuilder();
-                ButtonBuilder.Append("<form action='#' method='post' runat='server' class='submit'>");
-                ButtonBuilder.Append("<asp:Button ID='Button1' OnClick='Unnamed_Click' runat='server' Text='提交订单' />");
-                ButtonBuilder.Append("</form>");
-                commitOrder = ButtonBuilder.ToString();
+                commitOrder = "Temp1";
             }
             shopping_cart = sb.ToString();
         }

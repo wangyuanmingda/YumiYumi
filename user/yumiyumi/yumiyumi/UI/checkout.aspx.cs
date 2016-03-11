@@ -81,14 +81,11 @@ namespace yumiyumi.UI
             if (shopping_count == 0)
             {
                 sb.Append("<img class='emptycart img-responsive ' src='images/emptycart.png'alt=''>\n");//购物车是空的
+                
             }
             else
             {
-                StringBuilder ButtonBuilder = new StringBuilder();
-                ButtonBuilder.Append("<form action='#' method='post' runat='server'>\n");
-                ButtonBuilder.Append("<asp:Button ID='Button1' OnClick='Unnamed_Click' runat='server' Text='提交订单'/>\n");
-                ButtonBuilder.Append("</form>\n");
-                commitOrder = ButtonBuilder.ToString();
+                commitOrder = "Temp1";
             }
             shopping_cart = sb.ToString();
         }

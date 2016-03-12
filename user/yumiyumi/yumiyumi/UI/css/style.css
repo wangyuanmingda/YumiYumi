@@ -685,6 +685,8 @@ li.bt-nn {
 .cart-item-info h3{
 	font-size:1em;
 	font-weight:600;
+	width:50%;
+	float: left;
 }
 .cart-item-info h3 a{
 	color:#000;
@@ -717,6 +719,16 @@ li.bt-nn {
 	font-size:0.65em;
 	font-weight:400;
 } 
+.btn input{
+    position: absolute;
+    padding-left: 0px;
+    width: 80px;
+    margin-left: 212px;
+    margin-top: 120px;
+    background-color: transparent;
+    padding-right: 0px;
+
+}
 
 .close1,.close2{
   background: url('../images/close_1.png') no-repeat 0px 0px;
@@ -1733,7 +1745,7 @@ ul.qty{
   padding-left: 6px;
 }
 .total_price{
-  float: right;
+  float: left;
   width: 50%;
 }
 .number{
@@ -1747,6 +1759,7 @@ ul.qty{
 }
 .emptycart{
   padding-left: 0px;
+  position:absolute;
 }
 }
 /*-- responsive --*/

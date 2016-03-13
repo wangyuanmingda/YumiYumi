@@ -75,6 +75,8 @@
                                     date.setTime(date.getTime() - 10000); 
                                     setCookie(cookiename , null, date.toGMTString());
 									total(1);
+									var iddelete = "cart-header" + id;
+									document.getElementById(iddelete).style.display = "none";
                                     } 
                                 }
             }

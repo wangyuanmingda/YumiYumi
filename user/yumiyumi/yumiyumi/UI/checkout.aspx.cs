@@ -20,6 +20,7 @@ namespace yumiyumi.UI
         {
             StringBuilder sb = new StringBuilder();
             DishDAO dishDAO = new DishDAO();
+            DiscountDAO discountDAO = new DiscountDAO();
             shopping_count = 0;
             total_price = 0;
             every_price = 0;
@@ -35,11 +36,13 @@ namespace yumiyumi.UI
                     {
                         shopping_count++;
                         DishEntity temp = dishDAO.getDishById(Convert.ToInt32(id));
+                        int branchid = temp.brand_id;
+                        DiscountEntity discounttemp = discountDAO.getDiscountById(Convert.ToInt32(id));
                         string eachcookie = System.Web.HttpUtility.UrlDecode(Request.Cookies[i].Value.ToString());
                         string[] quantity = eachcookie.Split(';');
                         int q = Convert.ToInt32(quantity[0].Split(':')[1]);
-                        total_price += q * temp.price;
-                        every_price = q * temp.price;
+                        int price = temp.price;
+                        
                         /* Response.Write("Cookie[" + i + "]的Name为：" + id + "<br/>\n");
                        Response.Write("Cookie[" + i + "]的Value为：" + Request.Cookies[i].Value.ToString() + "<br/>\n");
                         sb.Append("<script>$(document).ready(function (c) {");
@@ -51,7 +54,7 @@ namespace yumiyumi.UI
                         sb.Append("});");
                         sb.Append("});");
                         sb.Append("</script>\n");*/
-                        sb.Append("<div id='cart-header" + i + "'class='cart-header3'>\n");
+                        sb.Append("<div id='cart-header" + id + "'class='cart-header3'>\n");
                         sb.Append("<div id='close" + id + "' class='close3' onclick='deletepart(this)'> </div>\n");
                         sb.Append("<div class='cart-sec simpleCart_shelfItem'>\n");
                         sb.Append("<div class='cart-item cyc'>\n");
@@ -62,10 +65,17 @@ namespace yumiyumi.UI
                         sb.Append("<ul class='qty'>\n");
                         sb.Append("<li><p>\0\0\0￥" + temp.price + "</p></li>\n"); //单价
                         sb.Append("</ul>\n");
-                        sb.Append("<ul class='qty' style='width:100%'>\n");
-                        sb.Append("<li><p'>实价：" + temp.price + "</p></li>\n"); //单价
-                        sb.Append("</ul>\n");
-                        sb.Append("<div style='width:100%;float:left' ><p>折扣原因：周五特价菜</p></div>\n");
+                       
+                        if (discounttemp.reason != null){
+                            sb.Append("<ul class='qty' style='width:100%'>\n");
+                            sb.Append("<li><p'>实价：￥" + discounttemp.currentprice + "</p></li>\n"); //单价
+                            price = discounttemp.currentprice;
+                            sb.Append("</ul>\n");
+                            sb.Append("<div style='width:100%;float:left' ><p>折扣原因："+ discounttemp.reason + "</p></div>\n");
+                        }
+                        total_price += q * price;
+                        every_price = q * price;
+                        
                         sb.Append("<div class='quantity'>");
                         sb.Append("<span class='number'>数量：</span>");
                         sb.Append(" <img id=p" + id + " src='images/remove.png'class='img-responsive img_minus' onclick='deletefromcart(this)'>");

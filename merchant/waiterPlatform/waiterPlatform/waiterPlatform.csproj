@@ -380,6 +380,10 @@
       <Project>{93c5164d-f0d4-43b7-9c0d-0de63a3b27c3}</Project>
       <Name>yumiyumiDB</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\..\user\yumiyumi\yumiyumi\yumiyumi.csproj">
+      <Project>{1dd6b0cd-f8c6-4dc4-9cae-87dd5cbbb236}</Project>
+      <Name>yumiyumi</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

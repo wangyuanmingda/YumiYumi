@@ -313,6 +313,8 @@
     <Compile Include="Models\AccountDAO.cs" />
     <Compile Include="Models\AccountEntity.cs" />
     <Compile Include="Models\BrandEntity.cs" />
+    <Compile Include="Models\DiscountDAO.cs" />
+    <Compile Include="Models\DiscountEntity.cs" />
     <Compile Include="Models\DishDAO.cs" />
     <Compile Include="Models\DishEntity.cs" />
     <Compile Include="Models\IdentityModels.cs" />

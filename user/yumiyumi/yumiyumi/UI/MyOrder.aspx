@@ -97,17 +97,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                             <div class="data-fluid">
                                 <table cellpadding="0" cellspacing="0" width="100%" class="table lcnp">
                                     <thead>
-                                        <tr>
+                                     <!--   <tr>
                                             <th width="16"></th>                                        
                                             <th>桌号</th>
                                             <th></th>
                                             <th>点单情况</th>
                                             <th>点单时间</th> 
                                             <th>支付情况</th>  
-                                            <th>价格</th>                      
+                                            <th>价格</th>                     
                                             <th width="78">状态</th>
                                             <th width="78">操作</th>
-                                        </tr>
+                                        </tr> -->
                                     </thead>
                                     <tbody>
                                     <%=orderPart %>

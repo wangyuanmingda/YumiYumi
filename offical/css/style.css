@@ -69,7 +69,7 @@ nav a:focus {
 	transform: translateX(0px);
 }
 .banner {
-  background: url(../images/m1.jpg)no-repeat center;
+  background: url(../images/logo-long.png)no-repeat center;
   min-height: 896px;
   background-size: cover;
 }
@@ -321,8 +321,9 @@ span.menu img {
 /*--header end here--*/
 /*--about start here--*/
 .about-left {
-  background: url(../images/3.png)no-repeat center;
+  background: url(../images/side.jpg)no-repeat center;
   min-height: 690px;
+  background-size: cover;
 }
 .about-top h3 {
 	font-size: 35px;

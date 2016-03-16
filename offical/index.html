@@ -19,6 +19,7 @@
 <!-- start-smoth-scrolling -->
 <script type="text/javascript" src="js/move-top.js"></script>
 <script type="text/javascript" src="js/easing.js"></script>
+<script type="text/javascript" src="js/sendtodatabase.js"></script>
 	<script type="text/javascript">
 			jQuery(document).ready(function($) {
 				$(".scroll").click(function(event){		
@@ -35,16 +36,16 @@
     <div class="container">
        	  <div class="header-main">
 			<div class="logo">
-				<a href="index.html"> <img src="images/logo.png" alt=""/> </a>
+				<a href="index.html"> <img style="width:150px;"src="images/logo.png" alt=""/> </a>
 			</div>
 			<div class="top-nav">
 				<span class="menu"> <img src="images/icon.png" alt=""/></span>
 			<nav class="cl-effect-1">	
 				<ul class="res">
 					    <li><a href="#" class="scroll"> <span data-hover="Home">介绍</span></a></li>
-						<li><a href="#About" class="scroll"> <span data-hover="About">关于</span></a></li>
-						<li><a href="#Services" class="scroll"> <span data-hover="Services">增值服务</span></a></li>
-						<li><a href="#Work" class="scroll"> <span data-hover="Work">work</span></a></li>
+						<li><a href="#About" class="scroll"> <span data-hover="About">关于我们</span></a></li>
+						<li><a href="#Services" class="scroll"> <span data-hover="Services">服务介绍</span></a></li>
+						<li><a href="#Work" class="scroll"> <span data-hover="Work">用户展示</span></a></li>
 						<li><a href="#Pricing" class="scroll"> <span data-hover="Pricing">购买</span></a></li>
 						<li><a href="#Contact" class="scroll"> <span data-hover="Contact">联系我们</span></a></li>
 				</ul>
@@ -71,7 +72,7 @@
 		 	<h1>电子商务订餐平台</h1>
 		 	<h2>创新</h2>
 		 	<p>开创新型订餐平台</p>
-		 	<img src="images/ftr-logo.png" alt=""/>
+		 	<img style="width:200px"src="images/logo2.png" alt=""/>
 		 </div>
 		<div class="clearfix"> </div>
     </div>
@@ -95,21 +96,7 @@
 			</ul>
 			<p>继续宣传</p>
 		 </div>
-		 <div class="worker">
-		 	<h4>团队</h4>
-		 	<p>要不要吧。。。</p>
-		 	<p> </p>
-		 	<div class="col-md-4 team-grid">
-		 		<img src="images/t1.jpg" alt=""/>
-		 	</div>
-		 	<div class="col-md-4 team-grid">
-		 		<img src="images/t2.jpg" alt=""/>
-		 	</div>
-		 	<div class="col-md-4 team-grid">
-		 		<img src="images/t3.jpg" alt=""/>
-		 	</div>
-		   <div class="clearfix"> </div>
-		 </div>
+		
 	  </div>
    <div class="clearfix"> </div>
 	   </div>
@@ -121,14 +108,14 @@
 	<div class="container">
 		<div class="services-main">
 			<div class="ser-top">
-				<h3>增值服务</h3>
+				<h3>相关服务</h3>
 				<h4>介绍</h4>
 			</div>
 			<div class="ser-bottom">
 			  <div class="ser-grid">
 				  <div class="col-md-8 ser-left">
-					<h5>服务一</h5>
-					<p>介绍们</p>
+					<h5>服务一·路径绘制</h5>
+					<p>按照客户的呼叫服务归类并按照时间的先后顺序为服务员绘制服务路径。</p>
 				   </div>
 				   <div class="col-md-4 ser-right">
 				   	<img src="images/bike.png" alt=""/>
@@ -140,8 +127,8 @@
 					<img src="images/dotts.png" alt=""/>
 				   </div>
 				   <div class="col-md-8 ser-right wltatext">
-				   	 <h5>服务二</h5>
-				   	 <p>介绍们</p>
+				   	 <h5>服务二·优惠价设定</h5>
+				   	 <p> blablablablablablablablablabla</p>
 				   </div>
 			     <div class="clearfix"> </div>
 			  </div>
@@ -172,7 +159,7 @@
 </script>
 
 <div class="gallery" id="Work">
-		<div class="portfolio-main">
+	<!--	<div class="portfolio-main">
 			<div class="port-folio-top">
 				<h3>我们的用户</h3>
 				<h4>用户。。。</h4>
@@ -223,7 +210,7 @@
 			</div>
 		  <div class="clearfix"> </div>
 		 
-		  <span class="port-line"> </span>
+		  <span class="port-line"> </span>-->
 	</div>
   </div>
 </div>
@@ -243,8 +230,8 @@
 	<div class="container">
 		<div class="happy-main">
 			<div class="happy-top">
-				<h3>HAPPY TESTIMONIALS</h3>
-				<h4>Lorem ipsum dolor sit amet, consectetur adipisicing elit</h4>
+				<h3>我们的用户</h3>
+				<h4>我们的用户遍及天南海北杀杀杀</h4>
 			</div>
 			<div class="happy-bottom">
 				 <div class="slider">
@@ -281,15 +268,15 @@
 			<div class="price-bottom">
 				<div class="col-md-4 order">
 				<div class="price-grid">
-					<h3>Starter</h3>
+					<h3>基础服务</h3>
 					<span class="price-line"> </span>
 					<ul>
-						<li><a href="#"><i> </i>Pre Consultation</a></li>
+						<li><a href="#"><i> </i>包括什么什么什么</a></li>
 					</ul>
-						<h4>10+  </h4>
+						<h4>12个月</h4>
 						<h5>$150</h5>
 						<span class="pricebott-line"> </span>
-						<h6>ORDER</h6>
+						<h6>选择</h6>
 				</div>
 				</div>
 				<div class="col-md-4 order">
@@ -323,7 +310,7 @@
 				<div class="clearfix"> </div>
 			</div>
 		
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+			<p>如果您有需要的服务我们没有请在下表中联系我们，一经采纳，我们将为您免费提供该服务一年的使用权。</p>
 		 
 		</div>
 	</div>
@@ -337,16 +324,16 @@
 		<div class="contact-main">
 			 <div class="contact-top">
 			 	<h3>联系我们</h3>
-			 	<P>HAVE ANY QUESTION? DROP US A MESSAGE</P>
+			 	<P>如果您有任何的建议请联系我们。</P>
 			 </div>
 			 <div class="contact-bottom">
 			 	<form>
-			 		<input type="text" value="Your Name" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your Name';}">
-			 		<input type="text" value="Your E-mail" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Your E-mail';}">
-			 		<input type="text" class="no-mar" value="Subject" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Subject';}">
-			 		<textarea onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = 'Message';}">Message</textarea>
+			 		<input id="myname" type="text" value="姓名" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '姓名';}">
+			 		<input id="mymail" type="text" value="电子邮件" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '电子邮件';}">
+			 		<input id="title" type="text" class="no-mar" value="标题" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '标题';}">
+			 		<textarea id="message" onFocus="this.value = '';" onBlur="if (this.value == '') {this.value = '信息';}">信息</textarea>
 			 		<div class="con-send">
-			 		<input type="submit"  value="SEND"/>
+			 		<input onclick="res();" type="submit"  value="发送"/>
 			 		</div>
 			 	</form>
 			 </div>
@@ -361,7 +348,7 @@
 	<div class="container">
 		<div class="footer-main">
 		    <div class="footer-left">
-			   <a href="#"><img src="images/ftr-logo.png" alt=""/></a>
+			   <a href="#"><img style="width: 200px" src="images/logo2.png" alt=""/></a>
 			</div>
 		</div>
 		<script type="text/javascript">

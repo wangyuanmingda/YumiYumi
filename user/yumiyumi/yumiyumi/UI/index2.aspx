@@ -100,7 +100,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ul>
 							<li class="active"><a href="index2.aspx">主页</a></li>
 							<li><a href=" restaurants.aspx">餐厅</a></li>
-							<li><a href="login2.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
                             <li><a href=" CallService.aspx">呼叫服务</a></li>
                             <li><a href=" MyOrder.aspx">订单查询</a></li>
@@ -335,15 +334,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- magnust -->	
 	<div class="magnust">
 		<div class="container">
-			<h3>Nascetur ridiculus mus</h3>
+			<h3>推广区</h3>
 		<div class="col-md-4 magnust-top">
 			
 			<div class="magnust-left">
 				<img src="images/9b.jpg" class="img-responsive" alt="">	
 			</div>
 			<div class="magnust-right">
-				<h4><a href="#">Cites of the</a></h4>
-				<p> Lorem Ipsum passage, and going through the cites of the undoubtable source. Lorem sections</p>
+				<h4><a href="#">意大利餐厅</a></h4>
+				<p>风味独特，专业西餐厨师。</p>
 				<a class="see" href="#">See More</a>
 			</div>
 				<div class="clearfix"> </div>
@@ -353,8 +352,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<img src="images/8b.jpg" class="img-responsive" alt="">	
 			</div>
 			<div class="magnust-right">
-				<h4><a href="#">Lorem Ipsum</a></h4>
-				<p> Lorem Ipsum passage, and going through the cites of the undoubtable source. Lorem sections</p>
+				<h4><a href="#">甜点餐厅</a></h4>
+				<p> 果汁均为鲜榨，可以尝到新鲜果肉。</p>
 				<a class="see" href="#">See More</a>
 			</div>
 				<div class="clearfix"> </div>
@@ -364,8 +363,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 				<img src="images/10b.jpg" class="img-responsive" alt="">	
 			</div>
 			<div class="magnust-right">
-				<h4><a href="#">Will uncove</a></h4>
-				<p> Lorem Ipsum passage, and going through the cites of the undoubtable source. Lorem sections</p>
+				<h4><a href="#">快餐店</a></h4>
+				<p>味道鲜美。</p>
 				<a class="see" href="#">See More</a>
 			</div>
 				<div class="clearfix"> </div>

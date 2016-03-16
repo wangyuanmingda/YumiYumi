@@ -64,7 +64,7 @@ namespace waiterPlatform.UI
                         sb.Append("<p class='bl_blue'>状态:" + "完成" + "</p>");
                         sb.Append("<p>单价:" + dish.price + "</p>");
                         sb.Append("<p>备注：</p>");
-                        sb.Append("<p><a class='btn btn-warning' href='#'>完成</a> <a class='btn' href='#'>取消</a></p>");
+                    //    sb.Append("<p><a class='btn btn-warning' href='#'>完成</a> <a class='btn' href='#'>取消</a></p>");
                         sb.Append("</div>");
                         sb.Append("</div>");  
                         break;
@@ -81,6 +81,7 @@ namespace waiterPlatform.UI
                         break;
                 }
             }
+            sb.Append("<input name='结算订单' type='submit' value='结算订单'");
             
             return sb.ToString();
         }

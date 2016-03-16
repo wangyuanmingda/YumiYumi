@@ -47,10 +47,14 @@ namespace yumiyumi.UI
             while(jj<disheslist.Count)//总共有disheslist.Count个菜
             {
                 sb.Append("<div class='order-top'>");
-                sb.Append("<li style='width:30%' class='data'><h4>"+disheslist[jj].type_name+"</h4>");
+                sb.Append("<li style='width:35%' class='data'><h4>"+disheslist[jj].type_name+"</h4>");
                 while (disheslist[kk].type_id == disheslist[jj].type_id && kk < disheslist.Count)//这是干嘛的，输出菜名，按列来搞
                 {
+                    sb.Append("<div style='width:100%'>");
+                    sb.Append("<img style='width:50%;float:left;padding-right:20px' src='"+ disheslist[kk].photo +"' class='img-responsive'/>");
                     sb.Append("<p>"+disheslist[kk].dish_name+"</p>");
+                    sb.Append("</div>");
+                    sb.Append("<div style='padding-bottom:20px'></div>");
                     kk++;
                     if (kk == disheslist.Count) break;
                 }
@@ -80,8 +84,10 @@ namespace yumiyumi.UI
                     sb.Append("<div class='pr-right'>");
                     sb.Append("<div class='item_add'><span id='a" + disheslist[kk].id + "' onclick='addtocart(this,0,"+  price + ")' class='item_price'><a href='#'>来一份</a></span></div>");//此处为了得到菜品单价，直接添加了单价作为参数。
                     sb.Append("</div>");
+                   
                     sb.Append("<div class='clearfix'></div>");
                     sb.Append("</div>");
+                    sb.Append("<div style='padding-bottom:20px'></div>");
                     kk++;
                     if (kk == disheslist.Count) break;
                 }

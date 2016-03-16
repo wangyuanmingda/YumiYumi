@@ -1825,8 +1825,7 @@ li.im-g {
 /*-- responsive --*/
 @media(max-width:480px){
 li.data2 {
-  float: right;
-  width: 65%;
+  width: 40%;
 }	
 .b_room {
   margin: 0 auto;
@@ -1923,8 +1922,7 @@ div.register-bottom-grid {
   margin: 0.5em 0;
 }
 li.bt-nn {
-  float: left;
-  width: 31%;
+  width: 25%;
 }
 .order-top h6 {
   margin: 0.53em 0;

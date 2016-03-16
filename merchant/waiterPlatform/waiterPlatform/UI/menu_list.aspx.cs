@@ -14,7 +14,7 @@ namespace waiterPlatform.UI
         public String dishList;
         protected void Page_Load(object sender, EventArgs e)
         {
-            identify();
+          //  identify();
             loadDishesList();
         }
 

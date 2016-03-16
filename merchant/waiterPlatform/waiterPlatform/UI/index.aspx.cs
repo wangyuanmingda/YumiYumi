@@ -18,7 +18,7 @@ namespace waiterPlatform.UI
         public int restaurantId;
         protected void Page_Load(object sender, EventArgs e)
         {
-            identify();
+         //   identify();
             getAllMessages();
             getAllOrders();
             getServiceCall();

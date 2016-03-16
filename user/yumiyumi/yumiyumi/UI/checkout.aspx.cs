@@ -58,7 +58,7 @@ namespace yumiyumi.UI
                         sb.Append("<div id='close" + id + "' class='close3' onclick='deletepart(this)'> </div>\n");
                         sb.Append("<div class='cart-sec simpleCart_shelfItem'>\n");
                         sb.Append("<div class='cart-item cyc'>\n");
-                        sb.Append("<img src='images/5p.jpg' class='img-responsive' alt=''>\n");//菜的图片
+                        sb.Append("<img src='" + temp.photo +"' class='img-responsive' alt=''>\n");//菜的图片
                         sb.Append("</div>\n");
                         sb.Append("<div class='cart-item-info'>\n");
                         sb.Append("<h3><a href='#'>"+temp.dish_name+"</a> </h3>\n");
@@ -142,8 +142,10 @@ namespace yumiyumi.UI
                         string eachcookie = System.Web.HttpUtility.UrlDecode(Request.Cookies[i].Value.ToString());
                         string[] quantity = eachcookie.Split(';');
                         int q = Convert.ToInt32(quantity[0].Split(':')[1]);
+                        int price = Convert.ToInt32(quantity[1].Split(':')[1]);
                         orderDetail.count = q;
                         orderDetail.dish_id = temp.id;
+                        orderDetail.price = price;
                         order.dishList.Add(orderDetail);
 
                         Request.Cookies[i].Value = "0";

@@ -72,7 +72,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <!-- header -->
 <!-- finish -->
     <div>
-        <h1>恭喜你，下单成功</h1>
+        <img class="img-responsive" src="images/logo2.jpg" />
+        <h1>下单成功，请稍等。</h1>
     </div>
 <!-- finish -->
 

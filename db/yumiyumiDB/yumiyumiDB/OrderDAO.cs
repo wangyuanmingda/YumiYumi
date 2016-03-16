@@ -121,7 +121,7 @@ namespace yumiyumiDB
                     detail.id = myreader2.GetInt32(0);
                     detail.order_id = myreader2.GetInt32(1);
                     detail.dish_id = myreader2.GetInt32(2);
-                    detail.count = detail.dish_id = myreader2.GetInt32(3);
+                    detail.count = myreader2.GetInt32(3);
                     detail.status = myreader2.GetInt32(4);
                     order.dishList.Add(detail);
                 }

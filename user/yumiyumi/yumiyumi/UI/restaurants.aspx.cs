@@ -30,7 +30,7 @@ namespace yumiyumi.UI
                 sb.Append("<P> "+list[i].description+"</P>");
                 sb.Append("</li>");
 			    sb.Append("<li class='bt-nn'>");
-                sb.Append("<a class='morebtn hvr-rectangle-in' href='shop?restaurantId="+list[i].id+"'>Explore</a>");
+                sb.Append("<a class='morebtn hvr-rectangle-in' href='shop?restaurantId="+list[i].id+"'>查看详情</a>");
                 sb.Append("</li>");
 			    sb.Append("<div class='clearfix'></div>");
                 sb.Append("</div>");

@@ -9,7 +9,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Spicemystery a Hotel and Resturant Category Flat Bootstarp Responsive Website Template | Resturant :: w3layouts</title>
+<title>饭店列表</title>
 <link href="css/bootstrap.css" rel="stylesheet" type="text/css" media="all">
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -40,7 +40,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<ul>
 							<li><a href="index2.aspx">主页</a></li>
 							<li   class="active"><a href=" restaurants.aspx">餐厅</a></li>
-							<li><a href="login2.aspx">登录</a></li>
 							<li><a href=" contact.aspx">联系我们</a></li>
                             <li><a href=" CallService.aspx">呼叫服务</a></li>
                             <li><a href=" MyOrder.aspx">订单查询</a></li>
@@ -83,18 +82,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<div class="footer">
 		<div class="container">
 			<div class="footer-left">
-				<p>Copyrights © 2015  All rights reserved | Design by </p>
+				<p>Copyrights © 2015  All rights reserved | Design by YumiYumi</p>
 			</div>
-			<div class="footer-right">
-				<ul>
-					<li><a href="#"><i class="fbk"></i></a></li>
-					<li><a href="#"><i class="googpl"></i></a></li>
-					<li><a href="#"><i class="link"></i></a></li>
-					<li><a href="#"><i class="rss"></i></a></li>
-					<li><a href="#"><i class="twt"></i></a></li>
-				</ul>
-			</div>	
-				<div class="clearfix"></div>
+            <div class="clearfix"></div>
 		</div>
 	</div>
 <!-- footer-->	

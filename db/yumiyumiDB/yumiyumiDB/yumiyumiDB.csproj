@@ -53,6 +53,7 @@
     <Compile Include="Dijkstra.cs" />
     <Compile Include="DishDAO.cs" />
     <Compile Include="DishEntity.cs" />
+    <Compile Include="Floyd.cs" />
     <Compile Include="MapDAO.cs" />
     <Compile Include="MapEntity.cs" />
     <Compile Include="MessageDAO.cs" />

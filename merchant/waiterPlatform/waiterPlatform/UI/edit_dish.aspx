@@ -9,8 +9,9 @@
     <!--[if gt IE 8]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
     <![endif]-->                
-    <title>Forms - Aries Premium Admin Template</title>
+    <title>修改菜单</title>
     <link rel="icon" type="image/ico" href="favicon.ico"/>
+
     
     <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
     <!--[if lte IE 7]>
@@ -58,9 +59,13 @@
     <script type='text/javascript' src='js/plugins.js'></script>
     <script type='text/javascript' src='js/charts.js'></script>
     <script type='text/javascript' src='js/actions.js'></script>
+
+        <!--checkbutton -->
+    <link href="css/inserthtml.com.radios.css" rel="stylesheet" type="text/css"/>    <script src="js/modernizr.js"></script>
     
 </head>
 <body>    
+
     <div id="loader"><img src="img/loader.gif"/></div>
     <div class="wrapper">
         
@@ -196,13 +201,14 @@
                     <div class="span4">
                         <div class="block">
                             <div class="head">
-                                <h2>Custom fields validation</h2>
+                                <h2>设定优惠价格</h2>
                             </div>                   
+                             
                             <form id="validate_custom" method="POST" action="javascript:alert('#validate_custom submited');">
                             <div class="data-fluid">
-
-                                <div class="row-form">
-                                    <div class="span5">Select:</div>
+                               
+                                <div class="row-form">  
+                                    <div class="span5">选择优惠方式:</div>
                                     <div class="span7">                            
                                         <select name="s_example" class="validate[required]" style="width: 100%;">
                                             <option value=""></option>
@@ -214,21 +220,7 @@
                                     </div>
                                 </div>
                                 <div class="row-form">
-                                    <div class="span5">Checkbox:</div>
-                                    <div class="span7">                            
-                                        <input type="checkbox" class="validate[required]" name="vcheck" value="1"/> Enabled <input  name="vcheck" value="0" type="checkbox" disabled="disabled" class="validate[required]"/> Disabled
-                                        <span class="bottom">Required</span>
-                                    </div>
-                                </div>                    
-                                <div class="row-form">
-                                    <div class="span5">Radio:</div>
-                                    <div class="span7">                            
-                                        <input type="radio" class="validate[required]" name="vradio" value="1"/> Enabled <input type="radio" disabled="disabled" class="validate[required]" name="vradio" value="0"/> Disabled
-                                        <span class="bottom">Required</span>
-                                    </div>
-                                </div>
-                                <div class="row-form">
-                                    <div class="span5">Datepicker:</div>
+                                    <div class="span5">优惠截止日期:</div>
                                     <div class="span7">                            
                                         <input type="text" class="validate[required] datepicker"/>
                                         <span class="bottom">Required</span>
@@ -238,41 +230,13 @@
                                 <div class="row-form"></div>
 
                                 <div class="row-form">
-                                    <div class="span5">Group required:</div>
+                                    <div class="span5">优惠价格:</div>
                                     <div class="span7">                            
                                         <input class="validate[groupRequired[payments]]" type="text" name="credit" id="credit" />
                                         <span class="bottom">Any of group fields must be filled.</span>
                                     </div>
                                 </div>
-                                <div class="row-form">
-                                    <div class="span5"></div>
-                                    <div class="span7">                            
-                                        <input class="validate[groupRequired[payments]]" type="text" name="paypal" id="paypal" />
-                                        <span class="bottom">Any of group fields must be filled.</span>
-                                    </div>
-                                </div>
 
-                                <div class="row-form"></div>
-
-                                <div class="row-form">
-                                    <div class="span5">Condition required:</div>
-                                    <div class="span7">                            
-                                        <input type="text" name="creditcard" id="creditcard" placeholder="Credit card"/>                   
-                                    </div>
-                                </div>
-                                <div class="row-form">
-                                    <div class="span5"></div>
-                                    <div class="span7">                            
-                                        <input class="validate[condRequired[creditcard]]" type="text" id="ccv" name="ccv" placeholder="CCV"/>
-                                        <span class="bottom">This field is required if "Credit card" field is filled.</span>
-                                    </div>
-                                </div>
-
-                                <div class="toolbar bottom tar">
-                                    <div class="btn-group">
-                                        <button class="btn btn-info" type="button" onClick="$('#validate_custom').validationEngine('hide');">Hide prompts</button>
-                                        <button class="btn" type="submit">Submit</button>
-                                    </div>
                                 </div>                    
 
                             </div>

@@ -47,6 +47,7 @@ namespace waiterPlatform.UI
                     sb.Append("<td><a href='edit_dish.aspx?dish_id="+list[i].id+"'>" + list[i].dish_name + "</a></td>");
                     sb.Append("<td>Product #"+list[i].id+"</td>");
                     sb.Append("<td><span>"+list[i].price+"</span></td>");
+                    sb.Append("<td>" + list[i].price + "</td>");
                     sb.Append("<td>"+list[i].dish_name+"</td>");
                     sb.Append("<td>");
                     sb.Append("<a href='#' class='button green'>");

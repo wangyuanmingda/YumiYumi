@@ -8,7 +8,7 @@
     <!--[if gt IE 8]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />        
     <![endif]-->                
-    <title>当前菜单列表</title>
+    <title>本店菜单列表</title>
     <link rel="icon" type="image/ico" href="favicon.ico"/>
     
     <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
@@ -147,7 +147,7 @@
                     <div class="icon">
                         <span class="ico-layout-7"></span>
                     </div>
-                    <h1>当前菜单列表 <small>电子商务点餐系统</small></h1>
+                    <h1>本店菜单列表 <small>电子商务点餐系统</small></h1>
                 </div>
                 
                 <asp:button runat="server" button class="btn" type="submit" OnClick="Unnamed_Click" Text="提交"></asp:button>
@@ -172,6 +172,7 @@
                                                 <th width="20%">菜品名</th>
                                                 <th width="20%">单号</th>
                                                 <th width="20%">单价</th>
+                                                <th width="20%">优惠价</th>
                                                 <th width="20%">主要原料</th>
                                                 <th width="80" class="TAC">操作</th>
                                             </tr>

@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
 <script>
-    function strokeRect() {
+    function strokeRect2() {
         var canvas = document.getElementById('Canvas');
         var ctx = canvas.getContext("2d");
         //绘制路径
@@ -25,7 +25,10 @@
     <form id="form1" runat="server">
     <div>
     <canvas id="Canvas" style="padding-left: 25%;width: 50%;padding-right: 25%;" width="500" height="353"> <p>爷，你还在上个世纪吧，现在都html5了，您还在ie6时代？</p> </canvas>
-    <input type="button" value="绘制" onclick="strokeRect();"/> 
+    <input type="button" value="绘制加水路径" onclick="strokeRect2();"/> 
+    <input type="button" value="绘制结账路径" onclick="strokeRect3();"/> 
+    <input type="button" value="绘制加汤路径" onclick="strokeRect4();"/> 
+
     <script type="text/javascript">
         //通过id获得当前的Canvas对象
         var canvasDom2 = document.getElementById("Canvas");

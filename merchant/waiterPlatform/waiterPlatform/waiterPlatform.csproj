@@ -283,6 +283,7 @@
     <Content Include="UI\order_list.html" />
     <Content Include="UI\restaurant_list.html" />
     <Content Include="UI\test.aspx" />
+    <Content Include="UI\test2.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -367,6 +368,13 @@
     </Compile>
     <Compile Include="UI\test.aspx.designer.cs">
       <DependentUpon>test.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI\test2.aspx.cs">
+      <DependentUpon>test2.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI\test2.aspx.designer.cs">
+      <DependentUpon>test2.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

@@ -10,15 +10,62 @@
     function strokeRect2() {
         var canvas = document.getElementById('Canvas');
         var ctx = canvas.getContext("2d");
-        //绘制路径
-        context.beginPath(); // 开始路径绘制
-        context.moveTo(166, 120); // 设置路径起点，坐标为(20,20)
-        context.lineTo(208, 120); // 绘制一条到(200,20)的直线
-        context.closePath();
-        context.lineWidth = 2.0; // 设置线宽
-        context.strokeStyle = "#CC0000"; // 设置线的颜色
-        context.stroke(); // 进行线的着色，这时整条线才变得可见
+        var image = new Image();//创建一张图片
+
+        image.src = "img/timg.jpg";//设置图片的路径
+        image.onload = function () {//当图片加载完成后
+            //参数：（1）绘制的图片  （2）坐标x，（3）坐标y
+            context.drawImage(image, 0, 0);
+            //绘制路径
+            context.beginPath(); // 开始路径绘制
+        <%= js%>
+            context.lineWidth = 2.0; // 设置线宽
+            context.strokeStyle = "#CC0000"; // 设置线的颜色
+            context.stroke(); // 进行线的着色，这时整条线才变得可见
+
+        };
+
     }
+
+    function strokeRect3() {
+        var canvas = document.getElementById('Canvas');
+        var ctx = canvas.getContext("2d");
+        var image = new Image();//创建一张图片
+
+        image.src = "img/timg.jpg";//设置图片的路径
+        image.onload = function () {//当图片加载完成后
+            //参数：（1）绘制的图片  （2）坐标x，（3）坐标y
+            context.drawImage(image, 0, 0);
+            //绘制路径
+            context.beginPath(); // 开始路径绘制
+        <%= js2%>
+            context.lineWidth = 2.0; // 设置线宽
+            context.strokeStyle = "#CC0000"; // 设置线的颜色
+            context.stroke(); // 进行线的着色，这时整条线才变得可见
+
+        };
+
+    }
+
+
+    function strokeRect4() {
+        var canvas = document.getElementById('Canvas');
+        var ctx = canvas.getContext("2d");
+        var image = new Image();//创建一张图片
+
+        image.src = "img/timg.jpg";//设置图片的路径
+        image.onload = function () {//当图片加载完成后
+            //参数：（1）绘制的图片  （2）坐标x，（3）坐标y
+            context.drawImage(image, 0, 0);
+            //绘制路径
+            context.beginPath(); // 开始路径绘制
+        <%= js3%>
+            context.lineWidth = 2.0; // 设置线宽
+            context.strokeStyle = "#CC0000"; // 设置线的颜色
+            context.stroke(); // 进行线的着色，这时整条线才变得可见
+        };
+
+        }
 </script>
 </head>
 <body>
@@ -42,18 +89,11 @@
                 //参数：（1）绘制的图片  （2）坐标x，（3）坐标y
             context.drawImage(image, 0, 0);
 
-            context.beginPath(); // 开始路径绘制
-            context.moveTo(166, 120); // 设置路径起点，坐标为(20,20)
-            context.lineTo(208, 120); // 绘制一条到(200,20)的直线
-            context.closePath();
-            context.lineWidth = 2.0; // 设置线宽
-            context.strokeStyle = "#CC0000"; // 设置线的颜色
-            context.stroke(); // 进行线的着色，这时整条线才变得可见
-
         };
 
     </script>
         <p><%=number %></p>
+        <p><%=shortString %></p>
     </div>
     </form>
 </body>

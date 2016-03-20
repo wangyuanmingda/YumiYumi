@@ -11,7 +11,8 @@
     <![endif]-->                
     <title>修改菜单</title>
     <link rel="icon" type="image/ico" href="favicon.ico"/>
-
+
+
     
     <link href="css/stylesheets.css" rel="stylesheet" type="text/css" />
     <!--[if lte IE 7]>
@@ -61,7 +62,8 @@
     <script type='text/javascript' src='js/actions.js'></script>
 
         <!--checkbutton -->
-    <link href="css/inserthtml.com.radios.css" rel="stylesheet" type="text/css"/>    <script src="js/modernizr.js"></script>
+    <link href="css/inserthtml.com.radios.css" rel="stylesheet" type="text/css"/>
+    <script src="js/modernizr.js"></script>
     
 </head>
 <body>    
@@ -203,7 +205,8 @@
                             <div class="head">
                                 <h2>设定优惠价格</h2>
                             </div>                   
-                             
+                             
+
                             <form id="validate_custom" method="POST" action="javascript:alert('#validate_custom submited');">
                             <div class="data-fluid">
                                

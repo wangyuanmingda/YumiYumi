@@ -15,7 +15,7 @@ namespace yumiyumiDB
         public int price;
         public int type_id;
         public string type_name;
-
+        public int discount;
         public int status;
         public int count;
     }

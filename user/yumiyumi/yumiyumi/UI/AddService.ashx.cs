@@ -15,12 +15,12 @@ namespace yumiyumi.UI
         public void ProcessRequest(HttpContext context)
         {
             context.Response.ContentType = "text/plain";
-            int user_id = Convert.ToInt32(context.Request.QueryString["user_id"]);
+ //           int user_id = Convert.ToInt32(context.Request.QueryString["user_id"]);
             int restaurant_id = Convert.ToInt32(context.Request.QueryString["restaurant_id"]);
             int service_type = Convert.ToInt32(context.Request.QueryString["service_type"]);
             ServiceDAO serviceDAO = new ServiceDAO();
             ServiceEntity service = new ServiceEntity();
-            service.user_id = user_id;
+   //         service.user_id = user_id;
             service.restaurant_id = restaurant_id;
             service.service_type = service_type;
             service.ctime = System.DateTime.Now.ToString();

@@ -16,7 +16,7 @@ namespace yumiyumi.Models
         public int type_id;
         public string type_name;
         public int status;
-
+        public int discount;
         public int count;
     }
 }

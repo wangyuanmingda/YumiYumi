@@ -53,7 +53,7 @@ namespace yumiyumiDB
         public DishEntity getDishById(int dishId)
         {
             //string mysql = "SELECT * FROM yumiyumi.yumi_account where user_name ='"+email+"'";
-            string mysql = "SELECT dish_id,dish_thumbimage,brand_id,dish_description,dish_price,type_id,dish_name,status FROM yumiyumi.yumi_dish where dish_id = ?dish_id";
+            string mysql = "SELECT yumi_dish.dish_id,dish_thumbimage,brand_id,dish_description,dish_price,type_id,dish_name,status,discount_price FROM yumiyumi.yumi_dish LEFT JOIN yumiyumi.yumi_discount on yumi_dish.dish_id = yumi_discount.dish_id where yumi_dish.dish_id = ?dish_id";
             MySqlParameter[] parameters = {
                     new MySqlParameter("?dish_id", MySqlDbType.UInt32),
                     };
@@ -69,6 +69,8 @@ namespace yumiyumiDB
                 dish.price = myreader.GetInt32(4);
                 dish.type_id = myreader.GetInt32(5);
                 dish.dish_name = myreader.GetString(6);
+                dish.discount = myreader.IsDBNull(8)? 0 : myreader.GetInt32(8);
+              
                 //dish.status = myreader.GetInt32(7);
             }
             myreader.Close();
